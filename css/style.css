@@ -557,6 +557,7 @@ textarea.input {
   font-weight: 700;
 }
 
+
 .menu-nav .menu-header>i {
   float: right;
   line-height: 20px;
@@ -564,6 +565,11 @@ textarea.input {
 
 .menu-nav .menu-list>li {
   display: inline-block;
+  
+}
+
+.menu-nav .menu-list>li#inicio{
+    background: #F8694A;
 }
 
 .menu-nav .menu-list>li>a {
