@@ -699,7 +699,7 @@
 	<!-- /NAVIGATION -->
 
 	<!-- BREADCRUMB -->
-	<div id="breadcrumb">
+	<!--<div id="breadcrumb">
 		<div class="container">
 			<ul class="breadcrumb">
 				<li><a href="#">Home</a></li>
@@ -742,7 +742,7 @@
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
 
 						<!-- footer social -->
-						<ul class="footer-social">
+						<!--<ul class="footer-social">
 							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
 							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
 							<li><a href="#"><i class="fa fa-instagram"></i></a></li>
@@ -755,7 +755,7 @@
 				<!-- /footer widget -->
 
 				<!-- footer widget -->
-				<div class="col-md-3 col-sm-6 col-xs-6">
+				<!--<div class="col-md-3 col-sm-6 col-xs-6">
 					<div class="footer">
 						<h3 class="footer-header">My Account</h3>
 						<ul class="list-links">
@@ -769,10 +769,10 @@
 				</div>
 				<!-- /footer widget -->
 
-				<div class="clearfix visible-sm visible-xs"></div>
+				<!--<div class="clearfix visible-sm visible-xs"></div>
 
 				<!-- footer widget -->
-				<div class="col-md-3 col-sm-6 col-xs-6">
+				<!--<div class="col-md-3 col-sm-6 col-xs-6">
 					<div class="footer">
 						<h3 class="footer-header">Customer Service</h3>
 						<ul class="list-links">
@@ -786,7 +786,7 @@
 				<!-- /footer widget -->
 
 				<!-- footer subscribe -->
-				<div class="col-md-3 col-sm-6 col-xs-6">
+				<!--<div class="col-md-3 col-sm-6 col-xs-6">
 					<div class="footer">
 						<h3 class="footer-header">Stay Connected</h3>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
