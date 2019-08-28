@@ -85,19 +85,6 @@
 					</div>
 					<!-- /Logo -->
 
-					<!-- Search -->
-					<!--<div class="header-search">
-						<form>
-							<input class="input search-input" type="text" placeholder="Enter your keyword">
-							<select class="input search-categories">
-								<option value="0">All Categories</option>
-								<option value="1">Category 01</option>
-								<option value="1">Category 02</option>
-							</select>
-							<button class="search-btn"><i class="fa fa-search"></i></button>
-						</form>
-					</div>
-					<!-- /Search -->
 				</div>
 				<div class="pull-right">
 					<ul class="header-btns">
@@ -710,6 +697,8 @@
 	<!-- /BREADCRUMB -->
 
 	<!-- section -->
+        <section id="body">
+            
 	<div class="section">
 		<!-- container -->
 		<div class="container">
@@ -720,9 +709,121 @@
 		</div>
 		<!-- /container -->
 	</div>
-	<!-- /section -->
+        
+	
+            </section>
+            <!-- /section -->
+        
+        
+        <!-- Search -->
+        <aside id="side">
+            <div id="lado">
+                                
+					<div class="procurar">
+                                            <form>
+                                                    
+                                                    <table>
+                                                        <th>Nome</th>
+                                                        <tr>
+                                                            <td>Grupo</td>
+                                                            
+                                                            <td>Família</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><select class="input search-categories">
+								<option value="0">Todos</option>
+								<option value="1">Category 01</option>
+								<option value="1">Category 02</option>
+                                                                </select></td>
+                                                                
+                                                                <td><select class="input search-categories">
+								<option value="0">Todos</option>
+								<option value="1">Category 01</option>
+								<option value="1">Category 02</option>
+							</select></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Autor</td>
+                                                            <td>Nome Popular</td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <td><input class="input search-input" type="text"</td>
+                                                            
+                                                            <td><input class="input search-input" type="text"</td>
+                                                            
 
+                                                        </tr>
+                                                        <tr>
+                                                            
+                                                            <td colspan="2">Nome completo</td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="2"><input class="input search-input" type="text"></td>
+                                                        </tr>
+                                                        
+                                                        
+                                                    </table><br>
+                                                    <table>
+                                                        <th>Forma de Vida</th>
+                                                        <tr>
+                                                            <td>Forma de Vida</td>
+                                                            <td>Subtrato</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><select class="input search-categories">
+								<option value="0">Todos</option>
+								<option value="1">Category 01</option>
+								<option value="1">Category 02</option>
+                                                                </select></td>
+                                                                
+                                                                <td><select class="input search-categories">
+								<option value="0">Todos</option>
+								<option value="1">Category 01</option>
+								<option value="1">Category 02</option>
+							</select></td>
+                                                        </tr>
+                                                    </table>
+                                                    <!--<table>
+                                                        <tr>
+                                                            <td id="center" >Filo</td>
+                                                            <td>Família</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><input class="input search-input" type="text" placeholder="Filo"></td>
+                                                            <!--<td class="search-btn"><i class="fa fa-search"></i></td>
+                                                            <td></td>
+                                                            <td><input class="input search-input" type="text" placeholder="Filo"></td>
+                                                            <!--<td class="search-btn"><i class="fa fa-search"></i></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Autor</td>
+                                                        <td>Nome Popular</td>
+                                                        
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input class="input search-input" type="text" placeholder="Filo"></td>
+                                                            <td class="search-btn"><i class="fa fa-search"></i></td>
+                                                            <td></td>
+                                                            <td><input class="input search-input" type="text" placeholder="Filo"></td>
+                                                            <td class="search-btn"><i class="fa fa-search"></i></td>
+                                                    </tr>
+                                                    <td>
+                                                    <td>Nome Completo</td>
+                                                    </td>
+                                                    </table>-->
+						</form>
+					</div>
+            </div>
+        </aside>
+        
+        <!-- /Search -->
+
+        
 	<!-- FOOTER -->
+        <footer id="foo">
+            
 	<footer id="footer" class="section section-grey">
 		<!-- container -->
 		<div class="container">
@@ -818,7 +919,9 @@
 		</div>
 		<!-- /container -->
 	</footer>
-	<!-- /FOOTER -->
+	</footer>
+        <!-- /FOOTER -->
+        
 
 	<!-- jQuery Plugins -->
 	<script src="js/jquery.min.js"></script>
