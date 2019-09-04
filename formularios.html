@@ -34,7 +34,9 @@
 		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
-
+        
+        <!--Editor de texto-->
+        <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
 </head>
 
 <body>
@@ -105,7 +107,7 @@
 					<div class="menu-nav">
 					<span class="menu-header">Menu <i class="fa fa-bars"></i></span>
 					<ul class="menu-list">
-                                            <li id="inicio"><a href="index.php"><span class="category-header">Início <!--<i class="fa fa-list"></i>--></span></a></li>
+                                            <li><a href="index.php"><span class="category-header">Início <!--<i class="fa fa-list"></i>--></span></a></li>
 						<li class="dropdown mega-dropdown full-width"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Filo <i class="fa fa-caret-down"></i></a>
 							<div class="custom-menu">
 								<div class="row">
@@ -602,17 +604,21 @@
                                                             
                                                             <td>Nome Científico</td>
                                                             <td>Nome Popular</td>
+                                                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                                            <td rowspan="11"><textarea id="ckeditor" class="ckeditor" maxlength="3000"></textarea></td>
                                                             
                                                             
                                                         </tr>
                                                         <tr>
                                                             <td><input class="input search-input" name="nomeCientifico" type="text"></td>
-                                                            <td><input class="input search-input" name="nomePopular" type="text"></td>    
+                                                            <td><input class="input search-input" name="nomePopular" type="text"></td>
+                                                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                                                                 
                                                         </tr>
                                                         <tr>
                                                             <td>Filo</td>
                                                             <td>Classe</td>
+                                                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                                                             
                                                             
                                                         </tr>
@@ -628,11 +634,13 @@
                                                                         <option value="1">Category 01</option>
                                                                         <option value="1">Category 02</option>
                                                                     </select></td>
+                                                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                                                             
 
                                                         </tr>
                                                         <td>Ordem<br></td>
                                                         <td>Família</td>
+                                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                                                             
                                                             
                                                         </tr>
@@ -647,138 +655,53 @@
                                                                         <option value="1">Category 01</option>
                                                                         <option value="1">Category 02</option>
                                                                     </select></td>
+                                                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                                                             
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="2">Carpoteca</td>
+                                                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="2"><select class="input search-categories" name="carpotecaFormulario">
+                                                                        <option value="0">Todos</option>
+                                                                        <option value="1">Category 01</option>
+                                                                        <option value="1">Category 02</option>
+                                                                    </select></td></td>
                                                         </tr>
                                                         <tr>
                                                             <td colspan="2">Imagem</td>
+                                                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                                                             
                                                             
                                                         </tr>
                                                         <tr>
-                                                            <td colspan="2"><input class="input search-input" type="image"  name="fotoPlanta"></td>
+                                                            <td colspan="2"><input type="file"  name="fotoPlanta" size="41"></td>
+                                                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                                                                 
                                                             
                                                         </tr>
                                                         <tr>
                                                             <td>Permitir Modificação:</td>
-                                                            <td><input type="radio" name="opniao" value="sim">Sim &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                        
+                                                            <td ><input type="radio" name="opniao" value="sim">Sim &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                
+                                                                
                                                                 <input type="radio" name="opniao" value="não">Não</td>
+                                                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                                            <td><input type="submit" class="primary-btn" value="Adicionar dados da planta"></td>
                                                         </tr>
                             
                         </table>
-                        <!--<table id="tabela1">
-                                                        <tr>
-                                                            
-                                                            <td>Nome Científico</td>
-                                                           
-                                                            
-                                                            
-                                                        </tr>
-                                                        <tr>
-                                                            <td><input class="input search-input" name="nomeCientifico" type="text"></td>
-                                                                
-                                                                
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Filo</td>
-                                                            
-                                                            
-                                                        </tr>
-                                                        <tr>
-                                                            <td><select class="input search-categories" name="filoFormulario">
-                                                                        <option value="0">Todos</option>
-                                                                        <option value="1">Category 01</option>
-                                                                        <option value="1">Category 02</option>
-                                                                    </select></td>
-                                                            
-                                                            
-                                                            
-
-                                                        </tr>
-                                                        <tr>
-                                                            
-                                                            <td>Ordem</td>
-                                                            
-                                                            
-                                                        </tr>
-                                                        <tr>
-                                                            <td><select class="input search-categories" name="ordemFormulario">
-                                                                        <option value="0">Todos</option>
-                                                                        <option value="1">Category 01</option>
-                                                                        <option value="1">Category 02</option>
-                                                                    </select></td>
-                                                            
-                                                            
-                                                        </tr>
-                                                        
-                                                        <tr>
-                                                            <td>Imagem</td>
-                                                            
-                                                        </tr>
-                                                        <tr>
-                                                            <td><input class="input search-input" type="image"  name="fotoPlanta"></td>
-                                                                
-                                                            
-                                                        </tr>
-                                                        
-                                                        
-                                                    </table>
+                        
                     </form>
-                    <form>
-                        <table id="tabela2">
-                            <tr>
-                                                            
-                                                          
-                                                            
-                                                            <td>Nome Popular</td>
-                                                            
-                                                        </tr>
-                                                        <tr>
-                                                            
-                                                                
-                                                                <td><input class="input search-input" name="nomePopular" type="text"></td>
-                                                        </tr>
-                                                        <tr>
-                                                            
-                                                            <td>Classe</td>
-                                                            
-                                                        </tr>
-                                                        <tr>
-                                                            
-                                                            
-                                                            <td><select class="input search-categories" name="classeFormulario">
-                                                                        <option value="0">Todos</option>
-                                                                        <option value="1">Category 01</option>
-                                                                        <option value="1">Category 02</option>
-                                                                    </select></td>
-                                                            
-
-                                                        </tr>
-                                                        <tr>
-                                                            
-                                                            
-                                                            <td>Família</td>
-                                                            
-                                                        </tr>
-                                                        <tr>
-                                                            
-                                                            
-                                                            <td><select class="input search-categories" name="familiaFormulario">
-                                                                        <option value="0">Todos</option>
-                                                                        <option value="1">Category 01</option>
-                                                                        <option value="1">Category 02</option>
-                                                                    </select></td>
-                                                        </tr>
-                                                        <tr>
-                                                            
-                                                            <td>Permitir Modificação:</td>
-                                                            <td><input type="radio" name="opniao" value="sim">Sim
-                                                                <input type="radio" name="opniao" value="não">Não</td>
-                                                        </tr>
-                                                        
-                        </table>
-                    </form>-->
                     
 		</div>
 		<!-- /container -->
