@@ -555,7 +555,7 @@
 	<div class="section">
 		<!-- container -->
 		<div class="tabelaFormulario"><!--se bugar mude a class para uma id-->
-                    <form>
+                    <form action="php/cadastroDasPlantas.php" method="POST">
                         <!--<table>
                             <tr>
                             <td>Nome Científico: &nbsp</td>
@@ -604,16 +604,20 @@
                                                             
                                                             <td>Nome Científico</td>
                                                             <td>Nome Popular</td>
+                                                            
                                                             <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                                                            <td rowspan="11"><textarea id="ckeditor" class="ckeditor" maxlength="3000"></textarea></td>
+                                                            <td>Descrição</td>
+                                                            
                                                             
                                                             
                                                         </tr>
                                                         <tr>
                                                             <td><input class="input search-input" name="nomeCientifico" type="text"></td>
                                                             <td><input class="input search-input" name="nomePopular" type="text"></td>
+                                                            
                                                             <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                                                                
+                                                            <td rowspan="9"><textarea name="descricao" id="ckeditor" class="ckeditor" maxlength="3000"></textarea></td>    
+                                                            
                                                         </tr>
                                                         <tr>
                                                             <td>Filo</td>
@@ -623,18 +627,9 @@
                                                             
                                                         </tr>
                                                         <tr>
-                                                            <td><select class="input search-categories" name="filoFormulario">
-                                                                        <option value="0">Todos</option>
-                                                                        <option value="1">Category 01</option>
-                                                                        <option value="1">Category 02</option>
-                                                                    </select></td>
-                                                            
-                                                            <td><select class="input search-categories" name="classeFormulario">
-                                                                        <option value="0">Todos</option>
-                                                                        <option value="1">Category 01</option>
-                                                                        <option value="1">Category 02</option>
-                                                                    </select></td>
-                                                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                                            <td><input class="input search-input" name="filoFormulario" type="text"></td>
+                                                            <td><input class="input search-input" name="classeFormulario" type="text"></td>
+                                                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                                                             
 
                                                         </tr>
@@ -645,17 +640,9 @@
                                                             
                                                         </tr>
                                                         <tr>
-                                                            <td><select class="input search-categories" name="ordemFormulario">
-                                                                        <option value="0">Todos</option>
-                                                                        <option value="1">Category 01</option>
-                                                                        <option value="1">Category 02</option>
-                                                                    </select></td>
-                                                            <td><select class="input search-categories" name="familiaFormulario">
-                                                                        <option value="0">Todos</option>
-                                                                        <option value="1">Category 01</option>
-                                                                        <option value="1">Category 02</option>
-                                                                    </select></td>
-                                                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                                            <td><input class="input search-input" name="ordemFormulario" type="text"></td>
+                                                            <td><input class="input search-input" name="familiaFormulario" type="text"></td>
+                                                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                                                             
                                                         </tr>
                                                         <tr>
@@ -663,11 +650,8 @@
                                                             <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                                                         </tr>
                                                         <tr>
-                                                            <td colspan="2"><select class="input search-categories" name="carpotecaFormulario">
-                                                                        <option value="0">Todos</option>
-                                                                        <option value="1">Category 01</option>
-                                                                        <option value="1">Category 02</option>
-                                                                    </select></td></td>
+                                                            <td colspan="2"><input class="input search-input" name="carpotecaFormulario" type="text"></td>
+                                                            
                                                         </tr>
                                                         <tr>
                                                             <td colspan="2">Imagem</td>
@@ -681,7 +665,7 @@
                                                                 
                                                             
                                                         </tr>
-                                                        <tr>
+                                                       <!--- <tr>
                                                             <td>Permitir Modificação:</td>
                                                         
                                                             <td ><input type="radio" name="opniao" value="sim">Sim &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -691,7 +675,7 @@
                                                                 
                                                                 <input type="radio" name="opniao" value="não">Não</td>
                                                             <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                                                        </tr>
+                                                        </tr>-->
                                                         <tr>
                                                             <td></td>
                                                             <td></td>
