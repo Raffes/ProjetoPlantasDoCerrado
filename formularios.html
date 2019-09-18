@@ -70,12 +70,11 @@
 							</div>
 							<a href="#" class="text-uppercase">Login</a> / <a href="#" class="text-uppercase">Join</a>
 							<ul class="custom-menu">
-								<li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
-								<li><a href="#"><i class="fa fa-heart-o"></i> My Wishlist</a></li>
-								<li><a href="#"><i class="fa fa-exchange"></i> Compare</a></li>
-								<li><a href="#"><i class="fa fa-check"></i> Checkout</a></li>
-								<li><a href="#"><i class="fa fa-unlock-alt"></i> Login</a></li>
-								<li><a href="#"><i class="fa fa-user-plus"></i> Create An Account</a></li>
+								<li><a href="#"><i class="fa fa-user-o"></i> Minha Conta</a></li>
+								<li><a href="#"><i class="fa fa-heart-o"></i> Plantas Salvas</a></li>
+								<li><a href="#"><i class="fa fa-check"></i> Criar Fichamento</a></li>
+								<li><a href="#"><i class="fa fa-user-plus"></i> Conceder Acesso</a></li>
+                                                                <li><a href="#"><i class="fa fa-exchange"></i> Sair</a></li>
 							</ul>
 						</li>
 						<!-- /Account -->
@@ -107,7 +106,7 @@
 					<div class="menu-nav">
 					<span class="menu-header">Menu <i class="fa fa-bars"></i></span>
 					<ul class="menu-list">
-                                            <li><a href="index.php"><span class="category-header">Início <!--<i class="fa fa-list"></i>--></span></a></li>
+                                            <li><a href="./php/logado.php"><span class="category-header">Início <!--<i class="fa fa-list"></i>--></span></a></li>
 						<li class="dropdown mega-dropdown full-width"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Filo <i class="fa fa-caret-down"></i></a>
 							<div class="custom-menu">
 								<div class="row">
@@ -549,64 +548,38 @@
 </div>
 	<!-- /NAVIGATION -->
 
-	
+	<!-- BREADCRUMB -->
+	<div id="breadcrumb">
+		<div class="container">
+			<ul class="breadcrumb">
+				<li><a href="./php/logado.php">Página Inicial</a></li>
+				<li class="active">Fichamento da Planta</li>
+			</ul>
+		</div>
+	</div>
+	<!-- /BREADCRUMB -->
 
 	<!-- section -->
 	<div class="section">
 		<!-- container -->
 		<div class="tabelaFormulario"><!--se bugar mude a class para uma id-->
-                    <form action="php/cadastroDasPlantas.php" method="POST">
-                        <!--<table>
-                            <tr>
-                            <td>Nome Científico: &nbsp</td>
-                            <td><input class="input search-input" name="nomeCientifico" type="text"></td>
-                            <td>Nome Popular: &nbsp;</td>
-                            <td><input class="input search-input" name="nomePopular" type="text"></td>
-                            </tr>
-                       
-                        <br>
+                    <div class="row">
                         
-                            <tr>
-                                <td>Filo: &nbsp;</td>
-                                <td><select class="input search-categories" name="filoFormulario">
-					<option value="0">Todos</option>
-					<option value="1">Category 01</option>
-					<option value="1">Category 02</option>
-                                    </select></td><!--Colocar a opção para aparecer um nova caixa de texto caso escolha outro--
-                                    <td>Classe: &nbsp;</td>
-                                    <td><select class="input search-categories" name="classeFormulario">
-					<option value="0">Todos</option>
-					<option value="1">Category 01</option>
-					<option value="1">Category 02</option>
-                                    </select></td>
-                            </tr>
-                        </table>
-                            <br>
-                        <table>
-                            <tr>
-                                <td>Ordem: &nbsp;</td>
-                                <td><select class="input search-categories" name="ordemFormulario">
-					<option value="0">Todos</option>
-					<option value="1">Category 01</option>
-					<option value="1">Category 02</option>
-                                    </select></td><!--Colocar a opção para aparecer um nova caixa de texto caso escolha outro--
-                                    <td>Família: &nbsp;</td>
-                                    <td><select class="input search-categories" name="familiaFormulario">
-					<option value="0">Todos</option>
-					<option value="1">Category 01</option>
-					<option value="1">Category 02</option>
-                                    </select></td>
-                            </tr>
-                                
-                        </table>-->
+                    <form id="checkout-form" class="clearfix" action="php/cadastroDasPlantas.php" method="POST">
+                        <div class="section-title" id="cadastro">
+								<h3 class="title">Fichamento da Planta</h3>
+							</div>
+                        <div class="col-md-6">
+                                                        
+                        
                         <table id="tabela1">
                             <tr>
                                                             
-                                                            <td>Nome Científico</td>
-                                                            <td>Nome Popular</td>
+                                                            <td class="text-uppercase">Nome Científico</td>
+                                                            <td class="text-uppercase">Nome Popular</td>
                                                             
                                                             <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                                                            <td>Descrição</td>
+                                                            
                                                             
                                                             
                                                             
@@ -616,12 +589,12 @@
                                                             <td><input class="input search-input" name="nomePopular" type="text"></td>
                                                             
                                                             <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                                                            <td rowspan="9"><textarea name="descricao" id="ckeditor" class="ckeditor" maxlength="3000"></textarea></td>    
+                                                            
                                                             
                                                         </tr>
                                                         <tr>
-                                                            <td>Filo</td>
-                                                            <td>Classe</td>
+                                                            <td class="text-uppercase">Filo</td>
+                                                            <td class="text-uppercase">Classe</td>
                                                             <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                                                             
                                                             
@@ -633,8 +606,8 @@
                                                             
 
                                                         </tr>
-                                                        <td>Ordem<br></td>
-                                                        <td>Família</td>
+                                                        <td class="text-uppercase">Ordem<br></td>
+                                                        <td class="text-uppercase">Família</td>
                                                         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                                                             
                                                             
@@ -646,7 +619,7 @@
                                                             
                                                         </tr>
                                                         <tr>
-                                                            <td colspan="2">Carpoteca</td>
+                                                            <td colspan="2" class="text-uppercase">Carpoteca</td>
                                                             <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                                                         </tr>
                                                         <tr>
@@ -654,39 +627,39 @@
                                                             
                                                         </tr>
                                                         <tr>
-                                                            <td colspan="2">Imagem</td>
+                                                            <td colspan="2" class="text-uppercase">Imagem</td>
                                                             <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                                                             
                                                             
                                                         </tr>
                                                         <tr>
-                                                            <td colspan="2"><input type="file"  name="fotoPlanta" size="41"></td>
+                                                            <td colspan="2"><input type="file"  name="fotoPlanta" size="72"></td>
                                                             <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                                                                 
                                                             
                                                         </tr>
-                                                       <!--- <tr>
-                                                            <td>Permitir Modificação:</td>
-                                                        
-                                                            <td ><input type="radio" name="opniao" value="sim">Sim &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                                
-                                                                
-                                                                <input type="radio" name="opniao" value="não">Não</td>
-                                                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                                                        </tr>-->
-                                                        <tr>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                                                            <td><input type="submit" class="primary-btn" value="Adicionar dados da planta"></td>
-                                                        </tr>
-                            
                         </table>
+                                                      
+                            
+                        
+                        </div>
+                        <div class="col-lg-6">
+                            <table id="tabela101">
+                                <tr>
+                                    <td class="text-uppercase">Descrição</td>
+                                </tr>
+                                <tr>
+                                    <td><textarea name="descricao" id="ckeditor" class="ckeditor" maxlength="3000"></textarea></td> 
+                                </tr>
+                                <tr class="pull-right">
+                                    <td><input type="submit" class="primary-btn" value="Adicionar dados da planta"></td>
+                                </tr>
+                            </table>
+                            
+                        </div>
                         
                     </form>
-                    
+                    </div>
 		</div>
 		<!-- /container -->
 	</div>
