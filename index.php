@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-	<title>Pagina Principal</title>
+	<title>Página Inicial</title>
 
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Hind:400,700" rel="stylesheet">
@@ -34,46 +34,13 @@
 		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
+        
+        
 
 </head>
 
 <body>
-	<!-- HEADER -->
-	<header>
-		<!-- top Header -->
-		<!--<div id="top-header">
-			<div class="container">
-				<div class="pull-left">
-					<span>Bem Vindo!</span>
-				</div>
-				<div class="pull-right">
-					<ul class="header-top-links">
-						<li><a href="#">Store</a></li>
-						<li><a href="#">Newsletter</a></li>
-						<li><a href="#">FAQ</a></li>
-						<li class="dropdown default-dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">ENG <i class="fa fa-caret-down"></i></a>
-							<ul class="custom-menu">
-								<li><a href="#">English (ENG)</a></li>
-								<li><a href="#">Russian (Ru)</a></li>
-								<li><a href="#">French (FR)</a></li>
-								<li><a href="#">Spanish (Es)</a></li>
-							</ul>
-						</li>
-						<li class="dropdown default-dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">USD <i class="fa fa-caret-down"></i></a>
-							<ul class="custom-menu">
-								<li><a href="#">USD ($)</a></li>
-								<li><a href="#">EUR (€)</a></li>
-							</ul>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>-->
-		<!-- /top Header -->
-
-		<!-- header -->
+	
 		<div id="header">
 			<div class="container">
 				<div class="pull-left">
@@ -86,27 +53,32 @@
 					<!-- /Logo -->
 
 				</div>
+                            
+                            
 				<div class="pull-right">
+                                    <form action="#" method="POST">
 					<ul class="header-btns">
 						<!-- Account -->
-						<li class="header-account dropdown default-dropdown">
+						
+                                                
+                                                <li class="header-account dropdown default-dropdown">
 							<div class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">
 								<div class="header-btns-icon">
 									<i class="fa fa-user-o"></i>
 								</div>
-								
-							</div>
-                                                    <strong class="text-uppercase">Minha conta <!--<i class="fa fa-caret-down"></i>--></strong><br>
-							<a href="#" class="text-uppercase">Acessar</a> <!--/ <a href="#" class="text-uppercase">Join</a>-->
-							<!--<ul class="custom-menu">
-								<li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
-								<li><a href="#"><i class="fa fa-heart-o"></i> My Wishlist</a></li>
-								<li><a href="#"><i class="fa fa-exchange"></i> Compare</a></li>
-								<li><a href="#"><i class="fa fa-check"></i> Checkout</a></li>
-								<li><a href="#"><i class="fa fa-unlock-alt"></i> Login</a></li>
-								<li><a href="#"><i class="fa fa-user-plus"></i> Create An Account</a></li>
+                                                            <strong class="text-uppercase">Minha Conta <i class="fa fa-caret-down"></i></strong><br>
+                                                                <a href="#" class="text-uppercase">Acessar</a>
+                                                        </div>
+							
+							<ul class="custom-menu">
+                                                            <li class="text-uppercase">Indentificação:</li>
+                                                            <li><input type="text" name="login" class="input search-input"></li>
+                                                            <li class="text-uppercase">Senha:</li>
+                                                            <li><input type="password" name="senha" class="input search-input"></li>
+                                                                <li class="pull-right"><input type="submit" Value="ACESSAR" class="primary-btn"></li>
 							</ul>
 						</li>
+							
 						<!-- /Account -->
 
 						
@@ -117,7 +89,9 @@
 						</li>
 						<!-- / Mobile nav toggle -->
 					</ul>
+                                    </form>   
 				</div>
+                                
 			</div>
 			<!-- header -->
 		</div>
@@ -130,201 +104,8 @@
 		<!-- container -->
 		<div class="container">
 			<div id="responsive-nav">
-				<!-- category nav -->
-				<!--<div class="category-nav show-on-click">
-                                    <span class="category-header">Início <!--<i class="fa fa-list"></i></span>
-					<!--<ul class="category-list">
-						<li class="dropdown side-dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Women’s Clothing <i class="fa fa-angle-right"></i></a>
-							<div class="custom-menu">
-								<div class="row">
-									<div class="col-md-4">
-										<ul class="list-links">
-											<li>
-												<h3 class="list-links-title">Categories</h3></li>
-											<li><a href="#">Women’s Clothing</a></li>
-											<li><a href="#">Men’s Clothing</a></li>
-											<li><a href="#">Phones & Accessories</a></li>
-											<li><a href="#">Jewelry & Watches</a></li>
-											<li><a href="#">Bags & Shoes</a></li>
-										</ul>
-										<hr class="hidden-md hidden-lg">
-									</div>
-									<div class="col-md-4">
-										<ul class="list-links">
-											<li>
-												<h3 class="list-links-title">Categories</h3></li>
-											<li><a href="#">Women’s Clothing</a></li>
-											<li><a href="#">Men’s Clothing</a></li>
-											<li><a href="#">Phones & Accessories</a></li>
-											<li><a href="#">Jewelry & Watches</a></li>
-											<li><a href="#">Bags & Shoes</a></li>
-										</ul>
-										<hr class="hidden-md hidden-lg">
-									</div>
-									<div class="col-md-4">
-										<ul class="list-links">
-											<li>
-												<h3 class="list-links-title">Categories</h3></li>
-											<li><a href="#">Women’s Clothing</a></li>
-											<li><a href="#">Men’s Clothing</a></li>
-											<li><a href="#">Phones & Accessories</a></li>
-											<li><a href="#">Jewelry & Watches</a></li>
-											<li><a href="#">Bags & Shoes</a></li>
-										</ul>
-									</div>
-								</div>
-								<div class="row hidden-sm hidden-xs">
-									<div class="col-md-12">
-										<hr>
-										<a class="banner banner-1" href="#">
-											<img src="./img/banner05.jpg" alt="">
-											<div class="banner-caption text-center">
-												<h2 class="white-color">NEW COLLECTION</h2>
-												<h3 class="white-color font-weak">HOT DEAL</h3>
-											</div>
-										</a>
-									</div>
-								</div>
-							</div>
-						</li>
-						<li><a href="#">Men’s Clothing</a></li>
-						<li class="dropdown side-dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Phones & Accessories <i class="fa fa-angle-right"></i></a>
-							<div class="custom-menu">
-								<div class="row">
-									<div class="col-md-4">
-										<ul class="list-links">
-											<li>
-												<h3 class="list-links-title">Categories</h3></li>
-											<li><a href="#">Women’s Clothing</a></li>
-											<li><a href="#">Men’s Clothing</a></li>
-											<li><a href="#">Phones & Accessories</a></li>
-											<li><a href="#">Jewelry & Watches</a></li>
-											<li><a href="#">Bags & Shoes</a></li>
-										</ul>
-										<hr>
-										<ul class="list-links">
-											<li>
-												<h3 class="list-links-title">Categories</h3></li>
-											<li><a href="#">Women’s Clothing</a></li>
-											<li><a href="#">Men’s Clothing</a></li>
-											<li><a href="#">Phones & Accessories</a></li>
-											<li><a href="#">Jewelry & Watches</a></li>
-											<li><a href="#">Bags & Shoes</a></li>
-										</ul>
-										<hr class="hidden-md hidden-lg">
-									</div>
-									<div class="col-md-4">
-										<ul class="list-links">
-											<li>
-												<h3 class="list-links-title">Categories</h3></li>
-											<li><a href="#">Women’s Clothing</a></li>
-											<li><a href="#">Men’s Clothing</a></li>
-											<li><a href="#">Phones & Accessories</a></li>
-											<li><a href="#">Jewelry & Watches</a></li>
-											<li><a href="#">Bags & Shoes</a></li>
-										</ul>
-										<hr>
-										<ul class="list-links">
-											<li>
-												<h3 class="list-links-title">Categories</h3></li>
-											<li><a href="#">Women’s Clothing</a></li>
-											<li><a href="#">Men’s Clothing</a></li>
-											<li><a href="#">Phones & Accessories</a></li>
-											<li><a href="#">Jewelry & Watches</a></li>
-											<li><a href="#">Bags & Shoes</a></li>
-										</ul>
-									</div>
-									<div class="col-md-4 hidden-sm hidden-xs">
-										<a class="banner banner-2" href="#">
-											<img src="./img/banner04.jpg" alt="">
-											<div class="banner-caption">
-												<h3 class="white-color">NEW<br>COLLECTION</h3>
-											</div>
-										</a>
-									</div>
-								</div>
-							</div>
-						</li>
-						<li><a href="#">Computer & Office</a></li>
-						<li><a href="#">Consumer Electronics</a></li>
-						<li class="dropdown side-dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Jewelry & Watches <i class="fa fa-angle-right"></i></a>
-							<div class="custom-menu">
-								<div class="row">
-									<div class="col-md-4">
-										<ul class="list-links">
-											<li>
-												<h3 class="list-links-title">Categories</h3></li>
-											<li><a href="#">Women’s Clothing</a></li>
-											<li><a href="#">Men’s Clothing</a></li>
-											<li><a href="#">Phones & Accessories</a></li>
-											<li><a href="#">Jewelry & Watches</a></li>
-											<li><a href="#">Bags & Shoes</a></li>
-										</ul>
-										<hr>
-										<ul class="list-links">
-											<li>
-												<h3 class="list-links-title">Categories</h3></li>
-											<li><a href="#">Women’s Clothing</a></li>
-											<li><a href="#">Men’s Clothing</a></li>
-											<li><a href="#">Phones & Accessories</a></li>
-											<li><a href="#">Jewelry & Watches</a></li>
-											<li><a href="#">Bags & Shoes</a></li>
-										</ul>
-										<hr class="hidden-md hidden-lg">
-									</div>
-									<div class="col-md-4">
-										<ul class="list-links">
-											<li>
-												<h3 class="list-links-title">Categories</h3></li>
-											<li><a href="#">Women’s Clothing</a></li>
-											<li><a href="#">Men’s Clothing</a></li>
-											<li><a href="#">Phones & Accessories</a></li>
-											<li><a href="#">Jewelry & Watches</a></li>
-											<li><a href="#">Bags & Shoes</a></li>
-										</ul>
-										<hr>
-										<ul class="list-links">
-											<li>
-												<h3 class="list-links-title">Categories</h3></li>
-											<li><a href="#">Women’s Clothing</a></li>
-											<li><a href="#">Men’s Clothing</a></li>
-											<li><a href="#">Phones & Accessories</a></li>
-											<li><a href="#">Jewelry & Watches</a></li>
-											<li><a href="#">Bags & Shoes</a></li>
-										</ul>
-										<hr class="hidden-md hidden-lg">
-									</div>
-									<div class="col-md-4">
-										<ul class="list-links">
-											<li>
-												<h3 class="list-links-title">Categories</h3></li>
-											<li><a href="#">Women’s Clothing</a></li>
-											<li><a href="#">Men’s Clothing</a></li>
-											<li><a href="#">Phones & Accessories</a></li>
-											<li><a href="#">Jewelry & Watches</a></li>
-											<li><a href="#">Bags & Shoes</a></li>
-										</ul>
-										<hr>
-										<ul class="list-links">
-											<li>
-												<h3 class="list-links-title">Categories</h3></li>
-											<li><a href="#">Women’s Clothing</a></li>
-											<li><a href="#">Men’s Clothing</a></li>
-											<li><a href="#">Phones & Accessories</a></li>
-											<li><a href="#">Jewelry & Watches</a></li>
-											<li><a href="#">Bags & Shoes</a></li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</li>
-						<li><a href="#">Bags & Shoes</a></li>
-						<li><a href="#">View All</a></li>
-					</ul>-->
 				</div>
-				<!-- /category nav -->
+				
 
 				<!-- menu nav -->
 				<div class="menu-nav">
@@ -675,6 +456,92 @@
 								</div>
 							</div>
 						</li>
+                                                <li class="dropdown mega-dropdown full-width"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Carpoteca<i class="fa fa-caret-down"></i></a>
+							<div class="custom-menu">
+								<div class="row">
+									<div class="col-md-3">
+										<div class="hidden-sm hidden-xs">
+											<a class="banner banner-1" href="#">
+												<img src="./img/banner06.jpg" alt="">
+												<div class="banner-caption text-center">
+													<h3 class="white-color text-uppercase">Women’s</h3>
+												</div>
+											</a>
+											<hr>
+										</div>
+										<ul class="list-links">
+											<li>
+												<h3 class="list-links-title">Categories</h3></li>
+											<li><a href="#">Women’s Clothing</a></li>
+											<li><a href="#">Men’s Clothing</a></li>
+											<li><a href="#">Phones & Accessories</a></li>
+											<li><a href="#">Jewelry & Watches</a></li>
+											<li><a href="#">Bags & Shoes</a></li>
+										</ul>
+									</div>
+									<div class="col-md-3">
+										<div class="hidden-sm hidden-xs">
+											<a class="banner banner-1" href="#">
+												<img src="./img/banner07.jpg" alt="">
+												<div class="banner-caption text-center">
+													<h3 class="white-color text-uppercase">Men’s</h3>
+												</div>
+											</a>
+										</div>
+										<hr>
+										<ul class="list-links">
+											<li>
+												<h3 class="list-links-title">Categories</h3></li>
+											<li><a href="#">Women’s Clothing</a></li>
+											<li><a href="#">Men’s Clothing</a></li>
+											<li><a href="#">Phones & Accessories</a></li>
+											<li><a href="#">Jewelry & Watches</a></li>
+											<li><a href="#">Bags & Shoes</a></li>
+										</ul>
+									</div>
+									<div class="col-md-3">
+										<div class="hidden-sm hidden-xs">
+											<a class="banner banner-1" href="#">
+												<img src="./img/banner08.jpg" alt="">
+												<div class="banner-caption text-center">
+													<h3 class="white-color text-uppercase">Accessories</h3>
+												</div>
+											</a>
+										</div>
+										<hr>
+										<ul class="list-links">
+											<li>
+												<h3 class="list-links-title">Categories</h3></li>
+											<li><a href="#">Women’s Clothing</a></li>
+											<li><a href="#">Men’s Clothing</a></li>
+											<li><a href="#">Phones & Accessories</a></li>
+											<li><a href="#">Jewelry & Watches</a></li>
+											<li><a href="#">Bags & Shoes</a></li>
+										</ul>
+									</div>
+									<div class="col-md-3">
+										<div class="hidden-sm hidden-xs">
+											<a class="banner banner-1" href="#">
+												<img src="./img/banner09.jpg" alt="">
+												<div class="banner-caption text-center">
+													<h3 class="white-color text-uppercase">Bags</h3>
+												</div>
+											</a>
+										</div>
+										<hr>
+										<ul class="list-links">
+											<li>
+												<h3 class="list-links-title">Categories</h3></li>
+											<li><a href="#">Women’s Clothing</a></li>
+											<li><a href="#">Men’s Clothing</a></li>
+											<li><a href="#">Phones & Accessories</a></li>
+											<li><a href="#">Jewelry & Watches</a></li>
+											<li><a href="#">Bags & Shoes</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+                                                </li>
 						
 					</ul>
 				</div>
@@ -682,49 +549,217 @@
 			</div>
 		</div>
 		<!-- /container -->
-	</div>
+	
 	<!-- /NAVIGATION -->
 
 	<!-- BREADCRUMB -->
-	<!--<div id="breadcrumb">
+	<div id="breadcrumb">
 		<div class="container">
 			<ul class="breadcrumb">
-				<li><a href="#">Home</a></li>
-				<li class="active">Blank</li>
+				
+				<li class="active">Página Inicial</li>
 			</ul>
 		</div>
 	</div>
 	<!-- /BREADCRUMB -->
 
 	<!-- section -->
-        <section id="body">
+        
             
 	<div class="section">
 		<!-- container -->
 		<div class="container">
-			<!-- row -->
 			<div class="row">
-			</div>
-			<!-- /row -->
+                        
+                            <div class="col-md-6">
+                                <div class="billing-details">
+
+                                    <div class="section-title">
+                                        <h3 class="title">Feed</h3>
+                                    </div>
+                                    <?php
+                                    include 'php/conexao.php';
+                                    
+                                    $feed = "SELECT * FROM plantas";
+
+                                        $resultado = $conecta->query(($feed));
+                                        if($resultado->num_rows > 0){
+                                            while($linha = $resultado->fetch_assoc()) { 
+                                                echo "<div class='product product-single'>"
+                                                ."<div class='product-thumb'>"
+                                                ."<table id='feed1'>"
+                                                ."<tr>"
+                                                ."<td colspan='4'><img src=' .img/" . $linha["imagem"]. "' alt='imagem'></td>"
+                                                ."</tr>"
+                                                ."<tr>"
+                                                ."<td class='text-uppercase'> <h6 class='title'>Nome Científico: </h6></td>" 
+                                                ."<td>".$linha["nomeCientifico"]. "</td>"
+                                                ."<td class='text-uppercase'><h6 class='title'>Nome Popular: </h6></td>" 
+                                                ."<td>".$linha["nomePopular"]."</td>" 
+                                                ."</tr>"
+                                                ."<tr>"
+                                                ."<td class='text-uppercase'> <h6 class='title'>Filo: </h6></td>" 
+                                                ."<td>".$linha["filo"]."</td>"
+                                                ."<td class='text-uppercase'><h6 class='title'>Classe: </h6></td>" 
+                                                ."<td>".$linha["classe"]."</td>"
+                                                ."</tr>"
+                                                ."<tr>"
+                                                ."<td class='text-uppercase'> <h6 class='title'>Ordem: </h6></td>" 
+                                                ."<td>" .$linha["ordem"]."</td>"
+                                                ."<td class='text-uppercase'><h6 class='title'>Familia: </h6></td>" 
+                                                ."<td>". $linha["familia"]."</td>"
+                                                ."</tr>"
+                                                ."<tr>"
+                                                ."<td class='text-uppercase'><h6 class='title'>Carpoteca: </h6></td>" 
+                                                ."<td colspan='3'>".$linha["carpoteca"]. "</td>"
+                                                ."</tr>"
+                                                ."</table>"
+                                                ."<table id='feed2'>"
+                                                ."<tr>"
+                                                ."<th colspan='4'  class='section-title'> <h6 class='title'>Descrição: </h6></th>" 
+                                                ."</tr>"
+                                                ."<tr id='desc'>"
+                                                ."<td colspan='4' id='des'>". $linha["descricao"]. "</td>"
+                                                ."</tr>"
+                                                ."<tr>"
+                                                ."<td colspan='4' class='product-btns'>
+                                                  <button class='main-btn icon-btn'><i class='fa fa-heart'></i></button></td>"
+                                                ."</tr>"        
+                                                ."</table>"
+                                                ."<button class='main-btn quick-view' oneclick='abrirIframe()'><i class='fa fa-search-plus'></i> Vê Descrição Completa</button>"
+                                                ."</div>"
+                                                  
+                                                ."</div>";
+                                        }
+                                        } else { echo "0 results";
+                                        } $conecta->close();
+                                    
+                                    ?>
+                                    
+
+                                    </div>
+                            </div>
+                            
+                            
+                         <div class="col-md-6">
+                             <div class="section-title">
+								<h3 class="title">Filtro</h3>
+							</div>
+                             <form>
+                                 
+                                 <!--<div id="tabelaFiltro">-->
+                                                
+                                                    <table id="tabelaFiltro">
+                                                        <tr>
+                                                            <th colspan="2" class="section-title"><h5 class="title">Tipo</h5></th>
+                                                        </tr>
+                                                        <tr>
+                                                            
+                                                            <td class="text-uppercase">Filo</td>
+                                                            
+                                                            <td class="text-uppercase">Classe</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><select class="input search-categories">
+								<option value="0">Todos</option>
+								<option value="1">Category 01</option>
+								<option value="1">Category 02</option>
+                                                                </select></td>
+                                                                
+                                                                <td><select class="input search-categories">
+								<option value="0">Todos</option>
+								<option value="1">Category 01</option>
+								<option value="1">Category 02</option>
+							</select></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text-uppercase">Ordem</td>
+                                                            <td class="text-uppercase">Família</td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <td><select class="input search-categories">
+								<option value="0">Todos</option>
+								<option value="1">Category 01</option>
+								<option value="1">Category 02</option>
+                                                                </select></td>
+                                                            
+                                                            <td><select class="input search-categories">
+								<option value="0">Todos</option>
+								<option value="1">Category 01</option>
+								<option value="1">Category 02</option>
+                                                                </select></td>
+                                                            
+
+                                                        </tr>
+                                                        <tr>
+                                                            
+                                                            <td colspan="2" class="text-uppercase">Carpoteca</td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="2"><select class="input search-categories">
+								<option value="0">Todos</option>
+								<option value="1">Category 01</option>
+								<option value="1">Category 02</option>
+                                                                </select></td>
+                                                        </tr>
+                                                        <th colspan="2" class="section-title"><h5 class="title">Nome</h5></th>
+                                                           
+                                              
+                                                        <tr>
+                                                            <td class="text-uppercase">Nome Científico</td>
+                                                            <td class="text-uppercase">Nome Popular</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><select class="input search-categories">
+								<option value="0">Todos</option>
+								<option value="1">Category 01</option>
+								<option value="1">Category 02</option>
+                                                                </select></td>
+                                                                
+                                                                <td><select class="input search-categories">
+								<option value="0">Todos</option>
+								<option value="1">Category 01</option>
+								<option value="1">Category 02</option>
+							</select></td>
+                                                        </tr>
+                                                        
+                                                        
+                                                    </table>
+                                                        <div class="pull-right">
+                                                            <button class="primary-btn">Pesquisar</button>
+                                                        </div>
+
+                                                    
+						</form>
+                        </div>
+                            
+                    </form>
+                       
+		</div>
+			
 		</div>
 		<!-- /container -->
 	</div>
         
 	
-            </section>
+            
             <!-- /section -->
         
         
         <!-- Search -->
-        <aside id="side">
+        <!--<aside id="side">
             <div id="lado">
                                 
-					<div class="procurar">
+					<div>
                                             <form>
-                                                    
+                                                <table>
+                                                    <th id="linhaH">Nome</th>
+                                                </table>
                                                     <table>
-                                                        <th>Nome</th>
                                                         <tr>
+                                                            
                                                             <td>Grupo</td>
                                                             
                                                             <td>Família</td>
@@ -748,9 +783,9 @@
                                                             
                                                         </tr>
                                                         <tr>
-                                                            <td><input class="input search-input" type="text"</td>
+                                                            <td><input class="input search-input" type="text"></td>
                                                             
-                                                            <td><input class="input search-input" type="text"</td>
+                                                            <td><input class="input search-input" type="text"></td>
                                                             
 
                                                         </tr>
@@ -762,11 +797,8 @@
                                                         <tr>
                                                             <td colspan="2"><input class="input search-input" type="text"></td>
                                                         </tr>
-                                                        
-                                                        
-                                                    </table><br>
-                                                    <table>
-                                                        <th>Forma de Vida</th>
+                                                            <th id="linhaH">Forma de Vida</th>
+                                              
                                                         <tr>
                                                             <td>Forma de Vida</td>
                                                             <td>Subtrato</td>
@@ -784,35 +816,15 @@
 								<option value="1">Category 02</option>
 							</select></td>
                                                         </tr>
-                                                    </table>
-                                                    <!--<table>
-                                                        <tr>
-                                                            <td id="center" >Filo</td>
-                                                            <td>Família</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td><input class="input search-input" type="text" placeholder="Filo"></td>
-                                                            <!--<td class="search-btn"><i class="fa fa-search"></i></td>
-                                                            <td></td>
-                                                            <td><input class="input search-input" type="text" placeholder="Filo"></td>
-                                                            <!--<td class="search-btn"><i class="fa fa-search"></i></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Autor</td>
-                                                        <td>Nome Popular</td>
                                                         
-                                                    </tr>
-                                                    <tr>
-                                                        <td><input class="input search-input" type="text" placeholder="Filo"></td>
-                                                            <td class="search-btn"><i class="fa fa-search"></i></td>
-                                                            <td></td>
-                                                            <td><input class="input search-input" type="text" placeholder="Filo"></td>
-                                                            <td class="search-btn"><i class="fa fa-search"></i></td>
-                                                    </tr>
-                                                    <td>
-                                                    <td>Nome Completo</td>
-                                                    </td>
-                                                    </table>-->
+                                                        
+                                                    </table>
+                                                    <table id="btn">
+                                                        <tr>
+                                                            <td><input type="submit" class="primary-btn" value="Pesquisar"></td>
+                                                        </tr>
+                                                    </table>
+                                                    
 						</form>
 					</div>
             </div>
@@ -822,9 +834,8 @@
 
         
 	<!-- FOOTER -->
-        <footer id="foo">
-            
-	<footer id="footer" class="section section-grey">
+  
+	<footer id="foo" id="footer" class="section section-grey">
 		<!-- container -->
 		<div class="container">
 			<!-- row -->
@@ -842,64 +853,10 @@
 
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
 
-						<!-- footer social -->
-						<!--<ul class="footer-social">
-							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-							<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-							<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-							<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-						</ul>
-						<!-- /footer social -->
+						
 					</div>
 				</div>
-				<!-- /footer widget -->
-
-				<!-- footer widget -->
-				<!--<div class="col-md-3 col-sm-6 col-xs-6">
-					<div class="footer">
-						<h3 class="footer-header">My Account</h3>
-						<ul class="list-links">
-							<li><a href="#">My Account</a></li>
-							<li><a href="#">My Wishlist</a></li>
-							<li><a href="#">Compare</a></li>
-							<li><a href="#">Checkout</a></li>
-							<li><a href="#">Login</a></li>
-						</ul>
-					</div>
-				</div>
-				<!-- /footer widget -->
-
-				<!--<div class="clearfix visible-sm visible-xs"></div>
-
-				<!-- footer widget -->
-				<!--<div class="col-md-3 col-sm-6 col-xs-6">
-					<div class="footer">
-						<h3 class="footer-header">Customer Service</h3>
-						<ul class="list-links">
-							<li><a href="#">About Us</a></li>
-							<li><a href="#">Shiping & Return</a></li>
-							<li><a href="#">Shiping Guide</a></li>
-							<li><a href="#">FAQ</a></li>
-						</ul>
-					</div>
-				</div>
-				<!-- /footer widget -->
-
-				<!-- footer subscribe -->
-				<!--<div class="col-md-3 col-sm-6 col-xs-6">
-					<div class="footer">
-						<h3 class="footer-header">Stay Connected</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
-						<form>
-							<div class="form-group">
-								<input class="input" placeholder="Enter Email Address">
-							</div>
-							<button class="primary-btn">Join Newslatter</button>
-						</form>
-					</div>
-				</div>
-				<!-- /footer subscribe -->
+				
 			</div>
 			<!-- /row -->
 			<hr>
@@ -919,7 +876,7 @@
 		</div>
 		<!-- /container -->
 	</footer>
-	</footer>
+	
         <!-- /FOOTER -->
         
 

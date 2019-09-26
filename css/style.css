@@ -50,6 +50,9 @@ Table OF Contents
 ------ Arrows
 ------ Dots
 12 > RESPONSIVE
+14 > Tabelas
+15 > Botões para para acessar os cadastrado
+
 ------------------------------------*/
 
 /*=========================================================
@@ -158,6 +161,7 @@ hr {
   background-color: #30323A;
 }
 
+
 /*----------------------------*\
 	Inputs
 \*----------------------------*/
@@ -263,6 +267,10 @@ textarea.input {
   border-bottom: 1px solid #DADADA;
 }
 
+.section-title#cadastro {
+  margin-left: 15px;
+}
+
 .section-title .title {
   display: inline-block;
   text-transform: uppercase;
@@ -276,6 +284,25 @@ textarea.input {
   height: 3px;
   width: 60px;
   background-color: #F8694A;
+}
+
+section#body {
+    display: block;
+    width: 700px;
+    float: left;
+    border-right: 2px solid #FFB656;
+    
+}
+
+aside#side {
+    display: block;
+    width: 645px;
+    float: right;
+    
+}
+
+footer#foo {
+    clear: both;
 }
 
 /*----------------------------*\
@@ -361,11 +388,16 @@ textarea.input {
 
 .header-search>form {
   position: relative;
+  /*display: block;
+  border: 1px solid #30323A;
+  margin: 100px -100px 500px 50px;/*todo o quadrado do form*/
 }
 
 .header-search>form .search-input {
   padding-left: 150px;
   padding-right: 45px;
+  
+  /*margin: 0px -100px 50px 500px; /*Configura a parte do input*/
 }
 
 .header-search>form .search-categories {
@@ -375,6 +407,11 @@ textarea.input {
   width: 135px;
 }
 
+/*.header-search>form>table>td {
+    padding: 20px;
+    margin: -100px;
+}*/
+
 .header-search>form .search-btn {
   position: absolute;
   top: 0px;
@@ -383,7 +420,40 @@ textarea.input {
   height: 40px;
   background-color: transparent;
   border: none;
+  /*top: 30px;
+  right: -70px;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: none;*/
 }
+
+div#lado {/*Filtro do lado direito da tela*/
+    
+    width: 420px;
+    display: block;
+    margin: 100px 10px -1px 200px;
+    text-transform: uppercase;
+    
+    
+    
+}
+
+/*td#linhaH{    //linha horizontal laranja
+    border-bottom: 1px #F8694A solid;
+    display: block;
+    margin: 100px 100px 20px 0px;
+    
+    
+    
+}*/
+
+table#btn{
+    display: block;
+    margin: 30px 0px 20px 150px; /*cima r r esquerda*/
+    
+}
+
 
 /*----------------------------*\
 	Account header
@@ -568,7 +638,7 @@ textarea.input {
   
 }
 
-.menu-nav .menu-list>li#inicio{
+.menu-nav .menu-list>li#inicio{/*Destacar o bloco do menu de laranja*/
     background: #F8694A;
 }
 
@@ -1734,3 +1804,84 @@ textarea.input {
     width: 100%;
   }
 }
+
+
+/*=========================================================
+	13 -> Login
+===========================================================*/
+
+div#Login{
+    width: 220px;
+    height: 200px;
+    display: block;
+    position: relative;
+    margin: -0px 400px -3px 530px;
+    /*border: #30323A solid 1px;*/
+    text-transform: uppercase;
+}
+
+table#btn-login{
+    display: block;
+    margin: 30px 0px 20px 60px;
+}
+
+/*=========================================================
+	14 -> Tabela do Formulário/Filtro
+===========================================================*/
+
+.tabelaFormulario>form{
+    /*border: 1px  #30323A solid;*/
+}
+
+table#tabela1 {
+    height: 329px;
+    width: 660px;
+    margin-left: 20px;
+    /*border: 1px #30323A solid;*/
+}
+
+table#tabela101 {
+    
+    width: 624px;
+    margin-left: 20px;
+    /*border: 1px #30323A solid;*/
+}
+
+table#tabelaFiltro {
+    height: 370px;
+    width: 552px;
+    /*margin-left: 30px;*/
+}
+
+table#feed1 {
+    height: 170px;
+    width: 552px;
+    
+}
+
+table#feed2 {
+    height: 170px;
+    width: 552px;
+    
+
+    
+}
+
+tr#desc {
+  
+  display: block;
+  position: relative;
+  width: 552px;
+  overflow: hidden;
+  height: 170px;
+}
+
+/*=========================================================
+	15 -> Botões para para acessar os cadastrado
+===========================================================*/
+
+.listaCadas {
+    width: 624px;
+    margin-left: 90px;
+}
+
