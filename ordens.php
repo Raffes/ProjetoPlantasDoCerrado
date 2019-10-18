@@ -8,7 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-	<title>Página Inicial</title>
+	<title>Ordens</title>
 
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Hind:400,700" rel="stylesheet">
@@ -57,7 +57,7 @@
                             
                             
 				<div class="pull-right">
-                                    <form action="php/sessao.php" method="POST">
+                                    <form action="#" method="POST">
 					<ul class="header-btns">
 						<!-- Account -->
 						
@@ -75,7 +75,7 @@
                                                             <li class="text-uppercase">Indentificação:</li>
                                                             <li><input type="text" name="login" class="input search-input"></li>
                                                             <li class="text-uppercase">Senha:</li>
-                                                            <li><input type="password" name="senhaDeLogin" class="input search-input"></li>
+                                                            <li><input type="password" name="senha" class="input search-input"></li>
                                                                 <li class="pull-right"><input type="submit" Value="ACESSAR" class="primary-btn"></li>
 							</ul>
 						</li>
@@ -113,60 +113,23 @@
 					<span class="menu-header">Menu <i class="fa fa-bars"></i></span>
 					<ul class="menu-list">
                                             <li id="inicio"><a href="index.php"><span class="category-header">Início <!--<i class="fa fa-list"></i>--></span></a></li>
-						<li class="dropdown mega-dropdown full-width"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Divisão <i class="fa fa-caret-down"></i></a>
+						<li class="dropdown mega-dropdown full-width"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Filo <i class="fa fa-caret-down"></i></a>
 							<div class="custom-menu">
 								<div class="row">
 									
-                                                                    
-										<div class="col-md-3">
-										                 <ul class="list-links">
-                                                                                             <li><h3 class='list-links-title'>Categorias</h3></li>
+                                                                    <div class="col-md-3">
+										
+                                                                               <ul class='list-links'>
+                                                                                    <li><h3 class='list-links-title'>Categorias</h3></li>
+										
                                                                                     <?php
                                                                                     
-                                                                                    $DivisaoSelect = "SELECT divisao FROM plantas LIMIT 39";
+                                                                                    $filoSelect = "SELECT filo FROM plantas";
 
-                                                                                    $resultadoDivisao = $conecta->query(($DivisaoSelect));
-                                                                                    if($resultadoDivisao->num_rows > 0){
-                                                                                        
-                                                                                       
-                                                                                        for($i = 0; $i < $linhaDivisao = $resultadoDivisao->fetch_assoc(); $i++){ 
-                                                                                            echo "<li><a href='#'>".$linhaDivisao["divisao"]."</a></li>";
-                                                                                            if(($i + 1) % 6 == 0){
-                                                                                                echo "</ul>"
-                                                                                                ."</div>"
-                                                                                                ."<ul class='list-links'>"
-                                                                                                ."<li><h3 class='list-links-title'>Categorias</h3></li>"
-                                                                                                ;
-                                                                                            }
-                                                                                            
-                                                                                            if($i == $linhaDivisao = $resultadoDivisao->fetch_assoc()){
-                                                                                                echo "</ul>"
-                                                                                                . "<hr class='hidden-md hidden-lg'>"
-                                                                                                . "</div>";
-                                                                                            }
-                                                                                            
-                                                                                            if($i+1 >= 20){
-                                                                                                echo "</div><bottom>Add</bottom>";
-                                                                                                return;
-                                                                                            }
-                                                                                        }
-                                                                                        
-                                                                                        /*for($i = 0; $i < $linhaFilo = $resultadoFilo->fetch_assoc();$i++){
-                                                                                            echo 
-                                                                                                 
-                                                                                                 "<li><a href='#'>".$linhaFilo["filo"]."</a></li>";
-                                                                                            
-                                                                                            if($i == 5){
-                                                                                                echo "</ul>"
-                                                                                                ."</div>"
-                                                                                                ."<ul class='list-links'>"
-                                                                                                ."<li><h3 class='list-links-title'>Categorias</h3></li>"
-                                                                                                ;
-                                                                                            }
-                                                                                           
-                                                                                        }
-                                                                                        
-                                                                                        /*$numItems = sizeof($resultadoFilo->fetch_assoc());
+                                                                                    $resultadoFilo = $conecta->query(($filoSelect));
+                                                                                    if($resultadoFilo->num_rows > 0){
+                                                                                        $linhaFilo = $resultadoFilo->fetch_assoc();
+                                                                                        $numItems = sizeof($resultadoFilo->fetch_assoc());
                                                                                         $maxRows = 5;
                                                                                         $maxItems = 4 * $maxRows;
                                                                                         for($i = 0; $i < $numItems; $i++){ 
@@ -189,17 +152,19 @@
                                                                                                 echo "</div><bottom>Add</bottom>";
                                                                                                 return;
                                                                                             }
-                                                                                        }*/
+                                                                                        }
                                                                                     }      
                                                                                         
                                                                                     
                                                                                     
                                                                                     
                                                                                     ?>
-                                                                                       
-                                                                                                <!--Vê depois se precisa </div>-->
-                                                                                                </div>         
-                                                                               
+                                                                               </ul>
+                                                                                    
+                                                                     
+							</div>
+                                                        </div>
+                                                </li>
 						<li class="dropdown mega-dropdown full-width"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Classe <i class="fa fa-caret-down"></i></a>
 							<div class="custom-menu">
 								<div class="row">
@@ -590,7 +555,7 @@
                                                 ."<div class='product-thumb'>"
                                                 ."<table id='feed1'>"
                                                 ."<tr>"
-                                                ."<td colspan='4'><img src=' .img/" . $linha["img1"]. "' alt='imagem'></td>"
+                                                ."<td colspan='4'><img src=' .img/" . $linha["imagem"]. "' alt='imagem'></td>"
                                                 ."</tr>"
                                                 ."<tr>"
                                                 ."<td class='text-uppercase'> <h6 class='title'>Nome Científico: </h6></td>" 
@@ -599,8 +564,8 @@
                                                 ."<td>".$linha["nomePopular"]."</td>" 
                                                 ."</tr>"
                                                 ."<tr>"
-                                                ."<td class='text-uppercase'> <h6 class='title'>Divisão: </h6></td>" 
-                                                ."<td>".$linha["divisao"]."</td>"
+                                                ."<td class='text-uppercase'> <h6 class='title'>Filo: </h6></td>" 
+                                                ."<td>".$linha["filo"]."</td>"
                                                 ."<td class='text-uppercase'><h6 class='title'>Classe: </h6></td>" 
                                                 ."<td>".$linha["classe"]."</td>"
                                                 ."</tr>"
@@ -656,7 +621,7 @@
                                                         </tr>
                                                         <tr>
                                                             
-                                                            <td class="text-uppercase">Divisão</td>
+                                                            <td class="text-uppercase">Filo</td>
                                                             
                                                             <td class="text-uppercase">Classe</td>
                                                         </tr>
@@ -892,4 +857,5 @@
 </body>
 
 </html>
+
 

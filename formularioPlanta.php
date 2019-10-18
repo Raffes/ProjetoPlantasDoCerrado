@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-	<title>Cadastro</title>
+	<title>Fichamento da Planta</title>
 
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Hind:400,700" rel="stylesheet">
@@ -34,7 +34,10 @@
 		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
-
+        
+        <!--Editor de texto-->
+        <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
+        <script type="text/javascript" src="js/events.js"></script>
 </head>
 
 <body>
@@ -70,8 +73,9 @@
 							<ul class="custom-menu">
 								<li><a href="#"><i class="fa fa-user-o"></i> Minha Conta</a></li>
 								<li><a href="#"><i class="fa fa-heart-o"></i> Plantas Salvas</a></li>
-								<li><a href="#"><i class="fa fa-check"></i> Criar Fichamento</a></li>
-								<li><a href="#"><i class="fa fa-user-plus"></i> Conceder Acesso</a></li>
+                                                                <li><a href="formularioPlanta.php"><i class="fa fa-check"></i> Ficha da Planta</a></li>
+                                                                <li><a href="formularioCarpoteca.php"><i class="fa fa-check"></i> Ficha da Carpoteca</a></li>
+                                                                <li><a href="cadastro.php"><i class="fa fa-user-plus"></i> Conceder Acesso</a></li>
                                                                 <li><a href="#"><i class="fa fa-exchange"></i> Sair</a></li>
 							</ul>
 						</li>
@@ -545,110 +549,177 @@
 	</div>
 </div>
 	<!-- /NAVIGATION -->
-        
-        <!-- BREADCRUMB -->
+
+	<!-- BREADCRUMB -->
 	<div id="breadcrumb">
 		<div class="container">
 			<ul class="breadcrumb">
 				<li><a href="./php/logado.php">Página Inicial</a></li>
-				<li class="active">Cadastro de Usuário</li>
+				<li class="active">Fichamento da Planta</li>
 			</ul>
 		</div>
 	</div>
 	<!-- /BREADCRUMB -->
-	
 
 	<!-- section -->
-        
 	<div class="section">
 		<!-- container -->
-		<div class="container">
+		<div class="tabelaFormulario"><!--se bugar mude a class para uma id-->
                     <div class="row">
-                        <form id="checkout-form" class="clearfix" action="#" method="POST">
-					<div class="col-md-6">
-                        <div class="billing-details">
-							
-							<div class="section-title">
-								<h3 class="title">Cadastro de Usuário</h3>
+                        
+                    <form id="checkout-form" class="clearfix" action="php/cadastroDasPlantas.php" method="POST">
+                        <div class="section-title" id="cadastro">
+								<h3 class="title">Fichamento da Planta</h3>
 							</div>
-							<div class="form-group">
-								<input class="input" type="text" name="ident" placeholder="Identificação">
-							</div>
-							<div class="form-group">
-								<input class="input" type="password" name="senha" placeholder="Senha">
-							</div>
+                        <div class="col-md-6">
                                                         
-                            <div class="form-group">
-								<div class="input-checkbox">
-									<input type="checkbox">
-									<label class="font-weak">Conceder a esse usuário a permissão de modificar artigos no site</label>
-									
-								</div>
-							
-                            
-								<div class="input-checkbox">
-									<input type="checkbox">
-									<label class="font-weak">Conceder a esse usuário a permissão de cadastrar usuários no site</label>
-									
-								</div>
-							
-                        </div>
-                            
-                            <div>
-							
-							<div class="input-checkbox">
-								<input type="radio" name="tipoDePessoa" checked>
-								<label class="font-weak">Aluno</label>
-								
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <div id="fichamento1">
+                                                            
+                                                            <ul class="size-option">
+                                                                <li class="form-group"><label class="text-uppercase" id="formularioLabel">Nome Científico:</label></li>
+                                                                <li class="form-group"><label class="text-uppercase" id="formularioLabel">Nome Popular:</label></li>
+                                                            </ul>
+                                                               
+                                                            <ul class="size-option">
                                                                 
-								<input type="radio" name="tipoDePessoa">
-								<label class="font-weak">Professor</label>
-								
-							</div>
-						</div>                            
+                                                                <li class="form-group" id="select1">
+                                                                <select class="input search-categories" id="formulario" name="nomeCientifico">
+								<option value="0">Todos</option>
+								<option value="1">Category 01</option>
+                                                                <option onclick="extraFormulario1()">Outro</option>
+                                                                </select>
+                                                                    
+                                                                    <!--<input class="input search-input" id="formulario" name="nomeCientifico" type="text" placeholder="Nome Científico">-->
+                                                                </li>
                             
-                                                        <div class="pull-right">
-								<button class="primary-btn">Cadastrar</button>
-							</div>
+                                                                <li class="form-group">
+                                                                    <input class="input search-input" id="formulario" name="nomePopular" type="text" placeholder="Nome Popular">
+                                                                </li> 
+                                                            </ul>
+                                
+                                                            <ul>
+                                                                <li id="f1"></li>
+                                                            </ul>
+                                
+                                                            <ul class="size-option">
+                                                                <li class="form-group"><label class="text-uppercase" id="formularioLabel">Divisão:</label></li>
+                                                                <li class="form-group"><label class="text-uppercase" id="formularioLabel">Classe:</label></li>
+                                                            </ul>
+                            
+                                                            <ul class="size-option">
+                                                                <li class="form-group" id="select2">
+                                                                <select class="input search-categories" id="formulario" name="filoFormulario">
+								<option value="0">Todos</option>
+								<option value="1">Category 01</option>
+								<option onclick="extraFormulario2()">Outro</option>
+                                                                </select>
+                                                                    <!--<input class="input search-input" id="formulario" name="filoFormulario" type="text" placeholder="Filo">-->
+                                                                </li>
+                                                            <!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+                                                            
+                                                                <li class="form-group" id="select3">
+                                                                <select class="input search-categories" id="formulario" name="classeFormulario">
+								<option value="0">Todos</option>
+								<option value="1">Category 01</option>
+								<option onclick="extraFormulario3()">Outro</option>
+                                                                </select>
+                                                                    <!--<input class="input search-input" id="formulario" name="classeFormulario" type="text" placeholder="Classe">-->
+
+                                                                </li>
+                                                            </ul>
+                                
+                                                            <ul class="size-option">
+                                                                <li class="form-group" id="f2"></li>
+                                                                <li class="form-group" id="f3"></li>
+                                                            </ul>
+                                                            
+                                
+                                                            <ul class="size-option">
+                                                                <li class="form-group"><label class="text-uppercase" id="formularioLabel">Ordem:</label></li>
+                                                                <li class="form-group"><label class="text-uppercase" id="formularioLabel">Família:</label></li>
+                                                            </ul>
+                                                            <ul class="size-option">
+
+                                                                <li class="form-group" id="select4">
+                                                                <select class="input search-categories" id="formulario" name="ordemFormulario">
+								<option value="0">Todos</option>
+								<option value="1">Category 01</option>
+								<option value="1">Category 02</option>
+                                                                <option onclick="extraFormulario4()">Outro</option>
+                                                                </select>
+                                                                    <!--<input class="input search-input" id="formulario" name="ordemFormulario" type="text" placeholder="Ordem">-->
+                                                                </li>
+                                                                <!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+
+                                                                <li class="form-group" id="select5">
+                                                                <select class="input search-categories" id="formulario" name="familiaFormulario">
+								<option value="0">Todos</option>
+								<option value="1">Category 01</option>
+								<option value="1">Category 02</option>
+                                                                <option onclick="extraFormulario5()">Outro</option>
+                                                                </select>
+                                                                    <!--<input class="input search-input" id="formulario" name="familiaFormulario" type="text" placeholder="Família">-->
+
+                                                                </li>
+                                                            </ul>
+                                
+                                                            <ul class="size-option">
+                                                                <li class="form-group" id="f4"></li>
+                                                                <li class="form-group" id="f5"></li>
+                                                            </ul>
+                                
+                                                            <ul class="size-option">
+                                                                <li class="form-group"><label class="text-uppercase">Imagem:</label></li>
+                                                            </ul>
+                                                            <ul class="size-option">
+                                                                <li class="form-group">
+                                                                   <input type="file" id="formulario" name="fotoPlanta1" size="25">
+                                                                </li>
+                                                                <li class="form-group">
+                                                                   <input type="file" id="formulario" name="fotoPlanta2" size="25">
+                                                                </li>
+                                                            </ul>
+                                                            <ul class="size-option">
+                                                                <li class="form-group">
+                                                                   <input type="file" id="formulario" name="fotoPlanta3" size="25">
+                                                                </li>
+                                                                <li class="form-group">
+                                                                   <input type="file" id="formulario" name="fotoPlanta4" size="25">
+                                                                </li>
+                                                            </ul>
+                                
+
+                            
+                                                        
+                                            </ul>
+                            </div>         
+                                                           
+                        </div>
+                        <div class="col-lg-6">
+                            <table id="fichamento2">
+                                <tr>
+                                    <td> <label class="text-uppercase">Descrição: </label></td>
+                                </tr>
+                                <tr>
+                                    <td><textarea name="descricao" id="ckeditor" class="ckeditor" maxlength="3000"></textarea></td> 
+                                </tr>
+                                <tr class="pull-right">
+                                    <td><input type="submit" class="primary-btn" value="Adicionar dados da planta"></td>
+                                </tr>
+                            </table>
                             
                         </div>
-                                        </div>
-                            
-                            
-                         <div class="col-md-6">
-                             
-                             <div class="listaCadas">
-                                 
-                             </div>
-                                        <div class="aside">
-						<div class="section-title">
-				                     <h3 class="title">Usuários Cadastrados</h3>
-			                        </div>
-						<ul class="size-option">
-                                                    <li class="active"><a href="#">Lista de Alunos Cadastrados</a><br></li>
-					            <li class="active"><a href="#">Lista de Professores Cadastrados</a></li>
-							
-						</ul>
-					</div>
-                        </div>
-                            
+                        
                     </form>
-                       
+                    </div>
 		</div>
 		<!-- /container -->
 	</div>
-        </div>
-        
 	<!-- /section -->
-        <!--List-->
-        
-        <!--/Lista-->
 
 
 	<!-- FOOTER -->
-        
-	<footer id="foo" class="section section-grey">
+	<footer id="footer" class="section section-grey">
 		<!-- container -->
 		<div class="container">
 			<!-- row -->
@@ -689,8 +760,6 @@
 		</div>
 		<!-- /container -->
 	</footer>
-        
-            
 	
         <!-- /FOOTER -->
         
@@ -706,3 +775,4 @@
 </body>
 
 </html>
+

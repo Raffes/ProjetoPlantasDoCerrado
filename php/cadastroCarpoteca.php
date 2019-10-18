@@ -4,7 +4,7 @@ include 'conexao.php';
 //Dados do formulário
 $nomeCientifico = $_POST["nomeCientifico"];
 $nomePopular = $_POST["nomePopular"];
-$divisao = $_POST["divisaoFormulario"];
+$filo = $_POST["filoFormulario"];
 $classe = $_POST["classeFormulario"];
 $ordem = $_POST["ordemFormulario"];
 $familia = $_POST["familiaFormulario"];
@@ -15,8 +15,8 @@ $imagem4 = $_POST["fotoPlanta4"];
 $descricao = $_POST["descricao"];
 
 //Inserir registro
-$insert1 = "INSERT INTO plantas (nomeCientifico, nomePopular, divisao, classe, ordem, familia, descricao)"
-        . "VALUES('$nomeCientifico','$nomePopular','$divisao','$classe','$ordem','$familia','$carpoteca','$descricao')";
+$insert1 = "INSERT INTO plantas (nomeCientifico, nomePopular, filo, classe, ordem, familia, descricao)"
+        . "VALUES('$nomeCientifico','$nomePopular','$filo','$classe','$ordem','$familia','$carpoteca','$descricao')";
 
 $insert2 = "INSERT INTO plantas (img1, img2, img3, img4)"
         . "VALUES('$imagem1','$imagem2','$imagem3','$imagem4')";

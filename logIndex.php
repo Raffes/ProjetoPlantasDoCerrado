@@ -1,4 +1,6 @@
-<?php include 'php/conexao.php'; ?>
+<?php 
+include 'php/conexao.php'; 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,7 +38,7 @@
 		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
         
-        
+        <?php include 'php/logacao.php';?>
 
 </head>
 
@@ -57,7 +59,7 @@
                             
                             
 				<div class="pull-right">
-                                    <form action="php/sessao.php" method="POST">
+                                    <form action="#" method="POST">
 					<ul class="header-btns">
 						<!-- Account -->
 						
@@ -67,16 +69,15 @@
 								<div class="header-btns-icon">
 									<i class="fa fa-user-o"></i>
 								</div>
-                                                            <strong class="text-uppercase">Minha Conta <i class="fa fa-caret-down"></i></strong><br>
-                                                                <a href="#" class="text-uppercase">Acessar</a>
-                                                        </div>
-							
+								<strong class="text-uppercase">LOGADO AQUI <i class="fa fa-caret-down"></i></strong>
+							</div>
+							<a href="#" class="text-uppercase">Login</a> / <a href="#" class="text-uppercase">Join</a>
 							<ul class="custom-menu">
-                                                            <li class="text-uppercase">Indentificação:</li>
-                                                            <li><input type="text" name="login" class="input search-input"></li>
-                                                            <li class="text-uppercase">Senha:</li>
-                                                            <li><input type="password" name="senhaDeLogin" class="input search-input"></li>
-                                                                <li class="pull-right"><input type="submit" Value="ACESSAR" class="primary-btn"></li>
+								<li><a href="#"><i class="fa fa-user-o"></i> Minha Conta</a></li>
+								<li><a href="#"><i class="fa fa-heart-o"></i> Plantas Salvas</a></li>
+								<li><a href="#"><i class="fa fa-check"></i> Criar Fichamento</a></li>
+								<li><a href="#"><i class="fa fa-user-plus"></i> Conceder Acesso</a></li>
+                                                                <li><a href="php/logout.php"><i class="fa fa-exchange"></i> Sair</a></li>
 							</ul>
 						</li>
 							
@@ -113,7 +114,7 @@
 					<span class="menu-header">Menu <i class="fa fa-bars"></i></span>
 					<ul class="menu-list">
                                             <li id="inicio"><a href="index.php"><span class="category-header">Início <!--<i class="fa fa-list"></i>--></span></a></li>
-						<li class="dropdown mega-dropdown full-width"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Divisão <i class="fa fa-caret-down"></i></a>
+						<li class="dropdown mega-dropdown full-width"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Filo <i class="fa fa-caret-down"></i></a>
 							<div class="custom-menu">
 								<div class="row">
 									
@@ -123,14 +124,14 @@
                                                                                              <li><h3 class='list-links-title'>Categorias</h3></li>
                                                                                     <?php
                                                                                     
-                                                                                    $DivisaoSelect = "SELECT divisao FROM plantas LIMIT 39";
+                                                                                    $filoSelect = "SELECT filo FROM plantas LIMIT 39";
 
-                                                                                    $resultadoDivisao = $conecta->query(($DivisaoSelect));
-                                                                                    if($resultadoDivisao->num_rows > 0){
+                                                                                    $resultadoFilo = $conecta->query(($filoSelect));
+                                                                                    if($resultadoFilo->num_rows > 0){
                                                                                         
                                                                                        
-                                                                                        for($i = 0; $i < $linhaDivisao = $resultadoDivisao->fetch_assoc(); $i++){ 
-                                                                                            echo "<li><a href='#'>".$linhaDivisao["divisao"]."</a></li>";
+                                                                                        for($i = 0; $i < $linhaFilo = $resultadoFilo->fetch_assoc(); $i++){ 
+                                                                                            echo "<li><a href='#'>".$linhaFilo["filo"]."</a></li>";
                                                                                             if(($i + 1) % 6 == 0){
                                                                                                 echo "</ul>"
                                                                                                 ."</div>"
@@ -139,7 +140,7 @@
                                                                                                 ;
                                                                                             }
                                                                                             
-                                                                                            if($i == $linhaDivisao = $resultadoDivisao->fetch_assoc()){
+                                                                                            if($i == $linhaFilo = $resultadoFilo->fetch_assoc()){
                                                                                                 echo "</ul>"
                                                                                                 . "<hr class='hidden-md hidden-lg'>"
                                                                                                 . "</div>";
@@ -590,7 +591,7 @@
                                                 ."<div class='product-thumb'>"
                                                 ."<table id='feed1'>"
                                                 ."<tr>"
-                                                ."<td colspan='4'><img src=' .img/" . $linha["img1"]. "' alt='imagem'></td>"
+                                                ."<td colspan='4'><img src=' .img/" . $linha["imagem"]. "' alt='imagem'></td>"
                                                 ."</tr>"
                                                 ."<tr>"
                                                 ."<td class='text-uppercase'> <h6 class='title'>Nome Científico: </h6></td>" 
@@ -599,8 +600,8 @@
                                                 ."<td>".$linha["nomePopular"]."</td>" 
                                                 ."</tr>"
                                                 ."<tr>"
-                                                ."<td class='text-uppercase'> <h6 class='title'>Divisão: </h6></td>" 
-                                                ."<td>".$linha["divisao"]."</td>"
+                                                ."<td class='text-uppercase'> <h6 class='title'>Filo: </h6></td>" 
+                                                ."<td>".$linha["filo"]."</td>"
                                                 ."<td class='text-uppercase'><h6 class='title'>Classe: </h6></td>" 
                                                 ."<td>".$linha["classe"]."</td>"
                                                 ."</tr>"
@@ -656,7 +657,7 @@
                                                         </tr>
                                                         <tr>
                                                             
-                                                            <td class="text-uppercase">Divisão</td>
+                                                            <td class="text-uppercase">Filo</td>
                                                             
                                                             <td class="text-uppercase">Classe</td>
                                                         </tr>

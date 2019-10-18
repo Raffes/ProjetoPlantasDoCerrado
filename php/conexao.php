@@ -9,7 +9,7 @@ $conecta = new mysqli($nome_servidor, $nome_usuario, $senha, $nome_banco);
 
 //Verificar conexão
 if($conecta -> connect_error){
-    die("Deu merda: ".$conecta->connect_error."<br>");
+    die("Parabéns, não funcionou: ".$conecta->connect_error."<br>");
 }
 
 
