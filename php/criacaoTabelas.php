@@ -120,9 +120,9 @@ if($conecta->query($tabela6)===TRUE){
 }
 
 if($conecta->query($tabela7)===TRUE){
-    echo "Tabela tipo de usuario criada com sucesso<br>";
+    echo "Tabela tipo de likeDoUsuario criada com sucesso<br>";
 }else{
-    echo "Erro na criação da tabela tipo de usuário: ".$conecta->error."<br>";
+    echo "Erro na criação da tabela de likeDoUsuario: ".$conecta->error."<br>";
 }
 
 $conecta->close();

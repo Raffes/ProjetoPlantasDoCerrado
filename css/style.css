@@ -1881,10 +1881,10 @@ table#btn-login{
     /*border: 1px  #30323A solid;*/
 }
 
-div#fichamento1 {
+table#fichamento1 {
     height: 329px;
     width: 660px;
-    margin-left: 30px;
+    margin-left: 60px;
     /*border: 1px #30323A solid;*/
 }
 
@@ -1896,7 +1896,7 @@ table#fichamento2 {
 }
 
 table#tabelaFiltro {
-    height: 370px;
+    height: 270px;
     width: 552px;
     /*margin-left: 30px;*/
 }

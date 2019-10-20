@@ -8,7 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-	<title>Página Inicial</title>
+	<title>Divisão</title>
 
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Hind:400,700" rel="stylesheet">
@@ -344,8 +344,8 @@
 	<div id="breadcrumb">
 		<div class="container">
 			<ul class="breadcrumb">
-				
-				<li class="active">Página Inicial</li>
+				<li><a href="./php/logado.php">Página Inicial</a></li>
+				<li class="active">Divisão</li>
 			</ul>
 		</div>
 	</div>

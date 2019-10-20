@@ -8,7 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-	<title>Página Inicial</title>
+	<title>Divisão</title>
 
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Hind:400,700" rel="stylesheet">
@@ -62,21 +62,21 @@
 						<!-- Account -->
 						
                                                 
-                                               <li class="header-account dropdown default-dropdown">
+                                                <li class="header-account dropdown default-dropdown">
 							<div class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">
 								<div class="header-btns-icon">
 									<i class="fa fa-user-o"></i>
 								</div>
-								<strong class="text-uppercase">LOGADO AQUI <i class="fa fa-caret-down"></i></strong>
-							</div>
-							<a href="#" class="text-uppercase">Login</a> / <a href="#" class="text-uppercase">Join</a>
+                                                            <strong class="text-uppercase">Minha Conta <i class="fa fa-caret-down"></i></strong><br>
+                                                                <a href="#" class="text-uppercase">Acessar</a>
+                                                        </div>
+							
 							<ul class="custom-menu">
-								<li><a href="#"><i class="fa fa-user-o"></i> Minha Conta</a></li>
-								<li><a href="#"><i class="fa fa-heart-o"></i> Plantas Salvas</a></li>
-                                                                <li><a href="formularioPlanta.php"><i class="fa fa-check"></i> Ficha da Planta</a></li>
-                                                                <li><a href="formularioCarpoteca.php"><i class="fa fa-check"></i> Ficha da Carpoteca</a></li>
-                                                                <li><a href="cadastro.php"><i class="fa fa-user-plus"></i> Conceder Acesso</a></li>
-                                                                <li><a href="#"><i class="fa fa-exchange"></i> Sair</a></li>
+                                                            <li><label class="text-uppercase">Indentificação:</label></li>
+                                                            <li><input type="text" name="login" class="input search-input"></li>
+                                                            <li><label class="text-uppercase">Senha:</label></li>
+                                                            <li><input type="password" name="senhaDeLogin" class="input search-input"></li>
+                                                                <li class="pull-right"><input type="submit" Value="ACESSAR" class="primary-btn"></li>
 							</ul>
 						</li>
 							
@@ -112,7 +112,7 @@
 				<div class="menu-nav">
 					<span class="menu-header">Menu <i class="fa fa-bars"></i></span>
 					<ul class="menu-list">
-                                            <li id="inicio"><a href="logIndex.php"><span class="category-header">Início <!--<i class="fa fa-list"></i>--></span></a></li>
+                                            <li id="inicio"><a href="index.php"><span class="category-header">Início <!--<i class="fa fa-list"></i>--></span></a></li>
 						<li class="dropdown mega-dropdown full-width"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Divisão <i class="fa fa-caret-down"></i></a>
 							<div class="custom-menu">
 								<div class="row">
@@ -130,7 +130,7 @@
                                                                                         
                                                                                        
                                                                                         for($i = 0; $i < $linhaDivisao = $resultadoDivisao->fetch_assoc(); $i++){ 
-                                                                                            echo "<li><a href='logDivisoes.php'>".$linhaDivisao["divisao"]."</a></li>";
+                                                                                            echo "<li><a href='divisoes.php'>".$linhaDivisao["divisao"]."</a></li>";
                                                                                             if(($i + 1) % 6 == 0){
                                                                                                 echo "</ul>"
                                                                                                 ."</div>"
@@ -173,7 +173,7 @@
                                                                                         
                                                                                        
                                                                                         for($i = 0; $i < $linhaClasse = $resultadoClasse->fetch_assoc(); $i++){ 
-                                                                                            echo "<li><a href='logClasses.php'>".$linhaClasse["classe"]."</a></li>";
+                                                                                            echo "<li><a href='classes.php'>".$linhaClasse["classe"]."</a></li>";
                                                                                             if(($i + 1) % 6 == 0){
                                                                                                 echo "</ul>"
                                                                                                 ."</div>"
@@ -216,7 +216,7 @@
                                                                                         
                                                                                        
                                                                                         for($i = 0; $i < $linhaOrdem = $resultadoOrdem->fetch_assoc(); $i++){ 
-                                                                                            echo "<li><a href='logOrdens.php'>".$linhaOrdem["ordem"]."</a></li>";
+                                                                                            echo "<li><a href='ordens.php'>".$linhaOrdem["ordem"]."</a></li>";
                                                                                             if(($i + 1) % 6 == 0){
                                                                                                 echo "</ul>"
                                                                                                 ."</div>"
@@ -258,7 +258,7 @@
                                                                                         
                                                                                        
                                                                                         for($i = 0; $i < $linhaFamilia = $resultadoFamilia->fetch_assoc(); $i++){ 
-                                                                                            echo "<li><a href='logFamilias.php'>".$linhaFamilia["familia"]."</a></li>";
+                                                                                            echo "<li><a href='familias.php'>".$linhaFamilia["familia"]."</a></li>";
                                                                                             if(($i + 1) % 6 == 0){
                                                                                                 echo "</ul>"
                                                                                                 ."</div>"
@@ -300,7 +300,7 @@
                                                                                         
                                                                                        
                                                                                         for($i = 0; $i < $linhaCarpoteca = $resultadoCarpoteca->fetch_assoc(); $i++){ 
-                                                                                            echo "<li><a href='logCarpotecas.php'>".$linhaCarpoteca["nomeCientifico"]."</a></li>";
+                                                                                            echo "<li><a href='carpotecas.php'>".$linhaCarpoteca["nomeCientifico"]."</a></li>";
                                                                                             if(($i + 1) % 6 == 0){
                                                                                                 echo "</ul>"
                                                                                                 ."</div>"
@@ -344,8 +344,8 @@
 	<div id="breadcrumb">
 		<div class="container">
 			<ul class="breadcrumb">
-				
-				<li class="active">Página Inicial</li>
+				<li><a href="./php/logado.php">Página Inicial</a></li>
+				<li class="active">Divisão</li>
 			</ul>
 		</div>
 	</div>
@@ -367,7 +367,7 @@
                                     </div>
                                     <?php
                                    
-                                    $feed = "SELECT * FROM plantas LIMIT 5";
+                                    $feed = "SELECT divisao FROM plantas LIMIT 5";
 
                                         $resultado = $conecta->query(($feed));
                                         if($resultado->num_rows > 0){

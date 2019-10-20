@@ -5,13 +5,13 @@ function abrirIframe(){
 function extraFormulario1(){
  
     if(document.getElementById("select1")){
-    document.getElementById("f1").innerHTML = "<div class='form-group'><input class='input search-input' id='formulario' name='nomeCientifico' type='text' placeholder='Nome Científico'></div>";
+    document.getElementById("f1").innerHTML = "<input class='input search-input' id='formulario' name='nomeCientifico' type='text' placeholder='Nome Científico'>";
     }
 }
 
 function extraFormulario2(){
     if(document.getElementById("select2")){
-    document.getElementById("f2").innerHTML = "<input class='input search-input' id='formulario' name='filoFormulario' type='text' placeholder='Divisão'>";
+    document.getElementById("f2").innerHTML = "<input class='input search-input' id='formulario' name='divisaoFormulario' type='text' placeholder='Divisão'>";
 }}
 
 function extraFormulario3(){
