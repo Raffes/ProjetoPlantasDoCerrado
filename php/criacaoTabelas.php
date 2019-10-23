@@ -39,8 +39,8 @@ $tabela3 = "CREATE TABLE IF NOT EXISTS imagemCarpoteca(
 
 $tabela4 = "CREATE TABLE IF NOT EXISTS carpoteca(
 id int(55) primary key auto_increment not null,
-nomeCientifico varchar(35) not null,
-nomePopular varchar(35) not null,
+nomeCientificoCarpoteca varchar(35) not null,
+nomePopularCarpoteca varchar(35) not null,
 descricao text(3000) not null,
 id_imgCarpoteca int(55),
 id_cadastro int(55) not null,

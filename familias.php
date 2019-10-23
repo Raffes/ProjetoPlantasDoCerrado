@@ -205,38 +205,38 @@
                                                         <div class="col-md-3">
                                                             <ul class="list-links">
                                                                 <li><h3 class='list-links-title'>Categorias</h3></li>
-<?php
-$OrdemSelect = "SELECT ordem FROM plantas LIMIT 39";
+                                                                <?php
+                                                                $OrdemSelect = "SELECT ordem FROM plantas LIMIT 39";
 
-$resultadoOrdem = $conecta->query(($OrdemSelect));
-if ($resultadoOrdem->num_rows > 0) {
+                                                                $resultadoOrdem = $conecta->query(($OrdemSelect));
+                                                                if ($resultadoOrdem->num_rows > 0) {
 
 
-    for ($i = 0; $i < $linhaOrdem = $resultadoOrdem->fetch_assoc(); $i++) {
-        echo "<li><a href='ordens.php'>" . $linhaOrdem["ordem"] . "</a></li>";
-        if (($i + 1) % 6 == 0) {
-            echo "</ul>"
-            . "</div>"
-            . "<ul class='list-links'>"
-            . "<li><h3 class='list-links-title'>Categorias</h3></li>"
-            ;
-        }
+                                                                    for ($i = 0; $i < $linhaOrdem = $resultadoOrdem->fetch_assoc(); $i++) {
+                                                                        echo "<li><a href='ordens.php'>" . $linhaOrdem["ordem"] . "</a></li>";
+                                                                        if (($i + 1) % 6 == 0) {
+                                                                            echo "</ul>"
+                                                                            . "</div>"
+                                                                            . "<ul class='list-links'>"
+                                                                            . "<li><h3 class='list-links-title'>Categorias</h3></li>"
+                                                                            ;
+                                                                        }
 
-        if ($i == $linhaOrdem = $resultadoOrdem->fetch_assoc()) {
-            echo "</ul>"
-            . "<hr class='hidden-md hidden-lg'>"
-            . "</div>";
-        }
+                                                                        if ($i == $linhaOrdem = $resultadoOrdem->fetch_assoc()) {
+                                                                            echo "</ul>"
+                                                                            . "<hr class='hidden-md hidden-lg'>"
+                                                                            . "</div>";
+                                                                        }
 
-        if ($i + 1 >= 20) {
-            echo "</div><bottom>Add</bottom>";
-            return;
-        }
-    }
-} else {
-    echo "0 resultados";
-}
-?>
+                                                                        if ($i + 1 >= 20) {
+                                                                            echo "</div><bottom>Add</bottom>";
+                                                                            return;
+                                                                        }
+                                                                    }
+                                                                } else {
+                                                                    echo "0 resultados";
+                                                                }
+                                                                ?>
 
 
                                                         </div>      
@@ -246,38 +246,38 @@ if ($resultadoOrdem->num_rows > 0) {
                                                                     <div class="col-md-3">
                                                                         <ul class="list-links">
                                                                             <li><h3 class='list-links-title'>Categorias</h3></li>
-<?php
-$FamiliaSelect = "SELECT familia FROM plantas LIMIT 39";
+                                                                            <?php
+                                                                            $FamiliaSelect = "SELECT familia FROM plantas LIMIT 39";
 
-$resultadoFamilia = $conecta->query(($FamiliaSelect));
-if ($resultadoFamilia->num_rows > 0) {
+                                                                            $resultadoFamilia = $conecta->query(($FamiliaSelect));
+                                                                            if ($resultadoFamilia->num_rows > 0) {
 
 
-    for ($i = 0; $i < $linhaFamilia = $resultadoFamilia->fetch_assoc(); $i++) {
-        echo "<li><a href='familias.php'>" . $linhaFamilia["familia"] . "</a></li>";
-        if (($i + 1) % 6 == 0) {
-            echo "</ul>"
-            . "</div>"
-            . "<ul class='list-links'>"
-            . "<li><h3 class='list-links-title'>Categorias</h3></li>"
-            ;
-        }
+                                                                                for ($i = 0; $i < $linhaFamilia = $resultadoFamilia->fetch_assoc(); $i++) {
+                                                                                    echo "<li><a href='familias.php'>" . $linhaFamilia["familia"] . "</a></li>";
+                                                                                    if (($i + 1) % 6 == 0) {
+                                                                                        echo "</ul>"
+                                                                                        . "</div>"
+                                                                                        . "<ul class='list-links'>"
+                                                                                        . "<li><h3 class='list-links-title'>Categorias</h3></li>"
+                                                                                        ;
+                                                                                    }
 
-        if ($i == $linhaFamilia = $resultadoFamilia->fetch_assoc()) {
-            echo "</ul>"
-            . "<hr class='hidden-md hidden-lg'>"
-            . "</div>";
-        }
+                                                                                    if ($i == $linhaFamilia = $resultadoFamilia->fetch_assoc()) {
+                                                                                        echo "</ul>"
+                                                                                        . "<hr class='hidden-md hidden-lg'>"
+                                                                                        . "</div>";
+                                                                                    }
 
-        if ($i + 1 >= 20) {
-            echo "</div><bottom>Add</bottom>";
-            return;
-        }
-    }
-} else {
-    echo "0 resultados";
-}
-?>
+                                                                                    if ($i + 1 >= 20) {
+                                                                                        echo "</div><bottom>Add</bottom>";
+                                                                                        return;
+                                                                                    }
+                                                                                }
+                                                                            } else {
+                                                                                echo "0 resultados";
+                                                                            }
+                                                                            ?>
 
 
                                                                     </div>      
@@ -287,38 +287,38 @@ if ($resultadoFamilia->num_rows > 0) {
                                                                                 <div class="col-md-3">
                                                                                     <ul class="list-links">
                                                                                         <li><h3 class='list-links-title'>Categorias</h3></li>
-<?php
-$CarpotecaSelect = "SELECT nomeCientifico FROM carpoteca LIMIT 39";
+                                                                                        <?php
+                                                                                        $CarpotecaSelect = "SELECT nomeCientificoCarpoteca FROM carpoteca LIMIT 39";
 
-$resultadoCarpoteca = $conecta->query(($CarpotecaSelect));
-if ($resultadoCarpoteca->num_rows > 0) {
+                                                                                        $resultadoCarpoteca = $conecta->query(($CarpotecaSelect));
+                                                                                        if ($resultadoCarpoteca->num_rows > 0) {
 
 
-    for ($i = 0; $i < $linhaCarpoteca = $resultadoCarpoteca->fetch_assoc(); $i++) {
-        echo "<li><a href='carpotecas.php'>" . $linhaCarpoteca["nomeCientifico"] . "</a></li>";
-        if (($i + 1) % 6 == 0) {
-            echo "</ul>"
-            . "</div>"
-            . "<ul class='list-links'>"
-            . "<li><h3 class='list-links-title'>Categorias</h3></li>"
-            ;
-        }
+                                                                                            for ($i = 0; $i < $linhaCarpoteca = $resultadoCarpoteca->fetch_assoc(); $i++) {
+                                                                                                echo "<li><a href='carpotecas.php'>" . $linhaCarpoteca["nomeCientificoCarpoteca"] . "</a></li>";
+                                                                                                if (($i + 1) % 6 == 0) {
+                                                                                                    echo "</ul>"
+                                                                                                    . "</div>"
+                                                                                                    . "<ul class='list-links'>"
+                                                                                                    . "<li><h3 class='list-links-title'>Categorias</h3></li>"
+                                                                                                    ;
+                                                                                                }
 
-        if ($i == $linhaCarpoteca = $resultadoCarpoteca->fetch_assoc()) {
-            echo "</ul>"
-            . "<hr class='hidden-md hidden-lg'>"
-            . "</div>";
-        }
+                                                                                                if ($i == $linhaCarpoteca = $resultadoCarpoteca->fetch_assoc()) {
+                                                                                                    echo "</ul>"
+                                                                                                    . "<hr class='hidden-md hidden-lg'>"
+                                                                                                    . "</div>";
+                                                                                                }
 
-        if ($i + 1 >= 20) {
-            echo "</div><bottom>Add</bottom>";
-            return;
-        }
-    }
-} else {
-    echo "0 resultados";
-}
-?>
+                                                                                                if ($i + 1 >= 20) {
+                                                                                                    echo "</div><bottom>Add</bottom>";
+                                                                                                    return;
+                                                                                                }
+                                                                                            }
+                                                                                        } else {
+                                                                                            echo "0 resultados";
+                                                                                        }
+                                                                                        ?>
 
 
                                                                                 </div>      
@@ -339,7 +339,7 @@ if ($resultadoCarpoteca->num_rows > 0) {
                                                     <div id="breadcrumb">
                                                         <div class="container">
                                                             <ul class="breadcrumb">
-                                                                <li><a href="./php/logado.php">Página Inicial</a></li>
+                                                                <li><a href="index.php">Página Inicial</a></li>
                                                                 <li class="active">Família</li>
                                                             </ul>
                                                         </div>
@@ -360,62 +360,72 @@ if ($resultadoCarpoteca->num_rows > 0) {
                                                                         <div class="section-title">
                                                                             <h3 class="title">Feed</h3>
                                                                         </div>
-<?php
-$feed = "SELECT familia FROM plantas LIMIT 5";
+                                                                        <?php
+                                                                        $feed = "SELECT a.familia, b.img1 FROM plantas as a inner join imagemPlantas as b on a.id = b.id LIMIT 5";
 
-$resultado = $conecta->query(($feed));
-if ($resultado->num_rows > 0) {
-    while ($linha = $resultado->fetch_assoc()) {
-        echo "<div class='product product-single'>"
-        . "<div class='product-thumb'>"
-        . "<table id='feed1'>"
-        . "<tr>"
-        . "<td colspan='4'><img src=' .img/" . $linha["img1"] . "' alt='imagem'></td>"
-        . "</tr>"
-        . "<tr>"
-        . "<td class='text-uppercase'> <h6 class='title'>Nome Científico: </h6></td>"
-        . "<td>" . $linha["nomeCientifico"] . "</td>"
-        . "<td class='text-uppercase'><h6 class='title'>Nome Popular: </h6></td>"
-        . "<td>" . $linha["nomePopular"] . "</td>"
-        . "</tr>"
-        . "<tr>"
-        . "<td class='text-uppercase'> <h6 class='title'>Divisão: </h6></td>"
-        . "<td>" . $linha["divisao"] . "</td>"
-        . "<td class='text-uppercase'><h6 class='title'>Classe: </h6></td>"
-        . "<td>" . $linha["classe"] . "</td>"
-        . "</tr>"
-        . "<tr>"
-        . "<td class='text-uppercase'> <h6 class='title'>Ordem: </h6></td>"
-        . "<td>" . $linha["ordem"] . "</td>"
-        . "<td class='text-uppercase'><h6 class='title'>Familia: </h6></td>"
-        . "<td>" . $linha["familia"] . "</td>"
-        . "</tr>"
-        . "<tr>"
-        . "<td class='text-uppercase'><h6 class='title'>Carpoteca: </h6></td>"
-        /* ."<td colspan='3'>".$linha["carpoteca"]. "</td>" */
-        . "</tr>"
-        . "</table>"
-        . "<table id='feed2'>"
-        . "<tr>"
-        . "<th colspan='4'  class='section-title'> <h6 class='title'>Descrição: </h6></th>"
-        . "</tr>"
-        . "<tr id='desc'>"
-        . "<td colspan='4' id='des'>" . $linha["descricao"] . "</td>"
-        . "</tr>"
-        . "<tr>"
-        . "<td colspan='4' class='product-btns'>
+                                                                        $resultado = $conecta->query(($feed));
+                                                                        if ($resultado->num_rows > 0) {
+                                                                            /* while($linha = $resultado->fetch_assoc()) { */
+                                                                            for ($i = 0; $i < $linha = $resultado->fetch_assoc(); $i++) {
+                                                                                echo "<div class='product product-single'>"
+                                                                                . "<div>" /* class='product-thumb' */
+                                                                                . "<table id='feed1'>"
+                                                                                . "<tr>"
+                                                                                . "<td colspan='4'><img src='img/" . $linha["img1"] . "' alt='imagem'></td>"
+                                                                                . "</tr>"
+                                                                                . "<tr>"
+                                                                                . "<td class='text-uppercase'> <h6 class='title'>Nome Científico: </h6></td>"
+                                                                                . "<td>" . $linha["nomeCientifico"] . "</td>"
+                                                                                . "<td class='text-uppercase'><h6 class='title'>Nome Popular: </h6></td>"
+                                                                                . "<td>" . $linha["nomePopular"] . "</td>"
+                                                                                . "</tr>"
+                                                                                . "<tr>"
+                                                                                . "<td class='text-uppercase'> <h6 class='title'>Divisão: </h6></td>"
+                                                                                . "<td>" . $linha["divisao"] . "</td>"
+                                                                                . "<td class='text-uppercase'><h6 class='title'>Classe: </h6></td>"
+                                                                                . "<td>" . $linha["classe"] . "</td>"
+                                                                                . "</tr>"
+                                                                                . "<tr>"
+                                                                                . "<td class='text-uppercase'> <h6 class='title'>Ordem: </h6></td>"
+                                                                                . "<td>" . $linha["ordem"] . "</td>"
+                                                                                . "<td class='text-uppercase'><h6 class='title'>Familia: </h6></td>"
+                                                                                . "<td>" . $linha["familia"] . "</td>"
+                                                                                . "</tr>"
+                                                                                . "<tr>"
+                                                                                . "<td class='text-uppercase'><h6 class='title'>Carpoteca: </h6></td>"
+                                                                                /* ."<td colspan='3'>".$linha["carpoteca"]. "</td>" */
+                                                                                . "</tr>"
+                                                                                . "</table>"
+                                                                                . "<table id='feed2'>"
+                                                                                . "<tr>"
+                                                                                . "<th colspan='4'  class='section-title'> <h6 class='title'>Descrição: </h6></th>"
+                                                                                . "</tr>"
+                                                                                . "<tr id='desc'>"
+                                                                                . "<td colspan='4' id='des'>" . $linha["descricao"] . "</td>"
+                                                                                . "</tr>"
+                                                                                . "<tr>"
+                                                                                . "<td colspan='4' class='product-btns'>
                                                   <button class='main-btn icon-btn'><i class='fa fa-heart'></i></button></td>"
-        . "</tr>"
-        . "</table>"
-        . "<button class='main-btn quick-view' oneclick='abrirIframe()'><i class='fa fa-search-plus'></i> Vê Descrição Completa</button>"
-        . "</div>"
-        . "</div>";
-    }
-} else {
-    echo "0 results";
-}
-?>
+                                                                                . "</tr>"
+                                                                                . "</table>"
+                                                                                /* . "<button class='main-btn quick-view' oneclick='abrirIframe()'><i class='fa fa-search-plus'></i> Vê Descrição Completa</button>" */
+                                                                                . "</div>"
+                                                                                . "</div>";
+                                                                            }
+                                                                        } else {
+                                                                            echo "0 results";
+                                                                        }
+                                                                        /* for ($j = 0; $j < $linha = $resultado->fetch_assoc(); $j++) {
+                                                                          echo "<div class='pull-right'>
 
+                                                                          <ul class='store-pages'>
+                                                                          <li><span class='text-uppercase'>Paginas:</span></li>
+                                                                          <li class='active'>$j</li>
+                                                                          <li><a href='index.php'><i class='fa fa-caret-right'></i></a></li>
+                                                                          </ul>
+                                                                          </div>";
+                                                                          } */
+                                                                        ?>       
 
                                                                     </div>
                                                                 </div>
@@ -430,165 +440,164 @@ if ($resultado->num_rows > 0) {
 
                                                                         <!--<div id="tabelaFiltro">-->
 
-                                                                        <table id="tabelaFiltro">
-                                                                            <tr>
-                                                                                <th colspan="2" class="section-title"><label class="text-uppercase" class="title">Tipo</label></th>
-                                                                            </tr>
-                                                                            <tr>
+                                                                        <?php
+                                                                        $filtro = "SELECT c.*, d.nomeCientificoCarpoteca FROM plantas as c inner join carpoteca as d on c.id = d.id";
 
-                                                                                <td><label class="text-uppercase">Divisão:</label></td>
-
-                                                                                <td><label class="text-uppercase">Classe:</label></td>
-                                                                            </tr>
-                                                                            <tr>
-<?php
-$divisaoFiltro = "SELECT divisao FROM plantas";
-
-$resultDivisaoFiltro = $conecta->query(($divisaoFiltro));
-if ($resultDivisaoFiltro->num_rows > 0) {
-    while ($linhaDivisaoFiltro = $resultDivisaoFiltro->fetch_assoc()) {
-        echo "<td><select class='input search-categories'>
-                                                                                <option>" . $linha["divisao"] . "</option>
-                                                                                </select></td>";
-    }
-} else {
-    echo "<td><select class='input search-categories'>
-                                                                                <option>Todos</option>
-                                                                                </select></td>";
-}
-
-
-$divisaoClasse = "SELECT classe FROM plantas";
-
-$resultClasseFiltro = $conecta->query(($divisaoClasse));
-if ($resultClasseFiltro->num_rows > 0) {
-    while ($linhaClasseFiltro = $resultClasseFiltro->fetch_assoc()) {
-        echo "<td><select class='input search-categories'>
-                                                                                <option>" . $linha["classe"] . "</option>
-                                                                                </select></td>";
-    }
-} else {
-    echo "<td><select class='input search-categories'>
-                                                                                <option>Todos</option>
-                                                                                </select></td>";
-}
-?>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td><label class="text-uppercase">Ordem:</label></td>
-                                                                                <td><label class="text-uppercase">Família:</label></td>
-
-                                                                            </tr>
-                                                                            <tr>
-<?php
-$OrdemFiltro = "SELECT ordem FROM plantas";
-
-$resultOrdemFiltro = $conecta->query(($OrdemFiltro));
-if ($resultOrdemFiltro->num_rows > 0) {
-    while ($linhaOrdemFiltro = $resultOrdemFiltro->fetch_assoc()) {
-        echo "<td><select class='input search-categories'>
-                                                                                <option>" . $linha["ordem"] . "</option>
-                                                                                </select></td>";
-    }
-} else {
-    echo "<td><select class='input search-categories'>
-                                                                                <option>Todos</option>
-                                                                                </select></td>";
-}
-
-
-$FamiliaClasse = "SELECT familia FROM plantas";
-
-$resultFamiliaFiltro = $conecta->query(($FamiliaClasse));
-if ($resultFamiliaFiltro->num_rows > 0) {
-    while ($linhaFamiliaFiltro = $resultFamiliaFiltro->fetch_assoc()) {
-        echo "<td><select class='input search-categories'>
-                                                                                <option>" . $linha["familia"] . "</option>
-                                                                                </select></td>";
-    }
-} else {
-    echo "<td><select class='input search-categories'>
-                                                                                <option>Todos</option>
-                                                                                </select></td>";
-}
-?>
-
-
-                                                                            </tr>
-                                                                            <tr>
-
-                                                                                <td colspan="2"><label class="text-uppercase">Carpoteca:</label></td>
-
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <?php
-                                                                                $CarpotecaFiltro = "SELECT nomeCientifico FROM carpoteca";
-
-                                                                                $resultCarpotecaFiltro = $conecta->query(($CarpotecaFiltro));
-                                                                                if ($resultCarpotecaFiltro->num_rows > 0) {
-                                                                                    while ($linhaCarpotecaFiltro = $resultCarpotecaFiltro->fetch_assoc()) {
-                                                                                        echo "<td colspan='2'><select class='input search-categories'>
-                                                                                <option>" . $linha["nomeCientifico"] . "</option>
-                                                                                </select></td>";
-                                                                                    }
-                                                                                } else {
-                                                                                    echo "<td colspan='2'><select class='input search-categories'>
-                                                                                <option>Todos</option>
-                                                                                </select></td>";
-                                                                                }
-                                                                                ?>
-                                                                            </tr>
-                                                                            <th colspan="2" class="section-title"><h5 class="title">Nome</h5></th>
+                                                                        $resultadoFiltro = $conecta->query($filtro);
+                                                                        if ($resultadoFiltro->num_rows > 0) {
+                                                                            while ($linhaFiltro = $resultadoFiltro->fetch_assoc()) {
+                                                                                echo "<table id='tabelaFiltro'>
+                                                                                            <th colspan='2' class='section-title'><h5 class='title'>Nome</h5></th>
 
 
                                                                             <tr>
-                                                                                <td><label class="text-uppercase">Nome Científico:</label></td>
-                                                                                <td><label class="text-uppercase">Nome Popular:</label></td>
+                                                                                <td><label class='text-uppercase'>Nome Científico:</label></td>
+                                                                                <td><label class='text-uppercase'>Nome Popular:</label></td>
                                                                             </tr>
                                                                             <tr>
-                                                                                <?php
-                                                                                $NcientFiltro = "SELECT nomeCientifico FROM plantas";
+                                                                                
+                                                                                <td><select class='input search-categories'>
+                                                                                        <option>Selecione</option>
+                                                                                        <option>" . $linhaFiltro["nomeCientifico"] . "</option>
+                                                                                        <option>Todos</option>
+                                                                                        </select></td>
+                                                                                        
+                                                                                <td><select class='input search-categories'>
+                                                                                        <option>Selecione</option>
+                                                                                        <option>" . $linhaFiltro["nomePopular"] . "</option>
+                                                                                        <option>Todos</option>
+                                                                                        </select></td>
+                                                                                        
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <th colspan='2' class='section-title'><label class='text-uppercase' class='title'>Tipo</label></th>
+                                                                            </tr>
+                                                                            <tr>
 
-                                                                                $resultNcientFiltro = $conecta->query(($NcientFiltro));
-                                                                                if ($resultNcientFiltro->num_rows > 0) {
-                                                                                    while ($linhaNcientFiltro = $resultNcientFiltro->fetch_assoc()) {
-                                                                                        echo "<td><select class='input search-categories'>
-                                                                                <option>" . $linha["nomeCientifico"] . "</option>
-                                                                                </select></td>";
-                                                                                    }
-                                                                                } else {
-                                                                                    echo "<td><select class='input search-categories'>
-                                                                                <option>Todos</option>
-                                                                                </select></td>";
-                                                                                }
+                                                                                <td><label class='text-uppercase'>Divisão:</label></td>
 
+                                                                                <td><label class='text-uppercase'>Classe:</label></td>
+                                                                            </tr>
+                                                                            <tr><td><select class='input search-categories'>
+                                                                                        <option>Selecione</option>
+                                                                                        <option>" . $linhaFiltro["divisao"] . "</option>
+                                                                                        <option>Todos</option>
+                                                                                        </select></td>
+                                                                                        
+                                                                                <td><select class='input search-categories'>
+                                                                                        <option>Selecione</option>
+                                                                                        <option>" . $linhaFiltro["classe"] . "</option>
+                                                                                        <option>Todos</option>
+                                                                                        </select></td>
+                                                                            </tr><tr>
+                                                                                <td><label class='text-uppercase'>Ordem:</label></td>
+                                                                                <td><label class='text-uppercase'>Família:</label></td>
 
-                                                                                $NpopularClasse = "SELECT nomePopular FROM plantas";
+                                                                            </tr>
+                                                                            <tr>
+                                                                                
+                                                                                <td><select class='input search-categories'>
+                                                                                        <option>Selecione</option>
+                                                                                        <option>" . $linhaFiltro["ordem"] . "</option>
+                                                                                        <option>Todos</option>
+                                                                                        </select></td>
+                                                                                        
+                                                                                <td><select class='input search-categories'>
+                                                                                        <option>Selecione</option>
+                                                                                        <option>" . $linhaFiltro["familia"] . "</option>
+                                                                                        <option>Todos</option>
+                                                                                        </select></td>
+                                                                            </tr><tr>
 
-                                                                                $resultNpopularFiltro = $conecta->query(($NpopularClasse));
-                                                                                if ($resultNpopularFiltro->num_rows > 0) {
-                                                                                    while ($linhaNpopularFiltro = $resultNpopularFiltro->fetch_assoc()) {
-                                                                                        echo "<td><select class='input search-categories'>
-                                                                                <option>" . $linha["nomePopular"] . "</option>
-                                                                                </select></td>";
-                                                                                    }
-                                                                                } else {
-                                                                                    echo "<td><select class='input search-categories'>
-                                                                                <option>Todos</option>
-                                                                                </select></td>";
-                                                                                }
-                                                                                ?>
+                                                                                <td colspan='2'><label class='text-uppercase'>Carpoteca:</label></td>
 
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td colspan='2'><select class='input search-categories'>
+                                                                                        <option>Selecione</option>
+                                                                                        <option>" . $linhaFiltro["nomeCientificoCarpoteca"] . "</option>
+                                                                                        <option>Todos</option>
+                                                                                        </select></td>
                                                                             </tr>
 
 
-                                                                        </table>
-                                                                        <div class="pull-right">
-                                                                            <button class="primary-btn">Pesquisar</button>
-                                                                        </div>
+                                                                                </table>
+                                                                                <div class='pull-right'>
+                                                                                    <button class='primary-btn'>Pesquisar</button>
+                                                                                </div>
+                                                                                        ";
+                                                                            }
+                                                                        } else {
+                                                                            echo "<table id='tabelaFiltro'>
+                                                                                        <th colspan='2' class='section-title'><h5 class='title'>Nome</h5></th>
 
 
+                                                                            <tr>
+                                                                                <td><label class='text-uppercase'>Nome Científico:</label></td>
+                                                                                <td><label class='text-uppercase'>Nome Popular:</label></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                
+                                                                                <td><select class='input search-categories'>
+                                                                                        <option>Selecione</option>
+                                                                                        </select></td>
+                                                                                        
+                                                                                <td><select class='input search-categories'>
+                                                                                        <option>Selecione</option>
+                                                                                        </select></td>
+                                                                                        
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <th colspan='2' class='section-title'><label class='text-uppercase' class='title'>Tipo</label></th>
+                                                                            </tr>
+                                                                            <tr>
+
+                                                                                <td><label class='text-uppercase'>Divisão:</label></td>
+
+                                                                                <td><label class='text-uppercase'>Classe:</label></td>
+                                                                            </tr>
+                                                                            <tr><td><select class='input search-categories'>
+                                                                                        <option>Selecione</option>
+                                                                                        </select></td>
+                                                                                        
+                                                                                <td><select class='input search-categories'>
+                                                                                        <option>Selecione</option>
+                                                                                        </select></td>
+                                                                            </tr><tr>
+                                                                                <td><label class='text-uppercase'>Ordem:</label></td>
+                                                                                <td><label class='text-uppercase'>Família:</label></td>
+
+                                                                            </tr>
+                                                                            <tr>
+                                                                                
+                                                                                <td><select class='input search-categories'>
+                                                                                        <option>Selecione</option>
+                                                                                        </select></td>
+                                                                                        
+                                                                                <td><select class='input search-categories'>
+                                                                                        <option>Selecione</option>
+                                                                                        </select></td>
+                                                                            </tr><tr>
+
+                                                                                <td colspan='2'><label class='text-uppercase'>Carpoteca:</label></td>
+
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td colspan='2'><select class='input search-categories'>
+                                                                                        <option>Selecione</option>
+                                                                                        </select></td>
+                                                                            </tr>
+
+                                                                                </table>
+                                                                                <div class='pull-right'>
+                                                                                    <button class='primary-btn'>Pesquisar</button>
+                                                                                </div>
+                                                                                        ";
+                                                                        }
+                                                                        ?>
                                                                     </form>
+
+
                                                                     <!--/SEARCH-->
                                                                 </div>
 
@@ -622,7 +631,7 @@ if ($resultFamiliaFiltro->num_rows > 0) {
                                                                         </div>
                                                                         <!-- /footer logo -->
 
-                                                                        <p> Tal plataforma está sendo criada de modo a aprimorar o banco de dados de plantas do bioma Cerrado e contribuir para a 
+                                                                        <p style="text-align: justify;"> Tal plataforma está sendo criada de modo a aprimorar o banco de dados de plantas do bioma Cerrado e contribuir para a 
                                                                             pesquisa e identificação de plantas otimizando o tempo gasto por pesquisadores e alunos na classificação de uma espécie alvo.</p>
 
 
