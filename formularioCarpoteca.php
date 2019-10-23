@@ -1,3 +1,4 @@
+<?php include 'php/conexao.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -67,9 +68,10 @@
                                     <div class="header-btns-icon">
                                         <i class="fa fa-user-o"></i>
                                     </div>
-                                    <strong class="text-uppercase">LOGADO AQUI <i class="fa fa-caret-down"></i></strong>
+                                    <strong class="text-uppercase">LOGADO AQUI <i class="fa fa-caret-down"></i></strong><br>
+                                    <a href="#" class="text-uppercase">Acesso</a>
                                 </div>
-                                <a href="#" class="text-uppercase">Login</a> / <a href="#" class="text-uppercase">Join</a>
+
                                 <ul class="custom-menu">
                                     <li><a href="#"><i class="fa fa-user-o"></i> Minha Conta</a></li>
                                     <li><a href="#"><i class="fa fa-heart-o"></i> Plantas Salvas</a></li>
@@ -79,7 +81,9 @@
                                     <li><a href="#"><i class="fa fa-exchange"></i> Sair</a></li>
                                 </ul>
                             </li>
+
                             <!-- /Account -->
+
 
 
                             <!-- Mobile nav toggle-->
@@ -88,7 +92,9 @@
                             </li>
                             <!-- / Mobile nav toggle -->
                         </ul>
+                        </form>   
                     </div>
+
                 </div>
                 <!-- header -->
             </div>
@@ -101,683 +107,516 @@
             <!-- container -->
             <div class="container">
                 <div id="responsive-nav">
-
-
-                    <!-- menu nav -->
-                    <div class="menu-nav">
-                        <div class="menu-nav">
-                            <span class="menu-header">Menu <i class="fa fa-bars"></i></span>
-                            <ul class="menu-list">
-                                <li><a href="./php/logado.php"><span class="category-header">Início <!--<i class="fa fa-list"></i>--></span></a></li>
-                                <li class="dropdown mega-dropdown full-width"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Filo <i class="fa fa-caret-down"></i></a>
-                                    <div class="custom-menu">
-                                        <div class="row">
-                                            <div class="col-md-3">
-                                                <div class="hidden-sm hidden-xs">
-                                                    <a class="banner banner-1" href="#">
-                                                        <img src="./img/banner06.jpg" alt="">
-                                                        <div class="banner-caption text-center">
-                                                            <h3 class="white-color text-uppercase">Women’s</h3>
-                                                        </div>
-                                                    </a>
-                                                    <hr>
-                                                </div>
-                                                <ul class="list-links">
-                                                    <li>
-                                                        <h3 class="list-links-title">Categories</h3></li>
-                                                    <li><a href="#">Women’s Clothing</a></li>
-                                                    <li><a href="#">Men’s Clothing</a></li>
-                                                    <li><a href="#">Phones & Accessories</a></li>
-                                                    <li><a href="#">Jewelry & Watches</a></li>
-                                                    <li><a href="#">Bags & Shoes</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="hidden-sm hidden-xs">
-                                                    <a class="banner banner-1" href="#">
-                                                        <img src="./img/banner07.jpg" alt="">
-                                                        <div class="banner-caption text-center">
-                                                            <h3 class="white-color text-uppercase">Men’s</h3>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <hr>
-                                                <ul class="list-links">
-                                                    <li>
-                                                        <h3 class="list-links-title">Categories</h3></li>
-                                                    <li><a href="#">Women’s Clothing</a></li>
-                                                    <li><a href="#">Men’s Clothing</a></li>
-                                                    <li><a href="#">Phones & Accessories</a></li>
-                                                    <li><a href="#">Jewelry & Watches</a></li>
-                                                    <li><a href="#">Bags & Shoes</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="hidden-sm hidden-xs">
-                                                    <a class="banner banner-1" href="#">
-                                                        <img src="./img/banner08.jpg" alt="">
-                                                        <div class="banner-caption text-center">
-                                                            <h3 class="white-color text-uppercase">Accessories</h3>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <hr>
-                                                <ul class="list-links">
-                                                    <li>
-                                                        <h3 class="list-links-title">Categories</h3></li>
-                                                    <li><a href="#">Women’s Clothing</a></li>
-                                                    <li><a href="#">Men’s Clothing</a></li>
-                                                    <li><a href="#">Phones & Accessories</a></li>
-                                                    <li><a href="#">Jewelry & Watches</a></li>
-                                                    <li><a href="#">Bags & Shoes</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="hidden-sm hidden-xs">
-                                                    <a class="banner banner-1" href="#">
-                                                        <img src="./img/banner09.jpg" alt="">
-                                                        <div class="banner-caption text-center">
-                                                            <h3 class="white-color text-uppercase">Bags</h3>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <hr>
-                                                <ul class="list-links">
-                                                    <li>
-                                                        <h3 class="list-links-title">Categories</h3></li>
-                                                    <li><a href="#">Women’s Clothing</a></li>
-                                                    <li><a href="#">Men’s Clothing</a></li>
-                                                    <li><a href="#">Phones & Accessories</a></li>
-                                                    <li><a href="#">Jewelry & Watches</a></li>
-                                                    <li><a href="#">Bags & Shoes</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="dropdown mega-dropdown full-width"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Classe <i class="fa fa-caret-down"></i></a>
-                                    <div class="custom-menu">
-                                        <div class="row">
-                                            <div class="col-md-3">
-                                                <div class="hidden-sm hidden-xs">
-                                                    <a class="banner banner-1" href="#">
-                                                        <img src="./img/banner06.jpg" alt="">
-                                                        <div class="banner-caption text-center">
-                                                            <h3 class="white-color text-uppercase">Women’s</h3>
-                                                        </div>
-                                                    </a>
-                                                    <hr>
-                                                </div>
-                                                <ul class="list-links">
-                                                    <li>
-                                                        <h3 class="list-links-title">Categories</h3></li>
-                                                    <li><a href="#">Women’s Clothing</a></li>
-                                                    <li><a href="#">Men’s Clothing</a></li>
-                                                    <li><a href="#">Phones & Accessories</a></li>
-                                                    <li><a href="#">Jewelry & Watches</a></li>
-                                                    <li><a href="#">Bags & Shoes</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="hidden-sm hidden-xs">
-                                                    <a class="banner banner-1" href="#">
-                                                        <img src="./img/banner07.jpg" alt="">
-                                                        <div class="banner-caption text-center">
-                                                            <h3 class="white-color text-uppercase">Men’s</h3>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <hr>
-                                                <ul class="list-links">
-                                                    <li>
-                                                        <h3 class="list-links-title">Categories</h3></li>
-                                                    <li><a href="#">Women’s Clothing</a></li>
-                                                    <li><a href="#">Men’s Clothing</a></li>
-                                                    <li><a href="#">Phones & Accessories</a></li>
-                                                    <li><a href="#">Jewelry & Watches</a></li>
-                                                    <li><a href="#">Bags & Shoes</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="hidden-sm hidden-xs">
-                                                    <a class="banner banner-1" href="#">
-                                                        <img src="./img/banner08.jpg" alt="">
-                                                        <div class="banner-caption text-center">
-                                                            <h3 class="white-color text-uppercase">Accessories</h3>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <hr>
-                                                <ul class="list-links">
-                                                    <li>
-                                                        <h3 class="list-links-title">Categories</h3></li>
-                                                    <li><a href="#">Women’s Clothing</a></li>
-                                                    <li><a href="#">Men’s Clothing</a></li>
-                                                    <li><a href="#">Phones & Accessories</a></li>
-                                                    <li><a href="#">Jewelry & Watches</a></li>
-                                                    <li><a href="#">Bags & Shoes</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="hidden-sm hidden-xs">
-                                                    <a class="banner banner-1" href="#">
-                                                        <img src="./img/banner09.jpg" alt="">
-                                                        <div class="banner-caption text-center">
-                                                            <h3 class="white-color text-uppercase">Bags</h3>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <hr>
-                                                <ul class="list-links">
-                                                    <li>
-                                                        <h3 class="list-links-title">Categories</h3></li>
-                                                    <li><a href="#">Women’s Clothing</a></li>
-                                                    <li><a href="#">Men’s Clothing</a></li>
-                                                    <li><a href="#">Phones & Accessories</a></li>
-                                                    <li><a href="#">Jewelry & Watches</a></li>
-                                                    <li><a href="#">Bags & Shoes</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="dropdown mega-dropdown full-width"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Ordem <i class="fa fa-caret-down"></i></a>
-                                    <div class="custom-menu">
-                                        <div class="row">
-                                            <div class="col-md-3">
-                                                <div class="hidden-sm hidden-xs">
-                                                    <a class="banner banner-1" href="#">
-                                                        <img src="./img/banner06.jpg" alt="">
-                                                        <div class="banner-caption text-center">
-                                                            <h3 class="white-color text-uppercase">Women’s</h3>
-                                                        </div>
-                                                    </a>
-                                                    <hr>
-                                                </div>
-                                                <ul class="list-links">
-                                                    <li>
-                                                        <h3 class="list-links-title">Categories</h3></li>
-                                                    <li><a href="#">Women’s Clothing</a></li>
-                                                    <li><a href="#">Men’s Clothing</a></li>
-                                                    <li><a href="#">Phones & Accessories</a></li>
-                                                    <li><a href="#">Jewelry & Watches</a></li>
-                                                    <li><a href="#">Bags & Shoes</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="hidden-sm hidden-xs">
-                                                    <a class="banner banner-1" href="#">
-                                                        <img src="./img/banner07.jpg" alt="">
-                                                        <div class="banner-caption text-center">
-                                                            <h3 class="white-color text-uppercase">Men’s</h3>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <hr>
-                                                <ul class="list-links">
-                                                    <li>
-                                                        <h3 class="list-links-title">Categories</h3></li>
-                                                    <li><a href="#">Women’s Clothing</a></li>
-                                                    <li><a href="#">Men’s Clothing</a></li>
-                                                    <li><a href="#">Phones & Accessories</a></li>
-                                                    <li><a href="#">Jewelry & Watches</a></li>
-                                                    <li><a href="#">Bags & Shoes</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="hidden-sm hidden-xs">
-                                                    <a class="banner banner-1" href="#">
-                                                        <img src="./img/banner08.jpg" alt="">
-                                                        <div class="banner-caption text-center">
-                                                            <h3 class="white-color text-uppercase">Accessories</h3>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <hr>
-                                                <ul class="list-links">
-                                                    <li>
-                                                        <h3 class="list-links-title">Categories</h3></li>
-                                                    <li><a href="#">Women’s Clothing</a></li>
-                                                    <li><a href="#">Men’s Clothing</a></li>
-                                                    <li><a href="#">Phones & Accessories</a></li>
-                                                    <li><a href="#">Jewelry & Watches</a></li>
-                                                    <li><a href="#">Bags & Shoes</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="hidden-sm hidden-xs">
-                                                    <a class="banner banner-1" href="#">
-                                                        <img src="./img/banner09.jpg" alt="">
-                                                        <div class="banner-caption text-center">
-                                                            <h3 class="white-color text-uppercase">Bags</h3>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <hr>
-                                                <ul class="list-links">
-                                                    <li>
-                                                        <h3 class="list-links-title">Categories</h3></li>
-                                                    <li><a href="#">Women’s Clothing</a></li>
-                                                    <li><a href="#">Men’s Clothing</a></li>
-                                                    <li><a href="#">Phones & Accessories</a></li>
-                                                    <li><a href="#">Jewelry & Watches</a></li>
-                                                    <li><a href="#">Bags & Shoes</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="dropdown mega-dropdown full-width"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Família <i class="fa fa-caret-down"></i></a>
-                                    <div class="custom-menu">
-                                        <div class="row">
-                                            <div class="col-md-3">
-                                                <div class="hidden-sm hidden-xs">
-                                                    <a class="banner banner-1" href="#">
-                                                        <img src="./img/banner06.jpg" alt="">
-                                                        <div class="banner-caption text-center">
-                                                            <h3 class="white-color text-uppercase">Women’s</h3>
-                                                        </div>
-                                                    </a>
-                                                    <hr>
-                                                </div>
-                                                <ul class="list-links">
-                                                    <li>
-                                                        <h3 class="list-links-title">Categories</h3></li>
-                                                    <li><a href="#">Women’s Clothing</a></li>
-                                                    <li><a href="#">Men’s Clothing</a></li>
-                                                    <li><a href="#">Phones & Accessories</a></li>
-                                                    <li><a href="#">Jewelry & Watches</a></li>
-                                                    <li><a href="#">Bags & Shoes</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="hidden-sm hidden-xs">
-                                                    <a class="banner banner-1" href="#">
-                                                        <img src="./img/banner07.jpg" alt="">
-                                                        <div class="banner-caption text-center">
-                                                            <h3 class="white-color text-uppercase">Men’s</h3>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <hr>
-                                                <ul class="list-links">
-                                                    <li>
-                                                        <h3 class="list-links-title">Categories</h3></li>
-                                                    <li><a href="#">Women’s Clothing</a></li>
-                                                    <li><a href="#">Men’s Clothing</a></li>
-                                                    <li><a href="#">Phones & Accessories</a></li>
-                                                    <li><a href="#">Jewelry & Watches</a></li>
-                                                    <li><a href="#">Bags & Shoes</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="hidden-sm hidden-xs">
-                                                    <a class="banner banner-1" href="#">
-                                                        <img src="./img/banner08.jpg" alt="">
-                                                        <div class="banner-caption text-center">
-                                                            <h3 class="white-color text-uppercase">Accessories</h3>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <hr>
-                                                <ul class="list-links">
-                                                    <li>
-                                                        <h3 class="list-links-title">Categories</h3></li>
-                                                    <li><a href="#">Women’s Clothing</a></li>
-                                                    <li><a href="#">Men’s Clothing</a></li>
-                                                    <li><a href="#">Phones & Accessories</a></li>
-                                                    <li><a href="#">Jewelry & Watches</a></li>
-                                                    <li><a href="#">Bags & Shoes</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="hidden-sm hidden-xs">
-                                                    <a class="banner banner-1" href="#">
-                                                        <img src="./img/banner09.jpg" alt="">
-                                                        <div class="banner-caption text-center">
-                                                            <h3 class="white-color text-uppercase">Bags</h3>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <hr>
-                                                <ul class="list-links">
-                                                    <li>
-                                                        <h3 class="list-links-title">Categories</h3></li>
-                                                    <li><a href="#">Women’s Clothing</a></li>
-                                                    <li><a href="#">Men’s Clothing</a></li>
-                                                    <li><a href="#">Phones & Accessories</a></li>
-                                                    <li><a href="#">Jewelry & Watches</a></li>
-                                                    <li><a href="#">Bags & Shoes</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="dropdown mega-dropdown full-width"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Carpoteca<i class="fa fa-caret-down"></i></a>
-                                    <div class="custom-menu">
-                                        <div class="row">
-                                            <div class="col-md-3">
-                                                <div class="hidden-sm hidden-xs">
-                                                    <a class="banner banner-1" href="#">
-                                                        <img src="./img/banner06.jpg" alt="">
-                                                        <div class="banner-caption text-center">
-                                                            <h3 class="white-color text-uppercase">Women’s</h3>
-                                                        </div>
-                                                    </a>
-                                                    <hr>
-                                                </div>
-                                                <ul class="list-links">
-                                                    <li>
-                                                        <h3 class="list-links-title">Categories</h3></li>
-                                                    <li><a href="#">Women’s Clothing</a></li>
-                                                    <li><a href="#">Men’s Clothing</a></li>
-                                                    <li><a href="#">Phones & Accessories</a></li>
-                                                    <li><a href="#">Jewelry & Watches</a></li>
-                                                    <li><a href="#">Bags & Shoes</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="hidden-sm hidden-xs">
-                                                    <a class="banner banner-1" href="#">
-                                                        <img src="./img/banner07.jpg" alt="">
-                                                        <div class="banner-caption text-center">
-                                                            <h3 class="white-color text-uppercase">Men’s</h3>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <hr>
-                                                <ul class="list-links">
-                                                    <li>
-                                                        <h3 class="list-links-title">Categories</h3></li>
-                                                    <li><a href="#">Women’s Clothing</a></li>
-                                                    <li><a href="#">Men’s Clothing</a></li>
-                                                    <li><a href="#">Phones & Accessories</a></li>
-                                                    <li><a href="#">Jewelry & Watches</a></li>
-                                                    <li><a href="#">Bags & Shoes</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="hidden-sm hidden-xs">
-                                                    <a class="banner banner-1" href="#">
-                                                        <img src="./img/banner08.jpg" alt="">
-                                                        <div class="banner-caption text-center">
-                                                            <h3 class="white-color text-uppercase">Accessories</h3>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <hr>
-                                                <ul class="list-links">
-                                                    <li>
-                                                        <h3 class="list-links-title">Categories</h3></li>
-                                                    <li><a href="#">Women’s Clothing</a></li>
-                                                    <li><a href="#">Men’s Clothing</a></li>
-                                                    <li><a href="#">Phones & Accessories</a></li>
-                                                    <li><a href="#">Jewelry & Watches</a></li>
-                                                    <li><a href="#">Bags & Shoes</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="hidden-sm hidden-xs">
-                                                    <a class="banner banner-1" href="#">
-                                                        <img src="./img/banner09.jpg" alt="">
-                                                        <div class="banner-caption text-center">
-                                                            <h3 class="white-color text-uppercase">Bags</h3>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <hr>
-                                                <ul class="list-links">
-                                                    <li>
-                                                        <h3 class="list-links-title">Categories</h3></li>
-                                                    <li><a href="#">Women’s Clothing</a></li>
-                                                    <li><a href="#">Men’s Clothing</a></li>
-                                                    <li><a href="#">Phones & Accessories</a></li>
-                                                    <li><a href="#">Jewelry & Watches</a></li>
-                                                    <li><a href="#">Bags & Shoes</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-
-                            </ul>
-                        </div>
-                        <!-- menu nav -->
-                    </div>
                 </div>
-                <!-- /container -->
-            </div>
-        </div>
-        <!-- /NAVIGATION -->
-
-        <!-- BREADCRUMB -->
-        <div id="breadcrumb">
-            <div class="container">
-                <ul class="breadcrumb">
-                    <li><a href="./php/logado.php">Página Inicial</a></li>
-                    <li class="active">Fichamento da Carpoteca</li>
-                </ul>
-            </div>
-        </div>
-        <!-- /BREADCRUMB -->
-
-        <!-- section -->
-        <div class="section">
-            <!-- container -->
-            <div class="tabelaFormulario"><!--se bugar mude a class para uma id-->
-                <div class="row">
-
-                    <form id="checkout-form" class="clearfix" action="php/cadastroDasPlantas.php" method="POST">
-                        <div class="section-title" id="cadastro">
-                            <h3 class="title">Fichamento da Carpoteca</h3>
-                        </div>
-                        <div class="col-md-6">
-
-                            <div id="fichamento1">
-
-                                <ul class="size-option">
-                                    <li class="form-group"><label class="text-uppercase" id="formularioLabel">Nome Científico:</label></li>
-                                    <li class="form-group"><label class="text-uppercase" id="formularioLabel">Nome Popular:</label></li>
-                                </ul>
-
-                                <ul class="size-option">
-
-                                    <li class="form-group" id="select6">
-                                        <select class="input search-categories" id="formulario" name="nomeCientifico">
-                                            <option value="0">Todos</option>
-                                            <option value="1">Category 01</option>
-                                            <option onclick="extraFormulario6()">Outro</option>
-                                        </select>
-
-<!--<input class="input search-input" id="formulario" name="nomeCientifico" type="text" placeholder="Nome Científico">-->
-                                    </li>
-
-                                    <li class="form-group">
-                                        <input class="input search-input" id="formulario" name="nomePopular" type="text" placeholder="Nome Popular">
-                                    </li> 
-                                </ul>
 
 
-                                <div id="f6"></div>
+                <!-- menu nav -->
+                <div class="menu-nav">
+                    <span class="menu-header">Menu <i class="fa fa-bars"></i></span>
+                    <ul class="menu-list">
+                        <li id="inicio"><a href="logIndex.php"><span class="category-header">Início <!--<i class="fa fa-list"></i>--></span></a></li>
+                        <li class="dropdown mega-dropdown full-width"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Divisão <i class="fa fa-caret-down"></i></a>
+                            <div class="custom-menu">
+                                <div class="row">
 
 
-                                <ul class="size-option">
-                                    <li class="form-group"><label class="text-uppercase" id="formularioLabel">Divisão:</label></li>
-                                    <li class="form-group"><label class="text-uppercase" id="formularioLabel">Classe:</label></li>
-                                </ul>
+                                    <div class="col-md-3">
+                                        <ul class="list-links">
+                                            <li><h3 class='list-links-title'>Categorias</h3></li>
+                                            <?php
+                                            $DivisaoSelect = "SELECT divisao FROM plantas LIMIT 39";
 
-                                <ul class="size-option">
-                                    <li class="form-group" id="select7">
-                                        <select class="input search-categories" id="formulario" name="divisaoFormulario">
-                                            <option value="0">Todos</option>
-                                            <option value="1">Category 01</option>
-                                            <option onclick="extraFormulario7()">Outro</option>
-                                        </select>
-                                            <!--<input class="input search-input" id="formulario" name="filoFormulario" type="text" placeholder="Filo">-->
-                                    </li>
-                                    <!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
-
-                                    <li class="form-group" id="select8">
-                                        <select class="input search-categories" id="formulario" name="classeFormulario">
-                                            <option value="0">Todos</option>
-                                            <option value="1">Category 01</option>
-                                            <option onclick="extraFormulario8()">Outro</option>
-                                        </select>
-                                            <!--<input class="input search-input" id="formulario" name="classeFormulario" type="text" placeholder="Classe">-->
-
-                                    </li>
-                                </ul>
-                                <table>
-                                    <tr>
-                                        <td id="f7"></td>
-                                        <td id="f8"></td>
-                                    </tr>
-                                </table>
+                                            $resultadoDivisao = $conecta->query(($DivisaoSelect));
+                                            if ($resultadoDivisao->num_rows > 0) {
 
 
+                                                for ($i = 0; $i < $linhaDivisao = $resultadoDivisao->fetch_assoc(); $i++) {
+                                                    echo "<li><a href='logDivisoes.php'>" . $linhaDivisao["divisao"] . "</a></li>";
+                                                    if (($i + 1) % 6 == 0) {
+                                                        echo "</ul>"
+                                                        . "</div>"
+                                                        . "<ul class='list-links'>"
+                                                        . "<li><h3 class='list-links-title'>Categorias</h3></li>"
+                                                        ;
+                                                    }
+
+                                                    if ($i == $linhaDivisao = $resultadoDivisao->fetch_assoc()) {
+                                                        echo "</ul>"
+                                                        . "<hr class='hidden-md hidden-lg'>"
+                                                        . "</div>";
+                                                    }
+
+                                                    if ($i + 1 >= 20) {
+                                                        echo "</div><bottom>Add</bottom>";
+                                                        return;
+                                                    }
+                                                }
+                                            } else {
+                                                echo "0 resultados";
+                                            }
+                                            ?>
 
 
-                                <ul class="size-option">
-                                    <li class="form-group"><label class="text-uppercase" id="formularioLabel">Ordem:</label></li>
-                                    <li class="form-group"><label class="text-uppercase" id="formularioLabel">Família:</label></li>
-                                </ul>
-                                <ul class="size-option">
+                                    </div>         
 
-                                    <li class="form-group" id="select9">
-                                        <select class="input search-categories" id="formulario" name="ordemFormulario">
-                                            <option value="0">Todos</option>
-                                            <option value="1">Category 01</option>
-                                            <option value="1">Category 02</option>
-                                            <option onclick="extraFormulario9()">Outro</option>
-                                        </select>
-                                            <!--<input class="input search-input" id="formulario" name="ordemFormulario" type="text" placeholder="Ordem">-->
-                                    </li>
-                                    <!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+                                    <li class="dropdown mega-dropdown full-width"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Classe <i class="fa fa-caret-down"></i></a>
+                                        <div class="custom-menu">
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <ul class="list-links">
+                                                        <li><h3 class='list-links-title'>Categorias</h3></li>
+                                                        <?php
+                                                        $ClasseSelect = "SELECT classe FROM plantas LIMIT 39";
 
-                                    <li class="form-group" id="select10">
-                                        <select class="input search-categories" id="formulario" name="familiaFormulario">
-                                            <option value="0">Todos</option>
-                                            <option value="1">Category 01</option>
-                                            <option value="1">Category 02</option>
-                                            <option onclick="extraFormulario10()">Outro</option>
-                                        </select>
-                                            <!--<input class="input search-input" id="formulario" name="familiaFormulario" type="text" placeholder="Família">-->
-
-                                    </li>
-                                </ul>
-
-                                <table>
-                                    <tr>
-                                        <td id="f9"></td>
-                                        <td id="f10"></td>
-                                    </tr>
-                                </table>
-
-                                <ul class="size-option">
-                                    <li class="form-group"><label class="text-uppercase">Imagem:</label></li>
-                                </ul>
-                                <ul class="size-option">
-                                    <li class="form-group">
-                                        <input type="file" id="formulario" name="fotoCarpoteca1" size="25">
-                                    </li>
-                                    <li class="form-group">
-                                        <input type="file" id="formulario" name="fotoCarpoteca2" size="25">
-                                    </li>
-                                </ul>
-                                <ul class="size-option">
-                                    <li class="form-group">
-                                        <input type="file" id="formulario" name="fotoCarpoteca3" size="25">
-                                    </li>
-                                    <li class="form-group">
-                                        <input type="file" id="formulario" name="fotoCarpoteca4" size="25">
-                                    </li>
-                                </ul>
+                                                        $resultadoClasse = $conecta->query(($ClasseSelect));
+                                                        if ($resultadoClasse->num_rows > 0) {
 
 
+                                                            for ($i = 0; $i < $linhaClasse = $resultadoClasse->fetch_assoc(); $i++) {
+                                                                echo "<li><a href='logClasses.php'>" . $linhaClasse["classe"] . "</a></li>";
+                                                                if (($i + 1) % 6 == 0) {
+                                                                    echo "</ul>"
+                                                                    . "</div>"
+                                                                    . "<ul class='list-links'>"
+                                                                    . "<li><h3 class='list-links-title'>Categorias</h3></li>"
+                                                                    ;
+                                                                }
+
+                                                                if ($i == $linhaClasse = $resultadoClasse->fetch_assoc()) {
+                                                                    echo "</ul>"
+                                                                    . "<hr class='hidden-md hidden-lg'>"
+                                                                    . "</div>";
+                                                                }
+
+                                                                if ($i + 1 >= 20) {
+                                                                    echo "</div><bottom>Add</bottom>";
+                                                                    return;
+                                                                }
+                                                            }
+                                                        } else {
+                                                            echo "0 resultados";
+                                                        }
+                                                        ?>
 
 
-                                </ul>
-                            </div>         
+                                                </div>      
+                                                <li class="dropdown mega-dropdown full-width"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Ordem <i class="fa fa-caret-down"></i></a>
+                                                    <div class="custom-menu">
+                                                        <div class="row">
 
-                        </div>
-                        <div class="col-lg-6">
-                            <table id="fichamento2">
-                                <tr>
-                                    <td> <label class="text-uppercase">Descrição: </label></td>
-                                </tr>
-                                <tr>
-                                    <td><textarea name="descricaoCarpoteca" id="ckeditor" class="ckeditor" maxlength="3000"></textarea></td> 
-                                </tr>
-                                <tr class="pull-right">
-                                    <td><input type="submit" class="primary-btn" value="Adicionar dados da Carpoteca"></td>
-                                </tr>
-                            </table>
+                                                            <div class="col-md-3">
+                                                                <ul class="list-links">
+                                                                    <li><h3 class='list-links-title'>Categorias</h3></li>
+                                                                    <?php
+                                                                    $OrdemSelect = "SELECT ordem FROM plantas LIMIT 39";
 
-                        </div>
-
-                    </form>
-                </div>
-            </div>
-            <!-- /container -->
-        </div>
-        <!-- /section -->
+                                                                    $resultadoOrdem = $conecta->query(($OrdemSelect));
+                                                                    if ($resultadoOrdem->num_rows > 0) {
 
 
-        <!-- FOOTER -->
-        <footer id="footer" class="section section-grey">
-            <!-- container -->
-            <div class="container">
-                <!-- row -->
-                <div class="row">
-                    <!-- footer widget -->
-                    <div class="col-md-3 col-sm-6 col-xs-6">
-                        <div class="footer">
-                            <!-- footer logo -->
-                            <div class="footer-logo">
-                                <a class="logo" href="#">
-                                    <img src="./img/logo.png" alt="">
-                                </a>
-                            </div>
-                            <!-- /footer logo -->
+                                                                        for ($i = 0; $i < $linhaOrdem = $resultadoOrdem->fetch_assoc(); $i++) {
+                                                                            echo "<li><a href='logOrdens.php'>" . $linhaOrdem["ordem"] . "</a></li>";
+                                                                            if (($i + 1) % 6 == 0) {
+                                                                                echo "</ul>"
+                                                                                . "</div>"
+                                                                                . "<ul class='list-links'>"
+                                                                                . "<li><h3 class='list-links-title'>Categorias</h3></li>"
+                                                                                ;
+                                                                            }
 
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
+                                                                            if ($i == $linhaOrdem = $resultadoOrdem->fetch_assoc()) {
+                                                                                echo "</ul>"
+                                                                                . "<hr class='hidden-md hidden-lg'>"
+                                                                                . "</div>";
+                                                                            }
 
-
-                        </div>
-                    </div>
-
-                </div>
-                <!-- /row -->
-                <hr>
-                <!-- row -->
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2 text-center">
-                        <!-- footer copyright -->
-                        <div class="footer-copyright">
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        </div>
-                        <!-- /footer copyright -->
-                    </div>
-                </div>
-                <!-- /row -->
-            </div>
-            <!-- /container -->
-        </footer>
-
-        <!-- /FOOTER -->
+                                                                            if ($i + 1 >= 20) {
+                                                                                echo "</div><bottom>Add</bottom>";
+                                                                                return;
+                                                                            }
+                                                                        }
+                                                                    } else {
+                                                                        echo "0 resultados";
+                                                                    }
+                                                                    ?>
 
 
-        <!-- jQuery Plugins -->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/slick.min.js"></script>
-        <script src="js/nouislider.min.js"></script>
-        <script src="js/jquery.zoom.min.js"></script>
-        <script src="js/main.js"></script>
+                                                            </div>      
+                                                            <li class="dropdown mega-dropdown full-width"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Família <i class="fa fa-caret-down"></i></a>
+                                                                <div class="custom-menu">
+                                                                    <div class="row">
+                                                                        <div class="col-md-3">
+                                                                            <ul class="list-links">
+                                                                                <li><h3 class='list-links-title'>Categorias</h3></li>
+                                                                                <?php
+                                                                                $FamiliaSelect = "SELECT familia FROM plantas LIMIT 39";
 
-    </body>
+                                                                                $resultadoFamilia = $conecta->query(($FamiliaSelect));
+                                                                                if ($resultadoFamilia->num_rows > 0) {
 
-</html>
+
+                                                                                    for ($i = 0; $i < $linhaFamilia = $resultadoFamilia->fetch_assoc(); $i++) {
+                                                                                        echo "<li><a href='logFamilias.php'>" . $linhaFamilia["familia"] . "</a></li>";
+                                                                                        if (($i + 1) % 6 == 0) {
+                                                                                            echo "</ul>"
+                                                                                            . "</div>"
+                                                                                            . "<ul class='list-links'>"
+                                                                                            . "<li><h3 class='list-links-title'>Categorias</h3></li>"
+                                                                                            ;
+                                                                                        }
+
+                                                                                        if ($i == $linhaFamilia = $resultadoFamilia->fetch_assoc()) {
+                                                                                            echo "</ul>"
+                                                                                            . "<hr class='hidden-md hidden-lg'>"
+                                                                                            . "</div>";
+                                                                                        }
+
+                                                                                        if ($i + 1 >= 20) {
+                                                                                            echo "</div><bottom>Add</bottom>";
+                                                                                            return;
+                                                                                        }
+                                                                                    }
+                                                                                } else {
+                                                                                    echo "0 resultados";
+                                                                                }
+                                                                                ?>
+
+
+                                                                        </div>      
+                                                                        <li class="dropdown mega-dropdown full-width"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Carpoteca<i class="fa fa-caret-down"></i></a>
+                                                                            <div class="custom-menu">
+                                                                                <div class="row">
+                                                                                    <div class="col-md-3">
+                                                                                        <ul class="list-links">
+                                                                                            <li><h3 class='list-links-title'>Categorias</h3></li>
+                                                                                            <?php
+                                                                                            $CarpotecaSelect = "SELECT nomeCientificoCarpoteca FROM carpoteca LIMIT 39";
+
+                                                                                            $resultadoCarpoteca = $conecta->query(($CarpotecaSelect));
+                                                                                            if ($resultadoCarpoteca->num_rows > 0) {
+
+
+                                                                                                for ($i = 0; $i < $linhaCarpoteca = $resultadoCarpoteca->fetch_assoc(); $i++) {
+                                                                                                    echo "<li><a href='logCarpotecas.php'>" . $linhaCarpoteca["nomeCientificoCarpoteca"] . "</a></li>";
+                                                                                                    if (($i + 1) % 6 == 0) {
+                                                                                                        echo "</ul>"
+                                                                                                        . "</div>"
+                                                                                                        . "<ul class='list-links'>"
+                                                                                                        . "<li><h3 class='list-links-title'>Categorias</h3></li>"
+                                                                                                        ;
+                                                                                                    }
+
+                                                                                                    if ($i == $linhaCarpoteca = $resultadoCarpoteca->fetch_assoc()) {
+                                                                                                        echo "</ul>"
+                                                                                                        . "<hr class='hidden-md hidden-lg'>"
+                                                                                                        . "</div>";
+                                                                                                    }
+
+                                                                                                    if ($i + 1 >= 20) {
+                                                                                                        echo "</div><bottom>Add</bottom>";
+                                                                                                        return;
+                                                                                                    }
+                                                                                                }
+                                                                                            } else {
+                                                                                                echo "0 resultados";
+                                                                                            }
+                                                                                            ?>
+
+
+                                                                                    </div>      
+                                                                                </div>
+                                                                            </div>
+                                                                        </li>
+
+                                                                        </ul>
+                                                                    </div>
+                                                                    <!-- menu nav -->
+                                                                </div>
+                                                        </div>
+                                                        <!-- /container -->
+
+                                                    </div>
+                                            </div>
+                                            <!-- /NAVIGATION -->
+
+                                            <!-- BREADCRUMB -->
+                                            <div id="breadcrumb">
+                                                <div class="container">
+                                                    <ul class="breadcrumb">
+                                                        <li><a href="logIndex.php">Página Inicial</a></li>
+                                                        <li class="active">Fichamento da Carpoteca</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <!-- /BREADCRUMB -->
+
+                                            <!-- section -->
+                                            <div class="section">
+                                                <!-- container -->
+                                                <div class="tabelaFormulario"><!--se bugar mude a class para uma id-->
+                                                    <div class="row">
+
+                                                        
+                                                            <div class="section-title" id="cadastro">
+                                                                <h3 class="title">Fichamento da Carpoteca</h3>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <form id="checkout-form" class="clearfix" action="php/cadastroCarpoteca.php" method="POST">
+                                                                <?php
+                                                                $formulario1 = "SELECT a.nomeCientificoCarpoteca, a.nomePopularCarpoteca, b.divisao, b.classe, b.ordem, b.familia FROM carpoteca as a inner join plantas as b on a.id = b.id";
+
+                                                                $resultadoFormulario2 = $conecta->query($formulario1);
+                                                                if ($resultadoFormulario2->num_rows > 0) {
+                                                                    while ($linhaFormulario2 = $resultadoFormulario2->fetch_assoc()) {
+                                                                        echo "<table id='fichamento1'>
+                                                                        <tr class='size-option'>
+                                                                                <td class='form-group'><label class='text-uppercase' id='formularioLabel'>Nome Científico:</label></td>
+                                                                                <td class='form-group'><label class='text-uppercase' id='formularioLabel'>Nome Popular:</label></td>
+                                                                            </tr>
+
+                                                                            <tr class='size-option'>
+                                                                                <td class='form-group' id='select6'>
+                                                                                <select class='input search-categories' id='formulario' name='nomeCientificoCarpoteca'>
+                                                                                <option>Selecione</option>
+                                                                                <option>" . $linhaFormulario2["nomeCientificoCarpoteca"] . "</option>
+                                                                                <option onclick='extraFormulario6()'>Outro</option>
+                                                                                </select></td>
+                                                                                
+                                                                                <td class='form-group'>
+                                                                                    <input class='input search-input' id='formulario' name='nomePopularCarpoteca' type='text' placeholder='Nome Popular'>
+                                                                                </td>                                                                                 
+
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td id='f6'></td>
+                                                                            </tr>
+                                                                            
+
+                                                                            <tr class='size-option'>
+                                                                                <td class='form-group'><label class='text-uppercase' id='formularioLabel'>Divisão:</label></td>
+                                                                                <td class='form-group'><label class='text-uppercase' id='formularioLabel'>Classe:</label></td>
+                                                                            </tr>
+
+                                                                            <tr>
+                                                                                <td class='form-group' id='select7'>
+                                                                                    <select class='input search-categories' id='formulario' name='divisaoFormulario'>
+                                                                                    <option>Selecione</option>
+                                                                                    <option>" . $linhaFormulario2["divisao"] . "</option>
+                                                                                    <option onclick='extraFormulario7()'>Outro</option>
+                                                                                    </select></td>
+                                                                                <td class='form-group' id='select8'>
+                                                                                    <select class='input search-categories' id='formulario' name='classeFormulario'>
+                                                                                    <option>Selecione</option>
+                                                                                    <option>" . $linhaFormulario2["classe"] . "</option>
+                                                                                    <option onclick='extraFormulario8()'>Outro</option>
+                                                                                    </select></td>
+                                                                            </tr>
+
+
+                                                                            <tr class='size-option'>
+                                                                                <td class='form-group' id='f7'></td>
+                                                                                <td class='form-group' id='f8'></td>
+                                                                            </tr>
+
+
+                                                                            <tr class='size-option'>
+                                                                                <td class='form-group'><label class='text-uppercase' id='formularioLabel'>Ordem:</label></td>
+                                                                                <td class='form-group'><label class='text-uppercase' id='formularioLabel'>Família:</label></td>
+                                                                            </tr>
+                                                                            <tr class='size-option'>
+                                                                                <td class='form-group' id='select9'>
+                                                                                <select class='input search-categories' id='formulario' name='ordemFormulario'>
+                                                                                <option>" . $linhaFormulario2["ordem"] . "</option>
+                                                                                <option onclick='extraFormulario9()'>Outro</option>
+                                                                                </select></td>
+
+                                                                                <td class='form-group' id='select10'>
+                                                                                <select class='input search-categories' id='formulario' name='familiaFormulario'>
+                                                                                <option>Selecione</option>
+                                                                                <option>" . $linhaFormulario2["familia"] . "</option>
+                                                                                <option onclick='extraFormulario10()'>Outro</option>
+                                                                                </select></td>
+
+                                                                            </tr>
+                                                                            
+                                                                                <tr class='size-option'>
+                                                                                    <td class='form-group' id='f9'></td>
+                                                                                    <td class='form-group' id='f10'></td>
+                                                                                </tr>
+
+                                                                                <tr class='size-option'>
+                                                                                    <td colspan='2' class='form-group'><label class='text-uppercase'>Imagem:</label></td>
+                                                                                </tr>
+                                                                                <tr class='size-option'>
+                                                                                    <td class='form-group'>
+                                                                                        <input type='file' id='formulario' name='fotoCarpoteca1' size='25'>
+                                                                                    </td>
+                                                                                    <td class='form-group'>
+                                                                                        <input type='file' id='formulario' name='fotoCarpoteca2' size='25'>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr class='size-option'>
+                                                                                    <td class='form-group'>
+                                                                                        <input type='file' id='formulario' name='fotoCarpoteca3' size='25'>
+                                                                                    </td>
+                                                                                    <td class='form-group'>
+                                                                                        <input type='file' id='formulario' name='fotoCarpoteca4' size='25'>
+                                                                                    </td>
+                                                                                </tr>
+
+                                                                            </table>";
+
+                                                                               
+                                                                    }
+                                                                } else {
+                                                                    echo "<table id='fichamento1'>
+                                                                        <tr class='size-option'>
+                                                                                <td class='form-group'><label class='text-uppercase' id='formularioLabel'>Nome Científico:</label></td>
+                                                                                <td class='form-group'><label class='text-uppercase' id='formularioLabel'>Nome Popular:</label></td>
+                                                                            </tr>
+
+                                                                            <tr class='size-option'>
+                                                                                <td class='form-group'><input class='input search-input' id='formulario' name='nomeCientificoCarpoteca' type='text' placeholder='Nome Científico da Carpoteca'></td>
+                                                                                
+                                                                                <td class='form-group'>
+                                                                                    <input class='input search-input' id='formulario' name='nomePopularCarpoteca' type='text' placeholder='Nome Popular'>
+                                                                                </td>                                                                                 
+
+                                                                            </tr>
+                                                                 
+                                                                            <tr class='size-option'>
+                                                                                <td class='form-group'><label class='text-uppercase' id='formularioLabel'>Divisão:</label></td>
+                                                                                <td class='form-group'><label class='text-uppercase' id='formularioLabel'>Classe:</label></td>
+                                                                            </tr>
+
+                                                                            <tr>
+                                                                                <td class='form-group'><input class='input search-input' id='formulario' name='divisaoFormulario' type='text' placeholder='Divisão'></td>
+                                                                                <td class='form-group'><input class='input search-input' id='formulario' name='classeFormulario' type='text' placeholder='Classe'></td>
+                                                                            </tr>
+
+                                                                            <tr class='size-option'>
+                                                                                <td class='form-group'><label class='text-uppercase' id='formularioLabel'>Ordem:</label></td>
+                                                                                <td class='form-group'><label class='text-uppercase' id='formularioLabel'>Família:</label></td>
+                                                                            </tr>
+                                                                            <tr class='size-option'>
+                                                                                <td class='form-group'><input class='input search-input' id='formulario' name='ordemFormulario' type='text' placeholder='Ordem'></td>
+
+                                                                                <td class='form-group'><input class='input search-input' id='formulario' name='familiaFormulario' type='text' placeholder='Família'></td>
+
+                                                                            </tr>
+                                                                            
+                                                                                <tr class='size-option'>
+                                                                                    <td class='form-group' id='f4'></td>
+                                                                                    <td class='form-group' id='f5'></td>
+                                                                                </tr>
+
+                                                                                <tr class='size-option'>
+                                                                                    <td colspan='2' class='form-group'><label class='text-uppercase'>Imagem:</label></td>
+                                                                                </tr>
+                                                                                <tr class='size-option'>
+                                                                                    <td class='form-group'>
+                                                                                        <input type='file' id='formulario' name='fotoPlanta1' size='25'>
+                                                                                    </td>
+                                                                                    <td class='form-group'>
+                                                                                        <input type='file' id='formulario' name='fotoPlanta2' size='25'>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr class='size-option'>
+                                                                                    <td class='form-group'>
+                                                                                        <input type='file' id='formulario' name='fotoPlanta3' size='25'>
+                                                                                    </td>
+                                                                                    <td class='form-group'>
+                                                                                        <input type='file' id='formulario' name='fotoPlanta4' size='25'>
+                                                                                    </td>
+                                                                                </tr>
+
+                                                                            </table>";
+                                                                }
+                                                                ?>
+                                                        </form>
+
+
+
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <table id="fichamento2">
+                                                            <tr>
+                                                                <td> <label class="text-uppercase">Descrição: </label></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><textarea name="descricao" id="ckeditor" class="ckeditor" maxlength="3000"></textarea></td> 
+                                                            </tr>
+                                                            <tr class="pull-right">
+                                                                <td><input type="submit" class="primary-btn" value="Adicionar Carpoteca"></td>
+                                                            </tr>
+                                                        </table>
+
+                                                    </div>
+
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <!-- /container -->
+                                        </div>
+                                        <!-- /section -->
+
+
+                                        <!-- FOOTER -->
+                                        <footer id="footer" class="section section-grey">
+                                            <!-- container -->
+                                            <div class="container">
+                                                <!-- row -->
+                                                <div class="row">
+                                                    <!-- footer widget -->
+                                                    <div class="col-md-3 col-sm-6 col-xs-6">
+                                                        <div class="footer">
+                                                            <!-- footer logo -->
+                                                            <div class="footer-logo">
+                                                                <a class="logo" href="#">
+                                                                    <img src="./img/logo.png" alt="">
+                                                                </a>
+                                                            </div>
+                                                            <!-- /footer logo -->
+
+                                                            <p style="text-align: justify;"> Tal plataforma está sendo criada de modo a aprimorar o banco de dados de plantas do bioma Cerrado e contribuir para a 
+                                                                            pesquisa e identificação de plantas otimizando o tempo gasto por pesquisadores e alunos na classificação de uma espécie alvo.</p>
+
+
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <!-- /row -->
+                                                <hr>
+                                                <!-- row -->
+                                                <div class="row">
+                                                    <div class="col-md-8 col-md-offset-2 text-center">
+                                                        <!-- footer copyright -->
+                                                        <div class="footer-copyright">
+                                                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                                            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                                                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                                        </div>
+                                                        <!-- /footer copyright -->
+                                                    </div>
+                                                </div>
+                                                <!-- /row -->
+                                            </div>
+                                            <!-- /container -->
+                                        </footer>
+
+                                        <!-- /FOOTER -->
+
+
+                                        <!-- jQuery Plugins -->
+                                        <script src="js/jquery.min.js"></script>
+                                        <script src="js/bootstrap.min.js"></script>
+                                        <script src="js/slick.min.js"></script>
+                                        <script src="js/nouislider.min.js"></script>
+                                        <script src="js/jquery.zoom.min.js"></script>
+                                        <script src="js/main.js"></script>
+                                        <?php $conecta->close(); ?>
+                                        </body>
+
+                                        </html>
 
