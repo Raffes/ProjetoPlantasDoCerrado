@@ -62,7 +62,8 @@
                     </div>
                     <div class="pull-right">
                         <ul class="header-btns">
-                            <!-- Account --><li class="header-account dropdown default-dropdown">
+                            <!-- Account -->
+                            <li class="header-account dropdown default-dropdown">
                                 <div class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">
                                     <div class="header-btns-icon">
                                         <i class="fa fa-user-o"></i>
@@ -289,14 +290,14 @@
                                                                                         <ul class="list-links">
                                                                                             <li><h3 class='list-links-title'>Categorias</h3></li>
                                                                                             <?php
-                                                                                            $CarpotecaSelect = "SELECT nomeCientifico FROM carpoteca LIMIT 39";
+                                                                                            $CarpotecaSelect = "SELECT nomeCientificoCarpoteca FROM carpoteca LIMIT 39";
 
                                                                                             $resultadoCarpoteca = $conecta->query(($CarpotecaSelect));
                                                                                             if ($resultadoCarpoteca->num_rows > 0) {
 
 
                                                                                                 for ($i = 0; $i < $linhaCarpoteca = $resultadoCarpoteca->fetch_assoc(); $i++) {
-                                                                                                    echo "<li><a href='logCarpotecas.php'>" . $linhaCarpoteca["nomeCientifico"] . "</a></li>";
+                                                                                                    echo "<li><a href='logCarpotecas.php'>" . $linhaCarpoteca["nomeCientificoCarpoteca"] . "</a></li>";
                                                                                                     if (($i + 1) % 6 == 0) {
                                                                                                         echo "</ul>"
                                                                                                         . "</div>"
@@ -342,7 +343,7 @@
                                             <div id="breadcrumb">
                                                 <div class="container">
                                                     <ul class="breadcrumb">
-                                                        <li><a href="./php/logado.php">Página Inicial</a></li>
+                                                        <li><a href="logIndex.php">Página Inicial</a></li>
                                                         <li class="active">Fichamento da Planta</li>
                                                     </ul>
                                                 </div>
@@ -355,246 +356,266 @@
                                                 <div class="tabelaFormulario"><!--se bugar mude a class para uma id-->
                                                     <div class="row">
 
-                                                        <form id="checkout-form" class="clearfix" action="php/cadastroDasPlantas.php" method="POST">
+                                                        
                                                             <div class="section-title" id="cadastro">
                                                                 <h3 class="title">Fichamento da Planta</h3>
                                                             </div>
                                                             <div class="col-md-6">
+                                                                <form id="checkout-form" class="clearfix" action="php/cadastroDasPlantas.php" method="POST">
+                                                                <?php
+                                                                $formulario1 = "SELECT nomeCientifico, nomePopular, divisao, classe, ordem, familia FROM plantas";
 
-                                                                <table id="fichamento1">
+                                                                $resultadoFormulario1 = $conecta->query($formulario1);
+                                                                if ($resultadoFormulario1->num_rows > 0) {
+                                                                    while ($linhaFormulario1 = $resultadoFormulario1->fetch_assoc()) {
+                                                                        echo "<table id='fichamento1'>
+                                                                        <tr class='size-option'>
+                                                                                <td class='form-group'><label class='text-uppercase' id='formularioLabel'>Nome Científico:</label></td>
+                                                                                <td class='form-group'><label class='text-uppercase' id='formularioLabel'>Nome Popular:</label></td>
+                                                                            </tr>
 
-                                                                    <tr class="size-option">
-                                                                        <td class="form-group"><label class="text-uppercase" id="formularioLabel">Nome Científico:</label></td>
-                                                                        <td class="form-group"><label class="text-uppercase" id="formularioLabel">Nome Popular:</label></td>
-                                                                    </tr>
-
-                                                                    <tr class="size-option">
-
-                                                                        <?php
-                                                                        $nomeCientificoPlanta = "SELECT nomeCientifico FROM plantas";
-
-                                                                        $resultNomeCientificoPlanta = $conecta->query(($nomeCientificoPlanta));
-                                                                        if ($resultNomeCientificoPlanta->num_rows > 0) {
-                                                                            while ($linhaNomeCientificoPlanta = $resultNomeCientificoPlanta->fetch_assoc()) {
-                                                                                echo "<td class='form-group' id='select1'>
-                                                                                <select class='input search-categories' id='formulario' name='divisaoFormularioPlanta'>
-                                                                                <option>" . $linhaNomeCientificoPlanta["nomeCientifico"] . "</option>
+                                                                            <tr class='size-option'>
+                                                                                <td class='form-group' id='select1'>
+                                                                                <select class='input search-categories' id='formulario' name='nomeCientificoPlanta'>
+                                                                                <option>Selecione</option>
+                                                                                <option>" . $linhaFormulario1["nomeCientifico"] . "</option>
                                                                                 <option onclick='extraFormulario1()'>Outro</option>
-                                                                                </select></td>";
-                                                                            }
-                                                                        } else {
-                                                                            echo "<td class='form-group'>"
-                                                                            . "<input class='input search-input' id='formulario' name='nomeCientificoPlanta' type='text' placeholder='Nome Científico da Planta'></td>";
-                                                                        }
-                                                                        ?>
+                                                                                </select></td>
+                                                                                
+                                                                                <td class='form-group'>
+                                                                                    <input class='input search-input' id='formulario' name='nomePopular' type='text' placeholder='Nome Popular'>
+                                                                                </td>                                                                                 
 
-                                                                        <td class="form-group">
-                                                                            <input class="input search-input" id="formulario" name="nomePopular" type="text" placeholder="Nome Popular">
-                                                                        </td> 
-                                                                    </tr>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td id='f1'></td>
+                                                                            </tr>
+                                                                            
 
-                                                                    <tr>
-                                                                        <td id="f1"></td>
-                                                                    </tr>
+                                                                            <tr class='size-option'>
+                                                                                <td class='form-group'><label class='text-uppercase' id='formularioLabel'>Divisão:</label></td>
+                                                                                <td class='form-group'><label class='text-uppercase' id='formularioLabel'>Classe:</label></td>
+                                                                            </tr>
 
-                                                                    <tr class="size-option">
-                                                                        <td class="form-group"><label class="text-uppercase" id="formularioLabel">Divisão:</label></td>
-                                                                        <td class="form-group"><label class="text-uppercase" id="formularioLabel">Classe:</label></td>
-                                                                    </tr>
-
-                                                                    <tr>
-                                                                        <?php
-                                                                        $divisaoForm = "SELECT divisao FROM plantas";
-
-                                                                        $resultDivisaoForm = $conecta->query(($divisaoForm));
-                                                                        if ($resultDivisaoForm->num_rows > 0) {
-                                                                            while ($linhaDivisaoForm = $resultDivisaoForm->fetch_assoc()) {
-                                                                                echo "<td class='form-group' id='select2'>
-                                                                                <select class='input search-categories' id='formulario' name='divisaoFormulario'>
-                                                                                <option>" . $linhaDivisaoForm["divisao"] . "</option>
-                                                                                <option onclick='extraFormulario2()'>Outro</option>
-                                                                                </select></td>";
-                                                                            }
-                                                                        } else {
-                                                                            echo "<td class='form-group'>"
-                                                                            . "<input class='input search-input' id='formulario' name='divisaoFormulario' type='text' placeholder='Divisão'></td>";
-                                                                        }
+                                                                            <tr>
+                                                                                <td class='form-group' id='select2'>
+                                                                                    <select class='input search-categories' id='formulario' name='divisaoFormulario'>
+                                                                                    <option>Selecione</option>
+                                                                                    <option>" . $linhaFormulario1["divisao"] . "</option>
+                                                                                    <option onclick='extraFormulario2()'>Outro</option>
+                                                                                    </select></td>
+                                                                                <td class='form-group' id='select3'>
+                                                                                    <select class='input search-categories' id='formulario' name='classeFormulario'>
+                                                                                    <option>Selecione</option>
+                                                                                    <option>" . $linhaFormulario1["classe"] . "</option>
+                                                                                    <option onclick='extraFormulario2()'>Outro</option>
+                                                                                    </select></td>
+                                                                            </tr>
 
 
-                                                                        $classeForm = "SELECT classe FROM plantas";
-
-                                                                        $resultClasseForm = $conecta->query(($classeForm));
-                                                                        if ($resultClasseForm->num_rows > 0) {
-                                                                            while ($linhaClasseFiltro = $resultClasseForm->fetch_assoc()) {
-                                                                                echo "<td class='form-group' id='select3'>
-                                                                                <select class='input search-categories' id='formulario' name='classeFormulario'>
-                                                                                <option>" . $linhaClasseFiltro["classe"] . "</option>
-                                                                                </select></td>";
-                                                                            }
-                                                                        } else {
-                                                                            echo "<td class='form-group'>"
-                                                                            . "<input class='input search-input' id='formulario' name='classeFormulario' type='text' placeholder='Classe'></td>";
-                                                                        }
-                                                                        ?>
-                                                                    </tr>
+                                                                            <tr class='size-option'>
+                                                                                <td class='form-group' id='f2'></td>
+                                                                                <td class='form-group' id='f3'></td>
+                                                                            </tr>
 
 
-                                                                    <tr class="size-option">
-                                                                        <td class="form-group" id="f2"></td>
-                                                                        <td class="form-group" id="f3"></td>
-                                                                    </tr>
-
-
-                                                                    <tr class="size-option">
-                                                                        <td class="form-group"><label class="text-uppercase" id="formularioLabel">Ordem:</label></td>
-                                                                        <td class="form-group"><label class="text-uppercase" id="formularioLabel">Família:</label></td>
-                                                                    </tr>
-                                                                    <tr class="size-option">
-                                                                        <?php
-                                                                        $ordemForm = "SELECT ordem FROM plantas";
-
-                                                                        $resultOrdemForm = $conecta->query(($ordemForm));
-                                                                        if ($resultOrdemForm->num_rows > 0) {
-                                                                            while ($linhaOrdemForm = $resultOrdemForm->fetch_assoc()) {
-                                                                                echo "<td class='form-group' id='select4'>
+                                                                            <tr class='size-option'>
+                                                                                <td class='form-group'><label class='text-uppercase' id='formularioLabel'>Ordem:</label></td>
+                                                                                <td class='form-group'><label class='text-uppercase' id='formularioLabel'>Família:</label></td>
+                                                                            </tr>
+                                                                            <tr class='size-option'>
+                                                                                <td class='form-group' id='select4'>
                                                                                 <select class='input search-categories' id='formulario' name='ordemFormulario'>
-                                                                                <option>" . $linhaOrdemForm["ordem"] . "</option>
+                                                                                <option>" . $linhaFormulario1["ordem"] . "</option>
                                                                                 <option onclick='extraFormulario2()'>Outro</option>
-                                                                                </select></td>";
-                                                                            }
-                                                                        } else {
-                                                                            echo "<td class='form-group'>"
-                                                                            . "<input class='input search-input' id='formulario' name='ordemFormulario' type='text' placeholder='Ordem'></td>";
-                                                                        }
+                                                                                </select></td>
 
-
-                                                                        $familiaForm = "SELECT familia FROM plantas";
-
-                                                                        $resultFamiliaForm = $conecta->query(($familiaForm));
-                                                                        if ($resultFamiliaForm->num_rows > 0) {
-                                                                            while ($linhaFamiliaForm = $resultFamiliaForm->fetch_assoc()) {
-                                                                                echo "<td class='form-group' id='select5'>
+                                                                                <td class='form-group' id='select5'>
                                                                                 <select class='input search-categories' id='formulario' name='familiaFormulario'>
-                                                                                <option>" . $linhaFamiliaForm["familia"] . "</option>
-                                                                                </select></td>";
-                                                                            }
-                                                                        } else {
-                                                                            echo "<td class='form-group'>"
-                                                                            . "<input class='input search-input' id='formulario' name='familiaFormulario' type='text' placeholder='Família'></td>";
-                                                                        }
-                                                                        ?>
-                                                                    </tr>
+                                                                                <option>Selecione</option>
+                                                                                <option>" . $linhaFormulario1["familia"] . "</option>
+                                                                                </select></td>
 
-                                                                    <tr class="size-option">
-                                                                        <td class="form-group" id="f4"></td>
-                                                                        <td class="form-group" id="f5"></td>
-                                                                    </tr>
+                                                                            </tr>
+                                                                            
+                                                                                <tr class='size-option'>
+                                                                                    <td class='form-group' id='f4'></td>
+                                                                                    <td class='form-group' id='f5'></td>
+                                                                                </tr>
 
-                                                                    <tr class="size-option">
-                                                                        <td colspan="2" class="form-group"><label class="text-uppercase">Imagem:</label></td>
-                                                                    </tr>
-                                                                    <tr class="size-option">
-                                                                        <td class="form-group">
-                                                                            <input type="file" id="formulario" name="fotoPlanta1" size="25">
-                                                                        </td>
-                                                                        <td class="form-group">
-                                                                            <input type="file" id="formulario" name="fotoPlanta2" size="25">
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr class="size-option">
-                                                                        <td class="form-group">
-                                                                            <input type="file" id="formulario" name="fotoPlanta3" size="25">
-                                                                        </td>
-                                                                        <td class="form-group">
-                                                                            <input type="file" id="formulario" name="fotoPlanta4" size="25">
-                                                                        </td>
-                                                                    </tr>
+                                                                                <tr class='size-option'>
+                                                                                    <td colspan='2' class='form-group'><label class='text-uppercase'>Imagem:</label></td>
+                                                                                </tr>
+                                                                                <tr class='size-option'>
+                                                                                    <td class='form-group'>
+                                                                                        <input type='file' id='formulario' name='fotoPlanta1' size='25'>
+                                                                                    </td>
+                                                                                    <td class='form-group'>
+                                                                                        <input type='file' id='formulario' name='fotoPlanta2' size='25'>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr class='size-option'>
+                                                                                    <td class='form-group'>
+                                                                                        <input type='file' id='formulario' name='fotoPlanta3' size='25'>
+                                                                                    </td>
+                                                                                    <td class='form-group'>
+                                                                                        <input type='file' id='formulario' name='fotoPlanta4' size='25'>
+                                                                                    </td>
+                                                                                </tr>
 
+                                                                            </table>";
 
+                                                                               
+                                                                    }
+                                                                } else {
+                                                                    echo "<table id='fichamento1'>
+                                                                        <tr class='size-option'>
+                                                                                <td class='form-group'><label class='text-uppercase' id='formularioLabel'>Nome Científico:</label></td>
+                                                                                <td class='form-group'><label class='text-uppercase' id='formularioLabel'>Nome Popular:</label></td>
+                                                                            </tr>
 
+                                                                            <tr class='size-option'>
+                                                                                <td class='form-group'><input class='input search-input' id='formulario' name='nomeCientificoPlanta' type='text' placeholder='Nome Científico da Planta'></td>
+                                                                                
+                                                                                <td class='form-group'>
+                                                                                    <input class='input search-input' id='formulario' name='nomePopular' type='text' placeholder='Nome Popular'>
+                                                                                </td>                                                                                 
 
+                                                                            </tr>
+                                                                 
+                                                                            <tr class='size-option'>
+                                                                                <td class='form-group'><label class='text-uppercase' id='formularioLabel'>Divisão:</label></td>
+                                                                                <td class='form-group'><label class='text-uppercase' id='formularioLabel'>Classe:</label></td>
+                                                                            </tr>
 
-                                                                </table>         
+                                                                            <tr>
+                                                                                <td class='form-group'><input class='input search-input' id='formulario' name='divisaoFormulario' type='text' placeholder='Divisão'></td>
+                                                                                <td class='form-group'><input class='input search-input' id='formulario' name='classeFormulario' type='text' placeholder='Classe'></td>
+                                                                            </tr>
 
-                                                            </div>
-                                                            <div class="col-lg-6">
-                                                                <table id="fichamento2">
-                                                                    <tr>
-                                                                        <td> <label class="text-uppercase">Descrição: </label></td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td><textarea name="descricao" id="ckeditor" class="ckeditor" maxlength="3000"></textarea></td> 
-                                                                    </tr>
-                                                                    <tr class="pull-right">
-                                                                        <td><input type="submit" class="primary-btn" value="Adicionar dados da planta"></td>
-                                                                    </tr>
-                                                                </table>
+                                                                            <tr class='size-option'>
+                                                                                <td class='form-group'><label class='text-uppercase' id='formularioLabel'>Ordem:</label></td>
+                                                                                <td class='form-group'><label class='text-uppercase' id='formularioLabel'>Família:</label></td>
+                                                                            </tr>
+                                                                            <tr class='size-option'>
+                                                                                <td class='form-group'><input class='input search-input' id='formulario' name='ordemFormulario' type='text' placeholder='Ordem'></td>
 
-                                                            </div>
+                                                                                <td class='form-group'><input class='input search-input' id='formulario' name='familiaFormulario' type='text' placeholder='Família'></td>
 
+                                                                            </tr>
+                                                                            
+                                                                                <tr class='size-option'>
+                                                                                    <td class='form-group' id='f4'></td>
+                                                                                    <td class='form-group' id='f5'></td>
+                                                                                </tr>
+
+                                                                                <tr class='size-option'>
+                                                                                    <td colspan='2' class='form-group'><label class='text-uppercase'>Imagem:</label></td>
+                                                                                </tr>
+                                                                                <tr class='size-option'>
+                                                                                    <td class='form-group'>
+                                                                                        <input type='file' id='formulario' name='fotoPlanta1' size='25'>
+                                                                                    </td>
+                                                                                    <td class='form-group'>
+                                                                                        <input type='file' id='formulario' name='fotoPlanta2' size='25'>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr class='size-option'>
+                                                                                    <td class='form-group'>
+                                                                                        <input type='file' id='formulario' name='fotoPlanta3' size='25'>
+                                                                                    </td>
+                                                                                    <td class='form-group'>
+                                                                                        <input type='file' id='formulario' name='fotoPlanta4' size='25'>
+                                                                                    </td>
+                                                                                </tr>
+
+                                                                            </table>";
+                                                                }
+                                                                ?>
                                                         </form>
+
+
+
                                                     </div>
+                                                    <div class="col-lg-6">
+                                                        <table id="fichamento2">
+                                                            <tr>
+                                                                <td> <label class="text-uppercase">Descrição: </label></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><textarea name="descricao" id="ckeditor" class="ckeditor" maxlength="3000"></textarea></td> 
+                                                            </tr>
+                                                            <tr class="pull-right">
+                                                                <td><input type="submit" class="primary-btn" value="Adicionar planta"></td>
+                                                            </tr>
+                                                        </table>
+
+                                                    </div>
+
+                                                    </form>
                                                 </div>
-                                                <!-- /container -->
                                             </div>
-                                            <!-- /section -->
+                                            <!-- /container -->
+                                        </div>
+                                        <!-- /section -->
 
 
-                                            <!-- FOOTER -->
-                                            <footer id="footer" class="section section-grey">
-                                                <!-- container -->
-                                                <div class="container">
-                                                    <!-- row -->
-                                                    <div class="row">
-                                                        <!-- footer widget -->
-                                                        <div class="col-md-3 col-sm-6 col-xs-6">
-                                                            <div class="footer">
-                                                                <!-- footer logo -->
-                                                                <div class="footer-logo">
-                                                                    <a class="logo" href="#">
-                                                                        <img src="./img/logo.png" alt="">
-                                                                    </a>
-                                                                </div>
-                                                                <!-- /footer logo -->
-
-                                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
-
-
+                                        <!-- FOOTER -->
+                                        <footer id="footer" class="section section-grey">
+                                            <!-- container -->
+                                            <div class="container">
+                                                <!-- row -->
+                                                <div class="row">
+                                                    <!-- footer widget -->
+                                                    <div class="col-md-3 col-sm-6 col-xs-6">
+                                                        <div class="footer">
+                                                            <!-- footer logo -->
+                                                            <div class="footer-logo">
+                                                                <a class="logo" href="#">
+                                                                    <img src="./img/logo.png" alt="">
+                                                                </a>
                                                             </div>
-                                                        </div>
+                                                            <!-- /footer logo -->
 
-                                                    </div>
-                                                    <!-- /row -->
-                                                    <hr>
-                                                    <!-- row -->
-                                                    <div class="row">
-                                                        <div class="col-md-8 col-md-offset-2 text-center">
-                                                            <!-- footer copyright -->
-                                                            <div class="footer-copyright">
-                                                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                                                                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                                                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                                                            </div>
-                                                            <!-- /footer copyright -->
+                                                            <p style="text-align: justify;"> Tal plataforma está sendo criada de modo a aprimorar o banco de dados de plantas do bioma Cerrado e contribuir para a 
+                                                                            pesquisa e identificação de plantas otimizando o tempo gasto por pesquisadores e alunos na classificação de uma espécie alvo.</p>
+
+
                                                         </div>
                                                     </div>
-                                                    <!-- /row -->
+
                                                 </div>
-                                                <!-- /container -->
-                                            </footer>
+                                                <!-- /row -->
+                                                <hr>
+                                                <!-- row -->
+                                                <div class="row">
+                                                    <div class="col-md-8 col-md-offset-2 text-center">
+                                                        <!-- footer copyright -->
+                                                        <div class="footer-copyright">
+                                                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                                            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                                                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                                        </div>
+                                                        <!-- /footer copyright -->
+                                                    </div>
+                                                </div>
+                                                <!-- /row -->
+                                            </div>
+                                            <!-- /container -->
+                                        </footer>
 
-                                            <!-- /FOOTER -->
+                                        <!-- /FOOTER -->
 
 
-                                            <!-- jQuery Plugins -->
-                                            <script src="js/jquery.min.js"></script>
-                                            <script src="js/bootstrap.min.js"></script>
-                                            <script src="js/slick.min.js"></script>
-                                            <script src="js/nouislider.min.js"></script>
-                                            <script src="js/jquery.zoom.min.js"></script>
-                                            <script src="js/main.js"></script>
-                                            <?php $conecta->close(); ?>
-                                            </body>
+                                        <!-- jQuery Plugins -->
+                                        <script src="js/jquery.min.js"></script>
+                                        <script src="js/bootstrap.min.js"></script>
+                                        <script src="js/slick.min.js"></script>
+                                        <script src="js/nouislider.min.js"></script>
+                                        <script src="js/jquery.zoom.min.js"></script>
+                                        <script src="js/main.js"></script>
+                                        <?php $conecta->close(); ?>
+                                        </body>
 
-                                            </html>
+                                        </html>
 
