@@ -57,7 +57,7 @@
 
 
                 <div class="pull-right">
-                    <form action="php/sessao.php" method="POST">
+                    <form action="sessao.php" method="POST">
                         <ul class="header-btns">
                             <!-- Account -->
 

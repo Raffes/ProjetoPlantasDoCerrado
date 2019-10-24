@@ -1,7 +1,7 @@
 <?php
 include 'conexao.php';
 
-/*$tabela1 = "drop table cadastro";
+/*$tabela1 = "drop table cadastroDeUsuario";
 
 $tabela2 = "drop table imagemPlantas";
 
@@ -70,8 +70,8 @@ foreign key (id_cadastro) references cadastroDeUsuario(id_cadastro)
 $tabela6 = "CREATE TABLE IF NOT EXISTS tipoDeUsuario(
 id int(55) primary key auto_increment not null,
 usuario varchar(15) not null,
-id_cadastro int(55) not null,
-foreign key (id_cadastro) references cadastroDeUsuario(id_cadastro)
+id_cadastro int(55),
+constraint foreign key (id_cadastro) references cadastroDeUsuario(id_cadastro)
 )";
 
 $tabela7 = "CREATE TABLE IF NOT EXISTS likeArtigo(

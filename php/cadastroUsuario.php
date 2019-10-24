@@ -4,10 +4,9 @@ include 'conexao.php';
 //Dados do formulario do cadastro do usuário
 $identificacao = $_POST["ident"];
 $senhaUsuario = $_POST["senha"];
-$modificadorArtigo = $_POST["modificadorArtigo"];
-$cadastrador = $_POST["cadastrador"];
+//$modificadorArtigo = $_POST["modificadorArtigo"];
+//$cadastrador = $_POST["cadastrador"];
 $tipoUsuario = $_POST["tipoDePessoa"];
-$outroUsuario = $_POST["outroUsuario"];
 
 //Inserir registro
 
@@ -20,11 +19,12 @@ if($modificadorArtigo == TRUE){
 //if() aqui vai na sessão conectar o usuario a pagina de cadastro de ususrio
 
 
-$cadastro1 = "INSERT INTO cadastro(login, senha)"
+$cadastro1 = "INSERT INTO cadastroDeUsuario(login, senha)"
         . "VALUES('$identificacao','$senhaUsuario')";
 
-$cadastro2 = "INSERT INTO tipoDeUsuario(usuario, outro)"
-        . "VALUES ('$tipoUsuario', '$outroUsuario')";
+$cadastro2 = "INSERT INTO tipoDeUsuario(usuario)"
+        . "VALUES ('$tipoUsuario')";
+
 
 
 if($conecta->query($cadastro1)===TRUE){
