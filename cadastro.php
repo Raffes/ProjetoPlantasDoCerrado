@@ -597,22 +597,22 @@
                                 <div>
 
                                     <div class="input-checkbox">
-                                        <input type="radio" name="tipoDePessoa" checked>
+                                        <input type="radio" name="tipoDePessoa" value="Aluno" checked>
                                         <label class="font-weak">Aluno</label>
 
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-                                        <input type="radio" name="tipoDePessoa">
+                                        <input type="radio" name="tipoDePessoa" value="Professor">
                                         <label class="font-weak">Professor</label>
 
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        
 
-                                        <input type="radio" name="outroUsuario">
+                                        <input type="radio" name="tipoDePessoa">
                                         <label class="font-weak">Outro</label>
                                         <div class="caption">
                                             <p> Indentifique esse usuário:
                                             <p>
-                                                <input class="input" type="text" name="outroUsuario" placeholder="Quem está acessando?">
+                                                <input class="input" type="text" name="tipoDePessoa" maxlength="15" placeholder="Quem está acessando?">
                                         </div>
 
                                     </div>
