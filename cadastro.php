@@ -1,3 +1,4 @@
+<?php include 'php/conexao.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-        <title>Cadastro</title>
+        <title>Cadastro de Usuário</title>
 
         <!-- Google font -->
         <link href="https://fonts.googleapis.com/css?family=Hind:400,700" rel="stylesheet">
@@ -35,47 +36,53 @@
                   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
                 <![endif]-->
 
+
+
     </head>
 
     <body>
-        <!-- HEADER -->
-        <header>
 
-
-            <!-- header -->
-            <div id="header">
-                <div class="container">
-                    <div class="pull-left">
-                        <!-- Logo -->
-                        <div class="header-logo">
-                            <a class="logo" href="#">
-                                <img src="./img/logo.png" alt="">
-                            </a>
-                        </div>
-                        <!-- /Logo -->
-
-
+        <div id="header">
+            <div class="container">
+                <div class="pull-left">
+                    <!-- Logo -->
+                    <div class="header-logo">
+                        <a class="logo" href="#">
+                            <img src="./img/logo.png" alt="">
+                        </a>
                     </div>
-                    <div class="pull-right">
+                    <!-- /Logo -->
+
+                </div>
+
+
+                <div class="pull-right">
+                    <form action="php/sessao.php" method="POST">
                         <ul class="header-btns">
                             <!-- Account -->
+
+
                             <li class="header-account dropdown default-dropdown">
                                 <div class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">
                                     <div class="header-btns-icon">
                                         <i class="fa fa-user-o"></i>
                                     </div>
-                                    <strong class="text-uppercase">LOGADO AQUI <i class="fa fa-caret-down"></i></strong>
+                                    <strong class="text-uppercase">LOGADO AQUI <i class="fa fa-caret-down"></i></strong><br>
+                                    <a href="#" class="text-uppercase">Acesso</a>
                                 </div>
-                                <a href="#" class="text-uppercase">Login</a> / <a href="#" class="text-uppercase">Join</a>
+
                                 <ul class="custom-menu">
                                     <li><a href="#"><i class="fa fa-user-o"></i> Minha Conta</a></li>
                                     <li><a href="#"><i class="fa fa-heart-o"></i> Plantas Salvas</a></li>
-                                    <li><a href="#"><i class="fa fa-check"></i> Criar Fichamento</a></li>
-                                    <li><a href="#"><i class="fa fa-user-plus"></i> Conceder Acesso</a></li>
+                                    <li><a href="formularioPlanta.php"><i class="fa fa-check"></i> Ficha da Planta</a></li>
+                                    <li><a href="formularioCarpoteca.php"><i class="fa fa-check"></i> Ficha da Carpoteca</a></li>
+                                    <li><a href="cadastro.php"><i class="fa fa-user-plus"></i> Conceder Acesso</a></li>
                                     <li><a href="#"><i class="fa fa-exchange"></i> Sair</a></li>
                                 </ul>
                             </li>
+
                             <!-- /Account -->
+
 
 
                             <!-- Mobile nav toggle-->
@@ -84,483 +91,266 @@
                             </li>
                             <!-- / Mobile nav toggle -->
                         </ul>
-                    </div>
+                    </form>   
                 </div>
-                <!-- header -->
+
             </div>
-            <!-- container -->
-        </header>
-        <!-- /HEADER -->
+            <!-- header -->
+        </div>
+        <!-- container -->
+    </header>
+    <!-- /HEADER -->
 
-        <!-- NAVIGATION -->
-        <div id="navigation">
-            <!-- container -->
-            <div class="container">
-                <div id="responsive-nav">
+    <!-- NAVIGATION -->
+    <div id="navigation">
+        <!-- container -->
+        <div class="container">
+            <div id="responsive-nav">
+            </div>
 
 
-                    <!-- menu nav -->
-                    <div class="menu-nav">
-                        <div class="menu-nav">
-                            <span class="menu-header">Menu <i class="fa fa-bars"></i></span>
-                            <ul class="menu-list">
-                                <li><a href="./php/logIndex.php"><span class="category-header">Início <!--<i class="fa fa-list"></i>--></span></a></li>
-                                <li class="dropdown mega-dropdown full-width"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Filo <i class="fa fa-caret-down"></i></a>
-                                    <div class="custom-menu">
-                                        <div class="row">
-                                            <div class="col-md-3">
-                                                <div class="hidden-sm hidden-xs">
-                                                    <a class="banner banner-1" href="#">
-                                                        <img src="./img/banner06.jpg" alt="">
-                                                        <div class="banner-caption text-center">
-                                                            <h3 class="white-color text-uppercase">Women’s</h3>
-                                                        </div>
-                                                    </a>
-                                                    <hr>
-                                                </div>
-                                                <ul class="list-links">
-                                                    <li>
-                                                        <h3 class="list-links-title">Categories</h3></li>
-                                                    <li><a href="#">Women’s Clothing</a></li>
-                                                    <li><a href="#">Men’s Clothing</a></li>
-                                                    <li><a href="#">Phones & Accessories</a></li>
-                                                    <li><a href="#">Jewelry & Watches</a></li>
-                                                    <li><a href="#">Bags & Shoes</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="hidden-sm hidden-xs">
-                                                    <a class="banner banner-1" href="#">
-                                                        <img src="./img/banner07.jpg" alt="">
-                                                        <div class="banner-caption text-center">
-                                                            <h3 class="white-color text-uppercase">Men’s</h3>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <hr>
-                                                <ul class="list-links">
-                                                    <li>
-                                                        <h3 class="list-links-title">Categories</h3></li>
-                                                    <li><a href="#">Women’s Clothing</a></li>
-                                                    <li><a href="#">Men’s Clothing</a></li>
-                                                    <li><a href="#">Phones & Accessories</a></li>
-                                                    <li><a href="#">Jewelry & Watches</a></li>
-                                                    <li><a href="#">Bags & Shoes</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="hidden-sm hidden-xs">
-                                                    <a class="banner banner-1" href="#">
-                                                        <img src="./img/banner08.jpg" alt="">
-                                                        <div class="banner-caption text-center">
-                                                            <h3 class="white-color text-uppercase">Accessories</h3>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <hr>
-                                                <ul class="list-links">
-                                                    <li>
-                                                        <h3 class="list-links-title">Categories</h3></li>
-                                                    <li><a href="#">Women’s Clothing</a></li>
-                                                    <li><a href="#">Men’s Clothing</a></li>
-                                                    <li><a href="#">Phones & Accessories</a></li>
-                                                    <li><a href="#">Jewelry & Watches</a></li>
-                                                    <li><a href="#">Bags & Shoes</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="hidden-sm hidden-xs">
-                                                    <a class="banner banner-1" href="#">
-                                                        <img src="./img/banner09.jpg" alt="">
-                                                        <div class="banner-caption text-center">
-                                                            <h3 class="white-color text-uppercase">Bags</h3>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <hr>
-                                                <ul class="list-links">
-                                                    <li>
-                                                        <h3 class="list-links-title">Categories</h3></li>
-                                                    <li><a href="#">Women’s Clothing</a></li>
-                                                    <li><a href="#">Men’s Clothing</a></li>
-                                                    <li><a href="#">Phones & Accessories</a></li>
-                                                    <li><a href="#">Jewelry & Watches</a></li>
-                                                    <li><a href="#">Bags & Shoes</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
+            <!-- menu nav -->
+            <div class="menu-nav">
+                <span class="menu-header">Menu <i class="fa fa-bars"></i></span>
+                <ul class="menu-list">
+                    <li id="inicio"><a href="index.php"><span class="category-header">Início <!--<i class="fa fa-list"></i>--></span></a></li>
+                    <li class="dropdown mega-dropdown full-width"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Divisão <i class="fa fa-caret-down"></i></a>
+                        <div class="custom-menu">
+                            <div class="row">
+
+
+                                <div class="col-md-3">
+                                    <ul class="list-links">
+                                        <li><h3 class='list-links-title'>Categorias</h3></li>
+                                        <?php
+                                        $DivisaoSelect = "SELECT divisao FROM plantas LIMIT 39";
+
+                                        $resultadoDivisao = $conecta->query(($DivisaoSelect));
+                                        if ($resultadoDivisao->num_rows > 0) {
+
+
+                                            for ($i = 0; $i < $linhaDivisao = $resultadoDivisao->fetch_assoc(); $i++) {
+                                                echo "<li><a href='divisoes.php'>" . $linhaDivisao["divisao"] . "</a></li>";
+                                                if (($i + 1) % 6 == 0) {
+                                                    echo "</ul>"
+                                                    . "</div>"
+                                                    . "<ul class='list-links'>"
+                                                    . "<li><h3 class='list-links-title'>Categorias</h3></li>"
+                                                    ;
+                                                }
+
+                                                if ($i == $linhaDivisao = $resultadoDivisao->fetch_assoc()) {
+                                                    echo "</ul>"
+                                                    . "<hr class='hidden-md hidden-lg'>"
+                                                    . "</div>";
+                                                }
+
+                                                if ($i + 1 >= 20) {
+                                                    echo "</div><bottom>Add</bottom>";
+                                                    return;
+                                                }
+                                            }
+                                        } else {
+                                            echo "0 resultados";
+                                        }
+                                        ?>
+
+
+                                </div>         
+
                                 <li class="dropdown mega-dropdown full-width"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Classe <i class="fa fa-caret-down"></i></a>
                                     <div class="custom-menu">
                                         <div class="row">
                                             <div class="col-md-3">
-                                                <div class="hidden-sm hidden-xs">
-                                                    <a class="banner banner-1" href="#">
-                                                        <img src="./img/banner06.jpg" alt="">
-                                                        <div class="banner-caption text-center">
-                                                            <h3 class="white-color text-uppercase">Women’s</h3>
-                                                        </div>
-                                                    </a>
-                                                    <hr>
-                                                </div>
                                                 <ul class="list-links">
-                                                    <li>
-                                                        <h3 class="list-links-title">Categories</h3></li>
-                                                    <li><a href="#">Women’s Clothing</a></li>
-                                                    <li><a href="#">Men’s Clothing</a></li>
-                                                    <li><a href="#">Phones & Accessories</a></li>
-                                                    <li><a href="#">Jewelry & Watches</a></li>
-                                                    <li><a href="#">Bags & Shoes</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="hidden-sm hidden-xs">
-                                                    <a class="banner banner-1" href="#">
-                                                        <img src="./img/banner07.jpg" alt="">
-                                                        <div class="banner-caption text-center">
-                                                            <h3 class="white-color text-uppercase">Men’s</h3>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <hr>
-                                                <ul class="list-links">
-                                                    <li>
-                                                        <h3 class="list-links-title">Categories</h3></li>
-                                                    <li><a href="#">Women’s Clothing</a></li>
-                                                    <li><a href="#">Men’s Clothing</a></li>
-                                                    <li><a href="#">Phones & Accessories</a></li>
-                                                    <li><a href="#">Jewelry & Watches</a></li>
-                                                    <li><a href="#">Bags & Shoes</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="hidden-sm hidden-xs">
-                                                    <a class="banner banner-1" href="#">
-                                                        <img src="./img/banner08.jpg" alt="">
-                                                        <div class="banner-caption text-center">
-                                                            <h3 class="white-color text-uppercase">Accessories</h3>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <hr>
-                                                <ul class="list-links">
-                                                    <li>
-                                                        <h3 class="list-links-title">Categories</h3></li>
-                                                    <li><a href="#">Women’s Clothing</a></li>
-                                                    <li><a href="#">Men’s Clothing</a></li>
-                                                    <li><a href="#">Phones & Accessories</a></li>
-                                                    <li><a href="#">Jewelry & Watches</a></li>
-                                                    <li><a href="#">Bags & Shoes</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="hidden-sm hidden-xs">
-                                                    <a class="banner banner-1" href="#">
-                                                        <img src="./img/banner09.jpg" alt="">
-                                                        <div class="banner-caption text-center">
-                                                            <h3 class="white-color text-uppercase">Bags</h3>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <hr>
-                                                <ul class="list-links">
-                                                    <li>
-                                                        <h3 class="list-links-title">Categories</h3></li>
-                                                    <li><a href="#">Women’s Clothing</a></li>
-                                                    <li><a href="#">Men’s Clothing</a></li>
-                                                    <li><a href="#">Phones & Accessories</a></li>
-                                                    <li><a href="#">Jewelry & Watches</a></li>
-                                                    <li><a href="#">Bags & Shoes</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="dropdown mega-dropdown full-width"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Ordem <i class="fa fa-caret-down"></i></a>
-                                    <div class="custom-menu">
-                                        <div class="row">
-                                            <div class="col-md-3">
-                                                <div class="hidden-sm hidden-xs">
-                                                    <a class="banner banner-1" href="#">
-                                                        <img src="./img/banner06.jpg" alt="">
-                                                        <div class="banner-caption text-center">
-                                                            <h3 class="white-color text-uppercase">Women’s</h3>
-                                                        </div>
-                                                    </a>
-                                                    <hr>
-                                                </div>
-                                                <ul class="list-links">
-                                                    <li>
-                                                        <h3 class="list-links-title">Categories</h3></li>
-                                                    <li><a href="#">Women’s Clothing</a></li>
-                                                    <li><a href="#">Men’s Clothing</a></li>
-                                                    <li><a href="#">Phones & Accessories</a></li>
-                                                    <li><a href="#">Jewelry & Watches</a></li>
-                                                    <li><a href="#">Bags & Shoes</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="hidden-sm hidden-xs">
-                                                    <a class="banner banner-1" href="#">
-                                                        <img src="./img/banner07.jpg" alt="">
-                                                        <div class="banner-caption text-center">
-                                                            <h3 class="white-color text-uppercase">Men’s</h3>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <hr>
-                                                <ul class="list-links">
-                                                    <li>
-                                                        <h3 class="list-links-title">Categories</h3></li>
-                                                    <li><a href="#">Women’s Clothing</a></li>
-                                                    <li><a href="#">Men’s Clothing</a></li>
-                                                    <li><a href="#">Phones & Accessories</a></li>
-                                                    <li><a href="#">Jewelry & Watches</a></li>
-                                                    <li><a href="#">Bags & Shoes</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="hidden-sm hidden-xs">
-                                                    <a class="banner banner-1" href="#">
-                                                        <img src="./img/banner08.jpg" alt="">
-                                                        <div class="banner-caption text-center">
-                                                            <h3 class="white-color text-uppercase">Accessories</h3>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <hr>
-                                                <ul class="list-links">
-                                                    <li>
-                                                        <h3 class="list-links-title">Categories</h3></li>
-                                                    <li><a href="#">Women’s Clothing</a></li>
-                                                    <li><a href="#">Men’s Clothing</a></li>
-                                                    <li><a href="#">Phones & Accessories</a></li>
-                                                    <li><a href="#">Jewelry & Watches</a></li>
-                                                    <li><a href="#">Bags & Shoes</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="hidden-sm hidden-xs">
-                                                    <a class="banner banner-1" href="#">
-                                                        <img src="./img/banner09.jpg" alt="">
-                                                        <div class="banner-caption text-center">
-                                                            <h3 class="white-color text-uppercase">Bags</h3>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <hr>
-                                                <ul class="list-links">
-                                                    <li>
-                                                        <h3 class="list-links-title">Categories</h3></li>
-                                                    <li><a href="#">Women’s Clothing</a></li>
-                                                    <li><a href="#">Men’s Clothing</a></li>
-                                                    <li><a href="#">Phones & Accessories</a></li>
-                                                    <li><a href="#">Jewelry & Watches</a></li>
-                                                    <li><a href="#">Bags & Shoes</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="dropdown mega-dropdown full-width"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Família <i class="fa fa-caret-down"></i></a>
-                                    <div class="custom-menu">
-                                        <div class="row">
-                                            <div class="col-md-3">
-                                                <div class="hidden-sm hidden-xs">
-                                                    <a class="banner banner-1" href="#">
-                                                        <img src="./img/banner06.jpg" alt="">
-                                                        <div class="banner-caption text-center">
-                                                            <h3 class="white-color text-uppercase">Women’s</h3>
-                                                        </div>
-                                                    </a>
-                                                    <hr>
-                                                </div>
-                                                <ul class="list-links">
-                                                    <li>
-                                                        <h3 class="list-links-title">Categories</h3></li>
-                                                    <li><a href="#">Women’s Clothing</a></li>
-                                                    <li><a href="#">Men’s Clothing</a></li>
-                                                    <li><a href="#">Phones & Accessories</a></li>
-                                                    <li><a href="#">Jewelry & Watches</a></li>
-                                                    <li><a href="#">Bags & Shoes</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="hidden-sm hidden-xs">
-                                                    <a class="banner banner-1" href="#">
-                                                        <img src="./img/banner07.jpg" alt="">
-                                                        <div class="banner-caption text-center">
-                                                            <h3 class="white-color text-uppercase">Men’s</h3>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <hr>
-                                                <ul class="list-links">
-                                                    <li>
-                                                        <h3 class="list-links-title">Categories</h3></li>
-                                                    <li><a href="#">Women’s Clothing</a></li>
-                                                    <li><a href="#">Men’s Clothing</a></li>
-                                                    <li><a href="#">Phones & Accessories</a></li>
-                                                    <li><a href="#">Jewelry & Watches</a></li>
-                                                    <li><a href="#">Bags & Shoes</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="hidden-sm hidden-xs">
-                                                    <a class="banner banner-1" href="#">
-                                                        <img src="./img/banner08.jpg" alt="">
-                                                        <div class="banner-caption text-center">
-                                                            <h3 class="white-color text-uppercase">Accessories</h3>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <hr>
-                                                <ul class="list-links">
-                                                    <li>
-                                                        <h3 class="list-links-title">Categories</h3></li>
-                                                    <li><a href="#">Women’s Clothing</a></li>
-                                                    <li><a href="#">Men’s Clothing</a></li>
-                                                    <li><a href="#">Phones & Accessories</a></li>
-                                                    <li><a href="#">Jewelry & Watches</a></li>
-                                                    <li><a href="#">Bags & Shoes</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="hidden-sm hidden-xs">
-                                                    <a class="banner banner-1" href="#">
-                                                        <img src="./img/banner09.jpg" alt="">
-                                                        <div class="banner-caption text-center">
-                                                            <h3 class="white-color text-uppercase">Bags</h3>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <hr>
-                                                <ul class="list-links">
-                                                    <li>
-                                                        <h3 class="list-links-title">Categories</h3></li>
-                                                    <li><a href="#">Women’s Clothing</a></li>
-                                                    <li><a href="#">Men’s Clothing</a></li>
-                                                    <li><a href="#">Phones & Accessories</a></li>
-                                                    <li><a href="#">Jewelry & Watches</a></li>
-                                                    <li><a href="#">Bags & Shoes</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="dropdown mega-dropdown full-width"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Carpoteca<i class="fa fa-caret-down"></i></a>
-                                    <div class="custom-menu">
-                                        <div class="row">
-                                            <div class="col-md-3">
-                                                <div class="hidden-sm hidden-xs">
-                                                    <a class="banner banner-1" href="#">
-                                                        <img src="./img/banner06.jpg" alt="">
-                                                        <div class="banner-caption text-center">
-                                                            <h3 class="white-color text-uppercase">Women’s</h3>
-                                                        </div>
-                                                    </a>
-                                                    <hr>
-                                                </div>
-                                                <ul class="list-links">
-                                                    <li>
-                                                        <h3 class="list-links-title">Categories</h3></li>
-                                                    <li><a href="#">Women’s Clothing</a></li>
-                                                    <li><a href="#">Men’s Clothing</a></li>
-                                                    <li><a href="#">Phones & Accessories</a></li>
-                                                    <li><a href="#">Jewelry & Watches</a></li>
-                                                    <li><a href="#">Bags & Shoes</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="hidden-sm hidden-xs">
-                                                    <a class="banner banner-1" href="#">
-                                                        <img src="./img/banner07.jpg" alt="">
-                                                        <div class="banner-caption text-center">
-                                                            <h3 class="white-color text-uppercase">Men’s</h3>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <hr>
-                                                <ul class="list-links">
-                                                    <li>
-                                                        <h3 class="list-links-title">Categories</h3></li>
-                                                    <li><a href="#">Women’s Clothing</a></li>
-                                                    <li><a href="#">Men’s Clothing</a></li>
-                                                    <li><a href="#">Phones & Accessories</a></li>
-                                                    <li><a href="#">Jewelry & Watches</a></li>
-                                                    <li><a href="#">Bags & Shoes</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="hidden-sm hidden-xs">
-                                                    <a class="banner banner-1" href="#">
-                                                        <img src="./img/banner08.jpg" alt="">
-                                                        <div class="banner-caption text-center">
-                                                            <h3 class="white-color text-uppercase">Accessories</h3>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <hr>
-                                                <ul class="list-links">
-                                                    <li>
-                                                        <h3 class="list-links-title">Categories</h3></li>
-                                                    <li><a href="#">Women’s Clothing</a></li>
-                                                    <li><a href="#">Men’s Clothing</a></li>
-                                                    <li><a href="#">Phones & Accessories</a></li>
-                                                    <li><a href="#">Jewelry & Watches</a></li>
-                                                    <li><a href="#">Bags & Shoes</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="hidden-sm hidden-xs">
-                                                    <a class="banner banner-1" href="#">
-                                                        <img src="./img/banner09.jpg" alt="">
-                                                        <div class="banner-caption text-center">
-                                                            <h3 class="white-color text-uppercase">Bags</h3>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <hr>
-                                                <ul class="list-links">
-                                                    <li>
-                                                        <h3 class="list-links-title">Categories</h3></li>
-                                                    <li><a href="#">Women’s Clothing</a></li>
-                                                    <li><a href="#">Men’s Clothing</a></li>
-                                                    <li><a href="#">Phones & Accessories</a></li>
-                                                    <li><a href="#">Jewelry & Watches</a></li>
-                                                    <li><a href="#">Bags & Shoes</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
+                                                    <li><h3 class='list-links-title'>Categorias</h3></li>
+                                                    <?php
+                                                    $ClasseSelect = "SELECT classe FROM plantas LIMIT 39";
 
-                            </ul>
-                        </div>
-                        <!-- menu nav -->
-                    </div>
-                </div>
-                <!-- /container -->
-            </div>
-        </div>
-        <!-- /NAVIGATION -->
-
-        <!-- BREADCRUMB -->
-        <div id="breadcrumb">
-            <div class="container">
-                <ul class="breadcrumb">
-                    <li><a href="./php/logado.php">Página Inicial</a></li>
-                    <li class="active">Cadastro de Usuário</li>
-                </ul>
-            </div>
-        </div>
-        <!-- /BREADCRUMB -->
+                                                    $resultadoClasse = $conecta->query(($ClasseSelect));
+                                                    if ($resultadoClasse->num_rows > 0) {
 
 
-        <!-- section -->
+                                                        for ($i = 0; $i < $linhaClasse = $resultadoClasse->fetch_assoc(); $i++) {
+                                                            echo "<li><a href='classes.php'>" . $linhaClasse["classe"] . "</a></li>";
+                                                            if (($i + 1) % 6 == 0) {
+                                                                echo "</ul>"
+                                                                . "</div>"
+                                                                . "<ul class='list-links'>"
+                                                                . "<li><h3 class='list-links-title'>Categorias</h3></li>"
+                                                                ;
+                                                            }
 
-        <div class="section">
+                                                            if ($i == $linhaClasse = $resultadoClasse->fetch_assoc()) {
+                                                                echo "</ul>"
+                                                                . "<hr class='hidden-md hidden-lg'>"
+                                                                . "</div>";
+                                                            }
+
+                                                            if ($i + 1 >= 20) {
+                                                                echo "</div><bottom>Add</bottom>";
+                                                                return;
+                                                            }
+                                                        }
+                                                    } else {
+                                                        echo "0 resultados";
+                                                    }
+                                                    ?>
+
+
+                                            </div>      
+                                            <li class="dropdown mega-dropdown full-width"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Ordem <i class="fa fa-caret-down"></i></a>
+                                                <div class="custom-menu">
+                                                    <div class="row">
+
+                                                        <div class="col-md-3">
+                                                            <ul class="list-links">
+                                                                <li><h3 class='list-links-title'>Categorias</h3></li>
+                                                                <?php
+                                                                $OrdemSelect = "SELECT ordem FROM plantas LIMIT 39";
+
+                                                                $resultadoOrdem = $conecta->query(($OrdemSelect));
+                                                                if ($resultadoOrdem->num_rows > 0) {
+
+
+                                                                    for ($i = 0; $i < $linhaOrdem = $resultadoOrdem->fetch_assoc(); $i++) {
+                                                                        echo "<li><a href='ordens.php'>" . $linhaOrdem["ordem"] . "</a></li>";
+                                                                        if (($i + 1) % 6 == 0) {
+                                                                            echo "</ul>"
+                                                                            . "</div>"
+                                                                            . "<ul class='list-links'>"
+                                                                            . "<li><h3 class='list-links-title'>Categorias</h3></li>"
+                                                                            ;
+                                                                        }
+
+                                                                        if ($i == $linhaOrdem = $resultadoOrdem->fetch_assoc()) {
+                                                                            echo "</ul>"
+                                                                            . "<hr class='hidden-md hidden-lg'>"
+                                                                            . "</div>";
+                                                                        }
+
+                                                                        if ($i + 1 >= 20) {
+                                                                            echo "</div><bottom>Add</bottom>";
+                                                                            return;
+                                                                        }
+                                                                    }
+                                                                } else {
+                                                                    echo "0 resultados";
+                                                                }
+                                                                ?>
+
+
+                                                        </div>      
+                                                        <li class="dropdown mega-dropdown full-width"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Família <i class="fa fa-caret-down"></i></a>
+                                                            <div class="custom-menu">
+                                                                <div class="row">
+                                                                    <div class="col-md-3">
+                                                                        <ul class="list-links">
+                                                                            <li><h3 class='list-links-title'>Categorias</h3></li>
+                                                                            <?php
+                                                                            $FamiliaSelect = "SELECT familia FROM plantas LIMIT 39";
+
+                                                                            $resultadoFamilia = $conecta->query(($FamiliaSelect));
+                                                                            if ($resultadoFamilia->num_rows > 0) {
+
+
+                                                                                for ($i = 0; $i < $linhaFamilia = $resultadoFamilia->fetch_assoc(); $i++) {
+                                                                                    echo "<li><a href='familias.php'>" . $linhaFamilia["familia"] . "</a></li>";
+                                                                                    if (($i + 1) % 6 == 0) {
+                                                                                        echo "</ul>"
+                                                                                        . "</div>"
+                                                                                        . "<ul class='list-links'>"
+                                                                                        . "<li><h3 class='list-links-title'>Categorias</h3></li>"
+                                                                                        ;
+                                                                                    }
+
+                                                                                    if ($i == $linhaFamilia = $resultadoFamilia->fetch_assoc()) {
+                                                                                        echo "</ul>"
+                                                                                        . "<hr class='hidden-md hidden-lg'>"
+                                                                                        . "</div>";
+                                                                                    }
+
+                                                                                    if ($i + 1 >= 20) {
+                                                                                        echo "</div><bottom>Add</bottom>";
+                                                                                        return;
+                                                                                    }
+                                                                                }
+                                                                            } else {
+                                                                                echo "0 resultados";
+                                                                            }
+                                                                            ?>
+
+
+                                                                    </div>      
+                                                                    <li class="dropdown mega-dropdown full-width"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Carpoteca<i class="fa fa-caret-down"></i></a>
+                                                                        <div class="custom-menu">
+                                                                            <div class="row">
+                                                                                <div class="col-md-3">
+                                                                                    <ul class="list-links">
+                                                                                        <li><h3 class='list-links-title'>Categorias</h3></li>
+                                                                                        <?php
+                                                                                        $CarpotecaSelect = "SELECT nomeCientificoCarpoteca FROM carpoteca LIMIT 39";
+
+                                                                                        $resultadoCarpoteca = $conecta->query(($CarpotecaSelect));
+                                                                                        if ($resultadoCarpoteca->num_rows > 0) {
+
+
+                                                                                            for ($i = 0; $i < $linhaCarpoteca = $resultadoCarpoteca->fetch_assoc(); $i++) {
+                                                                                                echo "<li><a href='carpotecas.php'>" . $linhaCarpoteca["nomeCientificoCarpoteca"] . "</a></li>";
+                                                                                                if (($i + 1) % 6 == 0) {
+                                                                                                    echo "</ul>"
+                                                                                                    . "</div>"
+                                                                                                    . "<ul class='list-links'>"
+                                                                                                    . "<li><h3 class='list-links-title'>Categorias</h3></li>"
+                                                                                                    ;
+                                                                                                }
+
+                                                                                                if ($i == $linhaCarpoteca = $resultadoCarpoteca->fetch_assoc()) {
+                                                                                                    echo "</ul>"
+                                                                                                    . "<hr class='hidden-md hidden-lg'>"
+                                                                                                    . "</div>";
+                                                                                                }
+
+                                                                                                if ($i + 1 >= 20) {
+                                                                                                    echo "</div><bottom>Add</bottom>";
+                                                                                                    return;
+                                                                                                }
+                                                                                            }
+                                                                                        } else {
+                                                                                            echo "0 resultados";
+                                                                                        }
+                                                                                        ?>
+
+
+                                                                                </div>      
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+
+                                                                    </ul>
+                                                                </div>
+                                                                <!-- menu nav -->
+                                                            </div>
+                                                    </div>
+                                                    <!-- /container -->
+
+                                                    <!-- /NAVIGATION -->
+
+                                                    <!-- BREADCRUMB -->
+                                                    <div id="breadcrumb">
+                                                        <div class="container">
+                                                            <ul class="breadcrumb">
+                                                                <li><a href="logIndex.php">Página Inicial</a></li>
+                                                                <li class="active">Cadastro de Usuário</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <!-- /BREADCRUMB -->
+
+                                                    <!-- section -->
+
+
+                                                    <div class="section">
             <!-- container -->
             <div class="container">
                 <div class="row">
@@ -573,6 +363,9 @@
                                 </div>
                                 <div class="form-group">
                                     <input class="input" type="text" name="ident" placeholder="Identificação">
+                                </div>
+                                <div class="form-group">
+                                    <input class="input" type="text" name="nome" placeholder="Nome">
                                 </div>
                                 <div class="form-group">
                                     <input class="input" type="password" name="senha" placeholder="Senha">
@@ -635,8 +428,19 @@
                                     <h3 class="title">Usuários Cadastrados</h3>
                                 </div>
                                 <ul class="size-option">
-                                    <li class="active"><a href="#">Lista de Alunos Cadastrados</a><br></li>
+                                    <li class="active"><a href="#">Lista de Alunos Cadastrados</a></li>
+
+                                </ul>
+                                <ul class="size-option">
                                     <li class="active"><a href="#">Lista de Professores Cadastrados</a></li>
+
+                                </ul>
+                                <ul class="size-option">
+                                    <li class="active"><a href="#">Outros Usuários</a></li>
+
+                                </ul>
+                                <ul class="size-option">
+                                    <li class="active"><a href="listaDeUsuariosCadastrado.php">Todos</a></li>
 
                                 </ul>
                             </div>
@@ -649,71 +453,66 @@
             </div>
         </div>
 
-        <!-- /section -->
-        <!--List-->
 
-        <!--/Lista-->
+                                                    <!-- /section -->
 
+                                                    <!-- FOOTER -->
 
-        <!-- FOOTER -->
+                                                    <footer id="foo" id="footer" class="section section-grey">
+                                                        <!-- container -->
+                                                        <div class="container">
+                                                            <!-- row -->
+                                                            <div class="row">
+                                                                <!-- footer widget -->
+                                                                <div class="col-md-3 col-sm-6 col-xs-6">
+                                                                    <div class="footer">
+                                                                        <!-- footer logo -->
+                                                                        <div class="footer-logo">
+                                                                            <a class="logo" href="#">
+                                                                                <img src="./img/logo.png" alt="">
+                                                                            </a>
+                                                                        </div>
+                                                                        <!-- /footer logo -->
 
-        <footer id="foo" class="section section-grey">
-            <!-- container -->
-            <div class="container">
-                <!-- row -->
-                <div class="row">
-                    <!-- footer widget -->
-                    <div class="col-md-3 col-sm-6 col-xs-6">
-                        <div class="footer">
-                            <!-- footer logo -->
-                            <div class="footer-logo">
-                                <a class="logo" href="#">
-                                    <img src="./img/logo.png" alt="">
-                                </a>
-                            </div>
-                            <!-- /footer logo -->
-
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
+                                                                        <p style="text-align: justify;"> Tal plataforma está sendo criada de modo a aprimorar o banco de dados de plantas do bioma Cerrado e contribuir para a 
+                                                                            pesquisa e identificação de plantas otimizando o tempo gasto por pesquisadores e alunos na classificação de uma espécie alvo.</p>
 
 
-                        </div>
-                    </div>
+                                                                    </div>
+                                                                </div>
 
-                </div>
-                <!-- /row -->
-                <hr>
-                <!-- row -->
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2 text-center">
-                        <!-- footer copyright -->
-                        <div class="footer-copyright">
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        </div>
-                        <!-- /footer copyright -->
-                    </div>
-                </div>
-                <!-- /row -->
-            </div>
-            <!-- /container -->
-        </footer>
+                                                            </div>
+                                                            <!-- /row -->
+                                                            <hr>
+                                                            <!-- row -->
+                                                            <div class="row">
+                                                                <div class="col-md-8 col-md-offset-2 text-center">
+                                                                    <!-- footer copyright -->
+                                                                    <div class="footer-copyright">
+                                                                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                                                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                                                                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                                                    </div>
+                                                                    <!-- /footer copyright -->
+                                                                </div>
+                                                            </div>
+                                                            <!-- /row -->
+                                                        </div>
+                                                        <!-- /container -->
+                                                    </footer>
 
-
-
-        <!-- /FOOTER -->
+                                                    <!-- /FOOTER -->
 
 
-        <!-- jQuery Plugins -->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/slick.min.js"></script>
-        <script src="js/nouislider.min.js"></script>
-        <script src="js/jquery.zoom.min.js"></script>
-        <script src="js/main.js"></script>
+                                                    <!-- jQuery Plugins -->
+                                                    <script src="js/jquery.min.js"></script>
+                                                    <script src="js/bootstrap.min.js"></script>
+                                                    <script src="js/slick.min.js"></script>
+                                                    <script src="js/nouislider.min.js"></script>
+                                                    <script src="js/jquery.zoom.min.js"></script>
+                                                    <script src="js/main.js"></script>
+<?php $conecta->close(); ?>
+                                                    </body>
 
-    </body>
-
-</html>
-
+                                                    </html>
 

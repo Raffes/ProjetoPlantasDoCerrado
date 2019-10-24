@@ -12,6 +12,19 @@ $result = mysqli_query($conecta,"SELECT * FROM cadastroDeUsuario WHERE login = '
 
 $linhas = mysqli_num_rows($result);
 
+/*if($linhas->mysqli_num_rows > 0){
+    $_SESSION['login'] = $login;
+    $_SESSION['login'] = $senhaLogin;
+    header('location: logIndex.php');
+}else{
+    session_unset();
+    session_destroy();
+    echo "<script>"
+    . "alert('Identificação e/ou senha inválidos';"
+            . "window.location.href = 'index.php';"
+            . "</script>";
+}*/
+
 
 if($linhas == ''){
     echo "Usuário e/ou senha inválidos";

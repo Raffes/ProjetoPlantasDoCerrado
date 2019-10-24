@@ -18,6 +18,7 @@ $tabela7 = "drop table likeArtigo";*/
 $tabela1 = "CREATE TABLE IF NOT EXISTS cadastroDeUsuario(
 id_cadastro int(55) primary key auto_increment not null,
 login varchar(20) not null,
+nome varchar(20) not null,
 senha varchar(15) not null
 )";
 

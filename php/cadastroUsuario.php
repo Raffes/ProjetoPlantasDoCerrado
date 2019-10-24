@@ -3,6 +3,7 @@ include 'conexao.php';
 
 //Dados do formulario do cadastro do usuário
 $identificacao = $_POST["ident"];
+$nomeUsuario = $_POST["nome"];
 $senhaUsuario = $_POST["senha"];
 //$modificadorArtigo = $_POST["modificadorArtigo"];
 //$cadastrador = $_POST["cadastrador"];
@@ -19,8 +20,8 @@ if($modificadorArtigo == TRUE){
 //if() aqui vai na sessão conectar o usuario a pagina de cadastro de ususrio
 
 
-$cadastro1 = "INSERT INTO cadastroDeUsuario(login, senha)"
-        . "VALUES('$identificacao','$senhaUsuario')";
+$cadastro1 = "INSERT INTO cadastroDeUsuario(login, nome, senha)"
+        . "VALUES('$identificacao', '$nomeUsuario','$senhaUsuario')";
 
 $cadastro2 = "INSERT INTO tipoDeUsuario(usuario)"
         . "VALUES ('$tipoUsuario')";
