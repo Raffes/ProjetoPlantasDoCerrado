@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-        <title>Lista de Cadastrado</title>
+        <title>Classe</title>
 
         <!-- Google font -->
         <link href="https://fonts.googleapis.com/css?family=Hind:400,700" rel="stylesheet">
@@ -341,8 +341,7 @@
                                                         <div class="container">
                                                             <ul class="breadcrumb">
                                                                 <li><a href="logIndex.php">Página Inicial</a></li>
-                                                                <li><a href="cadastro.php">Cadastro de Usuário</a></li>
-                                                                <li class="active">Lista de Usuários Cadastrados</li>
+                                                                <li class="active">Classe</li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -351,120 +350,269 @@
                                                     <!-- section -->
 
 
-                                                    
-        
-	<div class="section">
-		<!-- container -->
-		<div class="container">
-                    <div class="row">
-                       
-                        
-                        <div class="col-md-12">
-						<div class="order-summary clearfix">
-							<div class="section-title">
-								<h3 class="title">Lista de Alunos</h3>
-							</div>
-                                                    <?php
-                                        $selectListaUsuario = "SELECT * FROM cadastroDeUsuario";
+                                                    <div class="section">
+                                                        <!-- container -->
+                                                        <div class="container">
+                                                            <div class="row">
 
-                                            $resultadoListaUsuario = $conecta->query(($selectListaUsuario));
-                                            if ($resultadoListaUsuario->num_rows > 0) {
-                                                while ($linhaListaUsuario = $resultadoListaUsuario->fetch_assoc()) {
-                                                echo "
-							<table class='shopping-cart-table table'>
-								<thead>
-									<tr>
-										<th>Matrícula</th>
-										
-										<th class='text-center'>Nome</th>
-										<th class='text-center'>Tipo de Usuário</th>
-										<th class='text-center'>Modifica Fichamentos</th>
-                                                                                <th class='text-center'>Cadastra Usuário</th>
-										<th class='text-right'></th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										
-										<td class='text-left'>
-                                                                                    <a href='#'>".$linhaListaUsuario["login"]."</a>
-											
-										</td>
-                                                                                <td class='text-center'>
-                                                                                    <a href='#'>".$linhaListaUsuario["nome"]."</a>
-											
-										</td>
-                                                                                <td class='text-center'>
-                                                                                    <a href='#'>".$linhaListaUsuario["tipoDeUsuario"]."</a>
-											
-										</td>
-                                                                                <td class='text-center'>
-                                                                                    <a href='#'>modifi</a>
-											
-										</td>
-                                                                                <td class='text-center'>
-                                                                                    <a href='#'>cadastra</a>
-											
-										</td>
-										
-									</tr>
-                                                                    </tbody>
-									
-                                                </table>";}
-                                                
-                                            }else {
-                                                echo "<table class='shopping-cart-table table'>
-								<thead>
-									<tr>
-										<th>Matrícula</th>
-										
-										<th class='text-center'>Nome</th>
-										<th class='text-center'>Tipo de Usuário</th>
-										<th class='text-center'>Modifica Fichamentos</th>
-                                                                                <th class='text-center'>Cadastra Usuário</th>
-										<th class='text-right'></th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										
-										<td class='text-left'>
-                                                                                    <a href='#'></a>
-											
-										</td>
-                                                                                <td class='text-center'>
-                                                                                    <a href='#'></a>
-											
-										</td>
-                                                                                <td class='text-center'>
-                                                                                    <a href='#'></a>
-											
-										</td>
-                                                                                <td class='text-center'>
-                                                                                    <a href='#'></a>
-											
-										</td>
-                                                                                <td class='text-center'>
-                                                                                    <a href='#'></a>
-											
-										</td>
-										
-									</tr>
-                                                                    </tbody>
-									
-                                            </table>";
-                                            }
-                                                        ?>
-                                                    
-							
-						</div>
+                                                                <div class="col-md-6">
+                                                                    <div class="billing-details">
 
-					</div>
-                        
-		</div>
-		<!-- /container -->
-	</div>                                                    
-                <!-- /section -->
+                                                                        <div class="section-title">
+                                                                            <h3 class="title">Feed</h3>
+                                                                        </div>
+                                                                        <?php
+                                                                        $feed = "SELECT a.classe, b.img1 FROM plantas as a inner join imagemPlantas as b on a.id = b.id LIMIT 5";
+
+                                                                        $resultado = $conecta->query(($feed));
+                                                                        if ($resultado->num_rows > 0) {
+                                                                            /* while($linha = $resultado->fetch_assoc()) { */
+                                                                            for ($i = 0; $i < $linha = $resultado->fetch_assoc(); $i++) {
+                                                                                echo "<div class='product product-single'>"
+                                                                                . "<div>" /* class='product-thumb' */
+                                                                                . "<table id='feed1'>"
+                                                                                . "<tr>"
+                                                                                . "<td colspan='4'><img src='img/" . $linha["img1"] . "' alt='imagem'></td>"
+                                                                                . "</tr>"
+                                                                                . "<tr>"
+                                                                                . "<td class='text-uppercase'> <h6 class='title'>Nome Científico: </h6></td>"
+                                                                                . "<td>" . $linha["nomeCientifico"] . "</td>"
+                                                                                . "<td class='text-uppercase'><h6 class='title'>Nome Popular: </h6></td>"
+                                                                                . "<td>" . $linha["nomePopular"] . "</td>"
+                                                                                . "</tr>"
+                                                                                . "<tr>"
+                                                                                . "<td class='text-uppercase'> <h6 class='title'>Divisão: </h6></td>"
+                                                                                . "<td>" . $linha["divisao"] . "</td>"
+                                                                                . "<td class='text-uppercase'><h6 class='title'>Classe: </h6></td>"
+                                                                                . "<td>" . $linha["classe"] . "</td>"
+                                                                                . "</tr>"
+                                                                                . "<tr>"
+                                                                                . "<td class='text-uppercase'> <h6 class='title'>Ordem: </h6></td>"
+                                                                                . "<td>" . $linha["ordem"] . "</td>"
+                                                                                . "<td class='text-uppercase'><h6 class='title'>Familia: </h6></td>"
+                                                                                . "<td>" . $linha["familia"] . "</td>"
+                                                                                . "</tr>"
+                                                                                . "<tr>"
+                                                                                . "<td class='text-uppercase'><h6 class='title'>Carpoteca: </h6></td>"
+                                                                                /* ."<td colspan='3'>".$linha["carpoteca"]. "</td>" */
+                                                                                . "</tr>"
+                                                                                . "</table>"
+                                                                                . "<table id='feed2'>"
+                                                                                . "<tr>"
+                                                                                . "<th colspan='4'  class='section-title'> <h6 class='title'>Descrição: </h6></th>"
+                                                                                . "</tr>"
+                                                                                . "<tr id='desc'>"
+                                                                                . "<td colspan='4' id='des'>" . $linha["descricao"] . "</td>"
+                                                                                . "</tr>"
+                                                                                . "<tr>"
+                                                                                . "<td colspan='4' class='product-btns'>
+                                                  <button class='main-btn icon-btn'><i class='fa fa-heart'></i></button></td>"
+                                                                                . "</tr>"
+                                                                                . "</table>"
+                                                                                /* . "<button class='main-btn quick-view' oneclick='abrirIframe()'><i class='fa fa-search-plus'></i> Vê Descrição Completa</button>" */
+                                                                                . "</div>"
+                                                                                . "</div>";
+                                                                            }
+                                                                        } else {
+                                                                            echo "0 results";
+                                                                        }
+                                                                        /* for ($j = 0; $j < $linha = $resultado->fetch_assoc(); $j++) {
+                                                                          echo "<div class='pull-right'>
+
+                                                                          <ul class='store-pages'>
+                                                                          <li><span class='text-uppercase'>Paginas:</span></li>
+                                                                          <li class='active'>$j</li>
+                                                                          <li><a href='index.php'><i class='fa fa-caret-right'></i></a></li>
+                                                                          </ul>
+                                                                          </div>";
+                                                                          } */
+                                                                        ?>       
+
+                                                                    </div>
+                                                                </div>
+
+                                                                <!--SEARCH-->
+
+                                                                <div class="col-md-6">
+                                                                    <div class="section-title">
+                                                                        <h3 class="title">Filtro</h3>
+                                                                    </div>
+                                                                    <form>
+
+                                                                        <!--<div id="tabelaFiltro">-->
+
+                                                                        <?php
+                                                                        $filtro = "SELECT c.*, d.nomeCientificoCarpoteca FROM plantas as c inner join carpoteca as d on c.id = d.id";
+
+                                                                        $resultadoFiltro = $conecta->query($filtro);
+                                                                        if ($resultadoFiltro->num_rows > 0) {
+                                                                            while ($linhaFiltro = $resultadoFiltro->fetch_assoc()) {
+                                                                                echo "<table id='tabelaFiltro'>
+                                                                                            <th colspan='2' class='section-title'><h5 class='title'>Nome</h5></th>
+
+
+                                                                            <tr>
+                                                                                <td><label class='text-uppercase'>Nome Científico:</label></td>
+                                                                                <td><label class='text-uppercase'>Nome Popular:</label></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                
+                                                                                <td><select class='input search-categories'>
+                                                                                        <option>Selecione</option>
+                                                                                        <option>" . $linhaFiltro["nomeCientifico"] . "</option>
+                                                                                        <option>Todos</option>
+                                                                                        </select></td>
+                                                                                        
+                                                                                <td><select class='input search-categories'>
+                                                                                        <option>Selecione</option>
+                                                                                        <option>" . $linhaFiltro["nomePopular"] . "</option>
+                                                                                        <option>Todos</option>
+                                                                                        </select></td>
+                                                                                        
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <th colspan='2' class='section-title'><label class='text-uppercase' class='title'>Tipo</label></th>
+                                                                            </tr>
+                                                                            <tr>
+
+                                                                                <td><label class='text-uppercase'>Divisão:</label></td>
+
+                                                                                <td><label class='text-uppercase'>Classe:</label></td>
+                                                                            </tr>
+                                                                            <tr><td><select class='input search-categories'>
+                                                                                        <option>Selecione</option>
+                                                                                        <option>" . $linhaFiltro["divisao"] . "</option>
+                                                                                        <option>Todos</option>
+                                                                                        </select></td>
+                                                                                        
+                                                                                <td><select class='input search-categories'>
+                                                                                        <option>Selecione</option>
+                                                                                        <option>" . $linhaFiltro["classe"] . "</option>
+                                                                                        <option>Todos</option>
+                                                                                        </select></td>
+                                                                            </tr><tr>
+                                                                                <td><label class='text-uppercase'>Ordem:</label></td>
+                                                                                <td><label class='text-uppercase'>Família:</label></td>
+
+                                                                            </tr>
+                                                                            <tr>
+                                                                                
+                                                                                <td><select class='input search-categories'>
+                                                                                        <option>Selecione</option>
+                                                                                        <option>" . $linhaFiltro["ordem"] . "</option>
+                                                                                        <option>Todos</option>
+                                                                                        </select></td>
+                                                                                        
+                                                                                <td><select class='input search-categories'>
+                                                                                        <option>Selecione</option>
+                                                                                        <option>" . $linhaFiltro["familia"] . "</option>
+                                                                                        <option>Todos</option>
+                                                                                        </select></td>
+                                                                            </tr><tr>
+
+                                                                                <td colspan='2'><label class='text-uppercase'>Carpoteca:</label></td>
+
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td colspan='2'><select class='input search-categories'>
+                                                                                        <option>Selecione</option>
+                                                                                        <option>" . $linhaFiltro["nomeCientificoCarpoteca"] . "</option>
+                                                                                        <option>Todos</option>
+                                                                                        </select></td>
+                                                                            </tr>
+
+
+                                                                                </table>
+                                                                                <div class='pull-right'>
+                                                                                    <button class='primary-btn'>Pesquisar</button>
+                                                                                </div>
+                                                                                        ";
+                                                                            }
+                                                                        } else {
+                                                                            echo "<table id='tabelaFiltro'>
+                                                                                        <th colspan='2' class='section-title'><h5 class='title'>Nome</h5></th>
+
+
+                                                                            <tr>
+                                                                                <td><label class='text-uppercase'>Nome Científico:</label></td>
+                                                                                <td><label class='text-uppercase'>Nome Popular:</label></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                
+                                                                                <td><select class='input search-categories'>
+                                                                                        <option>Selecione</option>
+                                                                                        </select></td>
+                                                                                        
+                                                                                <td><select class='input search-categories'>
+                                                                                        <option>Selecione</option>
+                                                                                        </select></td>
+                                                                                        
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <th colspan='2' class='section-title'><label class='text-uppercase' class='title'>Tipo</label></th>
+                                                                            </tr>
+                                                                            <tr>
+
+                                                                                <td><label class='text-uppercase'>Divisão:</label></td>
+
+                                                                                <td><label class='text-uppercase'>Classe:</label></td>
+                                                                            </tr>
+                                                                            <tr><td><select class='input search-categories'>
+                                                                                        <option>Selecione</option>
+                                                                                        </select></td>
+                                                                                        
+                                                                                <td><select class='input search-categories'>
+                                                                                        <option>Selecione</option>
+                                                                                        </select></td>
+                                                                            </tr><tr>
+                                                                                <td><label class='text-uppercase'>Ordem:</label></td>
+                                                                                <td><label class='text-uppercase'>Família:</label></td>
+
+                                                                            </tr>
+                                                                            <tr>
+                                                                                
+                                                                                <td><select class='input search-categories'>
+                                                                                        <option>Selecione</option>
+                                                                                        </select></td>
+                                                                                        
+                                                                                <td><select class='input search-categories'>
+                                                                                        <option>Selecione</option>
+                                                                                        </select></td>
+                                                                            </tr><tr>
+
+                                                                                <td colspan='2'><label class='text-uppercase'>Carpoteca:</label></td>
+
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td colspan='2'><select class='input search-categories'>
+                                                                                        <option>Selecione</option>
+                                                                                        </select></td>
+                                                                            </tr>
+
+                                                                                </table>
+                                                                                <div class='pull-right'>
+                                                                                    <button class='primary-btn'>Pesquisar</button>
+                                                                                </div>
+                                                                                        ";
+                                                                        }
+                                                                        ?>
+                                                                    </form>
+
+
+                                                                    <!--/SEARCH-->
+                                                                </div>
+
+
+
+                                                            </div>
+
+                                                        </div>
+                                                        <!-- /container -->
+                                                    </div>
+
+
+
+                                                    <!-- /section -->
 
                                                     <!-- FOOTER -->
 
@@ -525,5 +673,4 @@
                                                     </body>
 
                                                     </html>
-
 

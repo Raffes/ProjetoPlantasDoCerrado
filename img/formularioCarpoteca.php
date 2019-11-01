@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-        <title>Fichamento da Planta</title>
+        <title>Fichamento da Carpoteca</title>
 
         <!-- Google font -->
         <link href="https://fonts.googleapis.com/css?family=Hind:400,700" rel="stylesheet">
@@ -344,7 +344,7 @@
                                                 <div class="container">
                                                     <ul class="breadcrumb">
                                                         <li><a href="logIndex.php">Página Inicial</a></li>
-                                                        <li class="active">Fichamento da Planta</li>
+                                                        <li class="active">Fichamento da Carpoteca</li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -358,38 +358,37 @@
 
                                                         
                                                             <div class="section-title" id="cadastro">
-                                                                <h3 class="title">Fichamento da Planta</h3>
+                                                                <h3 class="title">Fichamento da Carpoteca</h3>
                                                             </div>
                                                             <div class="col-md-6">
-                                                                
+                                                                <form id="checkout-form" class="clearfix" action="php/cadastroCarpoteca.php" method="POST">
                                                                 <?php
-                                                                $formulario1 = "SELECT nomeCientifico, nomePopular, divisao, classe, ordem, familia FROM plantas";
+                                                                $formulario1 = "SELECT a.nomeCientificoCarpoteca, a.nomePopularCarpoteca, b.divisao, b.classe, b.ordem, b.familia FROM carpoteca as a inner join plantas as b on a.id = b.id";
 
-                                                                $resultadoFormulario1 = $conecta->query($formulario1);
-                                                                if ($resultadoFormulario1->num_rows > 0) {
-                                                                    while ($linhaFormulario1 = $resultadoFormulario1->fetch_assoc()) {
-                                                                        echo "<form id='checkout-form' class='clearfix' action='php/cadastroDasPlantas.php' method='POST'>
-                                                                            <table id='fichamento1'>
+                                                                $resultadoFormulario2 = $conecta->query($formulario1);
+                                                                if ($resultadoFormulario2->num_rows > 0) {
+                                                                    while ($linhaFormulario2 = $resultadoFormulario2->fetch_assoc()) {
+                                                                        echo "<table id='fichamento1'>
                                                                         <tr class='size-option'>
                                                                                 <td class='form-group'><label class='text-uppercase' id='formularioLabel'>Nome Científico:</label></td>
                                                                                 <td class='form-group'><label class='text-uppercase' id='formularioLabel'>Nome Popular:</label></td>
                                                                             </tr>
 
                                                                             <tr class='size-option'>
-                                                                                <td class='form-group' id='select1'>
-                                                                                <select class='input search-categories' id='formulario' name='nomeCientificoPlanta'>
+                                                                                <td class='form-group' id='select6'>
+                                                                                <select class='input search-categories' id='formulario' name='nomeCientificoCarpoteca'>
                                                                                 <option>Selecione</option>
-                                                                                <option>" . $linhaFormulario1["nomeCientifico"] . "</option>
-                                                                                <option onclick='extraFormulario1()'>Outro</option>
+                                                                                <option>" . $linhaFormulario2["nomeCientificoCarpoteca"] . "</option>
+                                                                                <option onclick='extraFormulario6()'>Outro</option>
                                                                                 </select></td>
                                                                                 
                                                                                 <td class='form-group'>
-                                                                                    <input class='input search-input' id='formulario' name='nomePopular' type='text' placeholder='Nome Popular'>
+                                                                                    <input class='input search-input' id='formulario' name='nomePopularCarpoteca' type='text' placeholder='Nome Popular'>
                                                                                 </td>                                                                                 
 
                                                                             </tr>
                                                                             <tr>
-                                                                                <td id='f1'></td>
+                                                                                <td id='f6'></td>
                                                                             </tr>
                                                                             
 
@@ -399,24 +398,24 @@
                                                                             </tr>
 
                                                                             <tr>
-                                                                                <td class='form-group' id='select2'>
+                                                                                <td class='form-group' id='select7'>
                                                                                     <select class='input search-categories' id='formulario' name='divisaoFormulario'>
                                                                                     <option>Selecione</option>
-                                                                                    <option>" . $linhaFormulario1["divisao"] . "</option>
-                                                                                    <option onclick='extraFormulario2()'>Outro</option>
+                                                                                    <option>" . $linhaFormulario2["divisao"] . "</option>
+                                                                                    <option onclick='extraFormulario7()'>Outro</option>
                                                                                     </select></td>
-                                                                                <td class='form-group' id='select3'>
+                                                                                <td class='form-group' id='select8'>
                                                                                     <select class='input search-categories' id='formulario' name='classeFormulario'>
                                                                                     <option>Selecione</option>
-                                                                                    <option>" . $linhaFormulario1["classe"] . "</option>
-                                                                                    <option onclick='extraFormulario3()'>Outro</option>
+                                                                                    <option>" . $linhaFormulario2["classe"] . "</option>
+                                                                                    <option onclick='extraFormulario8()'>Outro</option>
                                                                                     </select></td>
                                                                             </tr>
 
 
                                                                             <tr class='size-option'>
-                                                                                <td class='form-group' id='f2'></td>
-                                                                                <td class='form-group' id='f3'></td>
+                                                                                <td class='form-group' id='f7'></td>
+                                                                                <td class='form-group' id='f8'></td>
                                                                             </tr>
 
 
@@ -425,24 +424,24 @@
                                                                                 <td class='form-group'><label class='text-uppercase' id='formularioLabel'>Família:</label></td>
                                                                             </tr>
                                                                             <tr class='size-option'>
-                                                                                <td class='form-group' id='select4'>
+                                                                                <td class='form-group' id='select9'>
                                                                                 <select class='input search-categories' id='formulario' name='ordemFormulario'>
-                                                                                <option>" . $linhaFormulario1["ordem"] . "</option>
-                                                                                <option onclick='extraFormulario4()'>Outro</option>
+                                                                                <option>" . $linhaFormulario2["ordem"] . "</option>
+                                                                                <option onclick='extraFormulario9()'>Outro</option>
                                                                                 </select></td>
 
-                                                                                <td class='form-group' id='select5'>
+                                                                                <td class='form-group' id='select10'>
                                                                                 <select class='input search-categories' id='formulario' name='familiaFormulario'>
                                                                                 <option>Selecione</option>
-                                                                                <option>" . $linhaFormulario1["familia"] . "</option>
-                                                                                <option onclick='extraFormulario5()'>Outro</option>
+                                                                                <option>" . $linhaFormulario2["familia"] . "</option>
+                                                                                <option onclick='extraFormulario10()'>Outro</option>
                                                                                 </select></td>
 
                                                                             </tr>
                                                                             
                                                                                 <tr class='size-option'>
-                                                                                    <td class='form-group' id='f4'></td>
-                                                                                    <td class='form-group' id='f5'></td>
+                                                                                    <td class='form-group' id='f9'></td>
+                                                                                    <td class='form-group' id='f10'></td>
                                                                                 </tr>
 
                                                                                 <tr class='size-option'>
@@ -450,55 +449,37 @@
                                                                                 </tr>
                                                                                 <tr class='size-option'>
                                                                                     <td class='form-group'>
-                                                                                        <input type='file' id='formulario' name='fotoPlanta1' size='25'>
+                                                                                        <input type='file' id='formulario' name='fotoCarpoteca1' size='25'>
                                                                                     </td>
                                                                                     <td class='form-group'>
-                                                                                        <input type='file' id='formulario' name='fotoPlanta2' size='25'>
+                                                                                        <input type='file' id='formulario' name='fotoCarpoteca2' size='25'>
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr class='size-option'>
                                                                                     <td class='form-group'>
-                                                                                        <input type='file' id='formulario' name='fotoPlanta3' size='25'>
+                                                                                        <input type='file' id='formulario' name='fotoCarpoteca3' size='25'>
                                                                                     </td>
                                                                                     <td class='form-group'>
-                                                                                        <input type='file' id='formulario' name='fotoPlanta4' size='25'>
+                                                                                        <input type='file' id='formulario' name='fotoCarpoteca4' size='25'>
                                                                                     </td>
                                                                                 </tr>
 
-                                                                            </table>
-                                                                            </div>
-                                                    <div class='col-lg-6'>
-                                                        <table id='fichamento2'>
-                                                            <tr>
-                                                                <td> <label class='text-uppercase'>Descrição: </label></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td><textarea name='descricao' id='ckeditor' class='ckeditor' maxlength='3000'></textarea></td> 
-                                                            </tr>
-                                                            <tr class='pull-right'>
-                                                                <td><input type='submit' class='primary-btn' value='Adicionar planta'></td>
-                                                            </tr>
-                                                        </table>
-
-                                                    </div>
-
-                                                    </form>";
+                                                                            </table>";
 
                                                                                
                                                                     }
                                                                 } else {
-                                                                    echo "<form id='checkout-form' class='clearfix' action='php/cadastroDasPlantas.php' method='POST'>
-                                                                        <table id='fichamento1'>
+                                                                    echo "<table id='fichamento1'>
                                                                         <tr class='size-option'>
                                                                                 <td class='form-group'><label class='text-uppercase' id='formularioLabel'>Nome Científico:</label></td>
                                                                                 <td class='form-group'><label class='text-uppercase' id='formularioLabel'>Nome Popular:</label></td>
                                                                             </tr>
 
                                                                             <tr class='size-option'>
-                                                                                <td class='form-group'><input class='input search-input' id='formulario' name='nomeCientificoPlanta' type='text' placeholder='Nome Científico da Planta'></td>
+                                                                                <td class='form-group'><input class='input search-input' id='formulario' name='nomeCientificoCarpoteca' type='text' placeholder='Nome Científico da Carpoteca'></td>
                                                                                 
                                                                                 <td class='form-group'>
-                                                                                    <input class='input search-input' id='formulario' name='nomePopular' type='text' placeholder='Nome Popular'>
+                                                                                    <input class='input search-input' id='formulario' name='nomePopularCarpoteca' type='text' placeholder='Nome Popular'>
                                                                                 </td>                                                                                 
 
                                                                             </tr>
@@ -549,31 +530,30 @@
                                                                                     </td>
                                                                                 </tr>
 
-                                                                            </table>
-                                                                            </div>
-                                                    <div class='col-lg-6'>
-                                                        <table id='fichamento2'>
+                                                                            </table>";
+                                                                }
+                                                                ?>
+                                                        </form>
+
+
+
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <table id="fichamento2">
                                                             <tr>
-                                                                <td> <label class='text-uppercase'>Descrição: </label></td>
+                                                                <td> <label class="text-uppercase">Descrição: </label></td>
                                                             </tr>
                                                             <tr>
-                                                                <td><textarea name='descricao' id='ckeditor' class='ckeditor' maxlength='3000'></textarea></td> 
+                                                                <td><textarea name="descricao" id="ckeditor" class="ckeditor" maxlength="3000"></textarea></td> 
                                                             </tr>
-                                                            <tr class='pull-right'>
-                                                                <td><input type='submit' class='primary-btn' value='Adicionar planta'></td>
+                                                            <tr class="pull-right">
+                                                                <td><input type="submit" class="primary-btn" value="Adicionar Carpoteca"></td>
                                                             </tr>
                                                         </table>
 
                                                     </div>
 
-                                                    </form>";
-                                                                }
-                                                                ?>
-                                                        
-
-
-
-                                                    
+                                                    </form>
                                                 </div>
                                             </div>
                                             <!-- /container -->

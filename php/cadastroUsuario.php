@@ -20,24 +20,16 @@ if($modificadorArtigo == TRUE){
 //if() aqui vai na sessão conectar o usuario a pagina de cadastro de ususrio
 
 
-$cadastro1 = "INSERT INTO cadastroDeUsuario(login, nome, senha)"
-        . "VALUES('$identificacao', '$nomeUsuario','$senhaUsuario')";
-
-$cadastro2 = "INSERT INTO tipoDeUsuario(usuario)"
-        . "VALUES ('$tipoUsuario')";
-
+$cadastro1 = "INSERT INTO cadastroDeUsuario(login, nome, senha, tipoDeUsuario)"
+        . "VALUES('$identificacao', '$nomeUsuario','$senhaUsuario', '$tipoUsuario')";
 
 
 if($conecta->query($cadastro1)===TRUE){
-    echo "<script>alert('Novo registro criado com sucesso');</script>";
+    echo "<script>alert('Novo registro criado com sucesso');"
+    . "window.location = '../cadastro.php';</script>";
 }else{
     echo "Erro: ".$cadastro1."<br>".$conecta->error."<br>";
 }
 
-if($conecta->query($cadastro2)===TRUE){
-    echo "<script>alert('Novo registro criado com sucesso');</script>";
-}else{
-    echo "Erro: ".$cadastro2."<br>".$conecta->error."<br>";
-}
 
 $conecta->close();

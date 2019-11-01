@@ -409,7 +409,7 @@
                                                                                     <select class='input search-categories' id='formulario' name='classeFormulario'>
                                                                                     <option>Selecione</option>
                                                                                     <option>" . $linhaFormulario1["classe"] . "</option>
-                                                                                    <option onclick='extraFormulario3()'>Outro</option>
+                                                                                    <option onclick='extraFormulario2()'>Outro</option>
                                                                                     </select></td>
                                                                             </tr>
 
@@ -428,14 +428,13 @@
                                                                                 <td class='form-group' id='select4'>
                                                                                 <select class='input search-categories' id='formulario' name='ordemFormulario'>
                                                                                 <option>" . $linhaFormulario1["ordem"] . "</option>
-                                                                                <option onclick='extraFormulario4()'>Outro</option>
+                                                                                <option onclick='extraFormulario2()'>Outro</option>
                                                                                 </select></td>
 
                                                                                 <td class='form-group' id='select5'>
                                                                                 <select class='input search-categories' id='formulario' name='familiaFormulario'>
                                                                                 <option>Selecione</option>
                                                                                 <option>" . $linhaFormulario1["familia"] . "</option>
-                                                                                <option onclick='extraFormulario5()'>Outro</option>
                                                                                 </select></td>
 
                                                                             </tr>

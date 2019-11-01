@@ -357,11 +357,11 @@
                                                                 <div class="col-md-6">
                                                                     <div class="billing-details">
 
-                                                                        <div class="section-title">
+                                                                        <div class="section-title" >
                                                                             <h3 class="title">Feed</h3>
                                                                         </div>
                                                                         <?php
-                                                                        $feed = "SELECT a.*, b.img1 FROM plantas as a inner join imagemPlantas as b on a.id = b.id LIMIT 5";
+                                                                        $feed = "SELECT * FROM Vwfeed";
 
                                                                         $resultado = $conecta->query(($feed));
                                                                         if ($resultado->num_rows > 0) {
@@ -371,7 +371,7 @@
                                                                                 . "<div>" /* class='product-thumb' */
                                                                                 . "<table id='feed1'>"
                                                                                 . "<tr>"
-                                                                                . "<td colspan='4'><img src='img/" . $linha["img1"] . "' alt='imagem'></td>"
+                                                                                . "<td colspan='4'><img src='img/" . $linha["imgPlanta1"] . "' alt='imagem'></td>"
                                                                                 . "</tr>"
                                                                                 . "<tr>"
                                                                                 . "<td class='text-uppercase'> <h6 class='title'>Nome Científico: </h6></td>"
@@ -401,7 +401,7 @@
                                                                                 . "<th colspan='4'  class='section-title'> <h6 class='title'>Descrição: </h6></th>"
                                                                                 . "</tr>"
                                                                                 . "<tr id='desc'>"
-                                                                                . "<td colspan='4' id='des'>" . $linha["descricao"] . "</td>"
+                                                                                . "<td colspan='4' id='des' style='text-align: justify;'>" . $linha["descricao"] . "</td>"
                                                                                 . "</tr>"
                                                                                 . "<tr>"
                                                                                 . "<td colspan='4' class='product-btns'>
@@ -441,7 +441,7 @@
                                                                         <!--<div id="tabelaFiltro">-->
 
                                                                         <?php
-                                                                        $filtro = "SELECT c.*, d.nomeCientificoCarpoteca FROM plantas as c inner join carpoteca as d on c.id = d.id";
+                                                                        $filtro = "SELECT * FROM VwFiltro";
 
                                                                         $resultadoFiltro = $conecta->query($filtro);
                                                                         if ($resultadoFiltro->num_rows > 0) {

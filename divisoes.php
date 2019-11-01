@@ -1,4 +1,8 @@
-<?php include 'php/conexao.php'; ?>
+<?php 
+include 'php/conexao.php'; 
+include 'index.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -361,7 +365,8 @@
                                                                             <h3 class="title">Feed</h3>
                                                                         </div>
                                                                         <?php
-                                                                        $feed = "SELECT a.divisao, b.img1 FROM plantas as a inner join imagemPlantas as b on a.id = b.id LIMIT 5";
+                                                                        $feed = "SELECT a.*, b.imgPlanta1 FROM plantas as a inner join imagemPlantas as b on a.id_plantas = b.id_imagemPlantas LIMIT 5"
+                                                                                . "WHERE divisao = '$linhaDivisao'";
 
                                                                         $resultado = $conecta->query(($feed));
                                                                         if ($resultado->num_rows > 0) {
@@ -371,7 +376,7 @@
                                                                                 . "<div>" /* class='product-thumb' */
                                                                                 . "<table id='feed1'>"
                                                                                 . "<tr>"
-                                                                                . "<td colspan='4'><img src='img/" . $linha["img1"] . "' alt='imagem'></td>"
+                                                                                . "<td colspan='4'><img src='img/" . $linha["imgPlanta1"] . "' alt='imagem'></td>"
                                                                                 . "</tr>"
                                                                                 . "<tr>"
                                                                                 . "<td class='text-uppercase'> <h6 class='title'>Nome Científico: </h6></td>"

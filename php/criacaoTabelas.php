@@ -15,7 +15,79 @@ $tabela6 = "drop table tipoDeUsuario";
 
 $tabela7 = "drop table likeArtigo";*/
 
-$tabela1 = "CREATE TABLE IF NOT EXISTS cadastroDeUsuario(
+$tabela1 = "CREATE TABLE IF NOT EXISTS `dbPlantasDoCerrado`.`cadastroDeUsuario` (
+  `id_cadastro` INT NOT NULL AUTO_INCREMENT,
+  `login` VARCHAR(20) NOT NULL,
+  `nome` VARCHAR(20) NOT NULL,
+  `senha` VARCHAR(15) NOT NULL,
+  `tipoDeUsuario` VARCHAR(15) NOT NULL,
+  PRIMARY KEY (`id_cadastro`))";
+
+$tabela2 = "CREATE TABLE IF NOT EXISTS `dbPlantasDoCerrado`.`imagemCarpoteca` (
+  `id_imagemCarpoteca` INT NOT NULL AUTO_INCREMENT,
+  `imgCarpoteca1` MEDIUMBLOB NULL,
+  `imgCarpoteca2` MEDIUMBLOB NULL,
+  `imgCarpoteca3` MEDIUMBLOB NULL,
+  `imgCarpoteca4` MEDIUMBLOB NULL,
+  PRIMARY KEY (`id_imagemCarpoteca`))";
+
+$tabela3 = "CREATE TABLE IF NOT EXISTS `dbPlantasDoCerrado`.`carpoteca` (
+  `id_carpoteca` INT NOT NULL AUTO_INCREMENT,
+  `nomeCientificoCarpoteca` VARCHAR(35) NOT NULL,
+  `nomePopularCarpoteca` VARCHAR(35) NOT NULL,
+  `descricao` TEXT(3000) NOT NULL,
+  `id_imagemCapoteca` INT NULL,
+  `idCadastro` INT NULL,
+  PRIMARY KEY (`id_carpoteca`),
+  CONSTRAINT `id_ImagemCapoteca`
+    FOREIGN KEY (`id_imagemCapoteca`)
+    REFERENCES `dbPlantasDoCerrado`.`imagemCarpoteca` (`id_imagemCarpoteca`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `idCadastro`
+    FOREIGN KEY (`idCadastro`)
+    REFERENCES `dbPlantasDoCerrado`.`cadastroDeUsuario` (`id_cadastro`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)";
+
+$tabela4 = "CREATE TABLE IF NOT EXISTS `dbPlantasDoCerrado`.`imagemPlantas` (
+  `id_imagemPlantas` INT NOT NULL AUTO_INCREMENT,
+  `imgPlanta1` MEDIUMBLOB NULL,
+  `imgPlanta2` MEDIUMBLOB NULL,
+  `imgPlanta3` MEDIUMBLOB NULL,
+  `imgPlanta4` MEDIUMBLOB NULL,
+  PRIMARY KEY (`id_imagemPlantas`))";
+
+$tabela5 = "CREATE TABLE IF NOT EXISTS `dbPlantasDoCerrado`.`plantas` (
+  `id_plantas` INT NOT NULL AUTO_INCREMENT,
+  `nomeCientifico` VARCHAR(35) NOT NULL,
+  `nomePopular` VARCHAR(35) NOT NULL,
+  `divisao` VARCHAR(35) NOT NULL,
+  `classe` VARCHAR(35) NOT NULL,
+  `ordem` VARCHAR(35) NOT NULL,
+  `familia` VARCHAR(35) NOT NULL,
+  `descricao` TEXT(3000) NOT NULL,
+  `id_cadastro` INT NULL,
+  `id_carpoteca` INT NULL,
+  `id_imagemPlantas` INT NULL,
+  PRIMARY KEY (`id_plantas`),
+  CONSTRAINT `id_cadastro`
+    FOREIGN KEY (`id_cadastro`)
+    REFERENCES `dbPlantasDoCerrado`.`cadastroDeUsuario` (`id_cadastro`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `id_carpoteca`
+    FOREIGN KEY (`id_carpoteca`)
+    REFERENCES `dbPlantasDoCerrado`.`carpoteca` (`id_carpoteca`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `id_imagemPlanta`
+    FOREIGN KEY (`id_imagemPlantas`)
+    REFERENCES `dbPlantasDoCerrado`.`imagemPlantas` (`id_imagemPlantas`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)";
+
+/*$tabela1 = "CREATE TABLE IF NOT EXISTS cadastroDeUsuario(
 id_cadastro int(55) primary key auto_increment not null,
 login varchar(20) not null,
 nome varchar(20) not null,
@@ -80,7 +152,7 @@ id int(55) primary key auto_increment,
 gostei boolean,
 id_cadastro int(55),
 foreign key (id_cadastro) references cadastroDeUsuario(id_cadastro)
-)";
+)";*/
 
 
 
@@ -91,21 +163,21 @@ if($conecta->query($tabela1)===TRUE){
 }
 
 if($conecta->query($tabela2)===TRUE){
-    echo "Tabela imagens das plantas criada com sucesso<br>";
-}else{
-    echo "Erro na criação da tabela imagens das plantas: ".$conecta->error."<br>";
-}
-
-if($conecta->query($tabela3)===TRUE){
     echo "Tabela imagens da Carpoteca criada com sucesso<br>";
 }else{
     echo "Erro na criação da tabela imagens da Carpoteca: ".$conecta->error."<br>";
 }
 
-if($conecta->query($tabela4)===TRUE){
+if($conecta->query($tabela3)===TRUE){
     echo "Tabela carpoteca criada com sucesso<br>";
 }else{
     echo "Erro na criação da tabela carpoteca: ".$conecta->error."<br>";
+}
+
+if($conecta->query($tabela4)===TRUE){
+    echo "Tabela imagens das plantas criada com sucesso<br>";
+}else{
+    echo "Erro na criação da tabela imagens das plantas: ".$conecta->error."<br>";
 }
 
 if($conecta->query($tabela5)===TRUE){
@@ -114,17 +186,6 @@ if($conecta->query($tabela5)===TRUE){
     echo "Erro na criação da tabela plantas: ".$conecta->error."<br>";
 }
 
-if($conecta->query($tabela6)===TRUE){
-    echo "Tabela tipo de usuario criada com sucesso<br>";
-}else{
-    echo "Erro na criação da tabela tipo de usuário: ".$conecta->error."<br>";
-}
-
-if($conecta->query($tabela7)===TRUE){
-    echo "Tabela tipo de likeDoUsuario criada com sucesso<br>";
-}else{
-    echo "Erro na criação da tabela de likeDoUsuario: ".$conecta->error."<br>";
-}
 
 $conecta->close();
 

@@ -1,7 +1,7 @@
 <?php
 include 'conexao.php';
 
-$sql = "CREATE DATABASE plantasDoCerrado";
+$sql = "CREATE DATABASE IF NOT EXISTS dbPlantasDoCerrado";
 if($conecta->query($sql)==TRUE){
     echo "Banco de dados criado com sucesso <br>";
 }else{

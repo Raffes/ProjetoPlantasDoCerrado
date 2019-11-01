@@ -2,7 +2,7 @@
 $nome_servidor = "localhost";
 $nome_usuario = "root";
 $senha = "";
-$nome_banco = "plantasDoCerrado";
+$nome_banco = "dbPlantasDoCerrado";
 
 //Conecão com banco
 $conecta = new mysqli($nome_servidor, $nome_usuario, $senha, $nome_banco);
