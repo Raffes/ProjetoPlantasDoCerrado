@@ -4,7 +4,7 @@ include 'conexao.php';
 
 $view1 = "CREATE VIEW `VwFeed` AS 
 SELECT a.nomeCientifico, a.nomePopular, a.divisao, a.classe, a.ordem, a.familia, a.descricao, b.imgPlanta1 
-FROM plantas as a LEFT JOIN imagemPlantas as b on a.id_plantas = b.id_imagemPlantas LIMIT 3;";
+FROM plantas as a LEFT JOIN imagemPlantas as b on a.id_plantas = b.id_imagemPlantas";
 
 $view2 = "CREATE VIEW `VwFiltro` AS SELECT c.*, d.nomeCientificoCarpoteca FROM plantas as c left join carpoteca as d on c.id_plantas = d.id_carpoteca";
 

@@ -28,6 +28,7 @@
 
         <!-- Custom stlylesheet -->
         <link type="text/css" rel="stylesheet" href="css/style.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -360,75 +361,35 @@
                                                                         <div class="section-title" >
                                                                             <h3 class="title">Feed</h3>
                                                                         </div>
-                                                                        <?php
-                                                                        $feed = "SELECT * FROM Vwfeed";
+                                                                        <div class='product product-single'>
+                                                                            <span id="feedSelect"></span>
+                                                                        </div>
 
-                                                                        $resultado = $conecta->query(($feed));
-                                                                        if ($resultado->num_rows > 0) {
-                                                                            /* while($linha = $resultado->fetch_assoc()) { */
-                                                                            for ($i = 0; $i < $linha = $resultado->fetch_assoc(); $i++) {
-                                                                                echo "<div class='product product-single'>"
-                                                                                . "<div>" /* class='product-thumb' */
-                                                                                . "<table id='feed1'>"
-                                                                                . "<tr>"
-                                                                                . "<td colspan='4'><img src='img/" . $linha["imgPlanta1"] . "' alt='imagem'></td>"
-                                                                                . "</tr>"
-                                                                                . "<tr>"
-                                                                                . "<td class='text-uppercase'> <h6 class='title'>Nome Científico: </h6></td>"
-                                                                                . "<td>" . $linha["nomeCientifico"] . "</td>"
-                                                                                . "<td class='text-uppercase'><h6 class='title'>Nome Popular: </h6></td>"
-                                                                                . "<td>" . $linha["nomePopular"] . "</td>"
-                                                                                . "</tr>"
-                                                                                . "<tr>"
-                                                                                . "<td class='text-uppercase'> <h6 class='title'>Divisão: </h6></td>"
-                                                                                . "<td>" . $linha["divisao"] . "</td>"
-                                                                                . "<td class='text-uppercase'><h6 class='title'>Classe: </h6></td>"
-                                                                                . "<td>" . $linha["classe"] . "</td>"
-                                                                                . "</tr>"
-                                                                                . "<tr>"
-                                                                                . "<td class='text-uppercase'> <h6 class='title'>Ordem: </h6></td>"
-                                                                                . "<td>" . $linha["ordem"] . "</td>"
-                                                                                . "<td class='text-uppercase'><h6 class='title'>Familia: </h6></td>"
-                                                                                . "<td>" . $linha["familia"] . "</td>"
-                                                                                . "</tr>"
-                                                                                . "<tr>"
-                                                                                . "<td class='text-uppercase'><h6 class='title'>Carpoteca: </h6></td>"
-                                                                                /* ."<td colspan='3'>".$linha["carpoteca"]. "</td>" */
-                                                                                . "</tr>"
-                                                                                . "</table>"
-                                                                                . "<table id='feed2'>"
-                                                                                . "<tr>"
-                                                                                . "<th colspan='4'  class='section-title'> <h6 class='title'>Descrição: </h6></th>"
-                                                                                . "</tr>"
-                                                                                . "<tr id='desc'>"
-                                                                                . "<td colspan='4' id='des' style='text-align: justify;'>" . $linha["descricao"] . "</td>"
-                                                                                . "</tr>"
-                                                                                . "<tr>"
-                                                                                . "<td colspan='4' class='product-btns'>
-                                                  <button class='main-btn icon-btn'><i class='fa fa-heart'></i></button></td>"
-                                                                                . "</tr>"
-                                                                                . "</table>"
-                                                                                /* . "<button class='main-btn quick-view' oneclick='abrirIframe()'><i class='fa fa-search-plus'></i> Vê Descrição Completa</button>" */
-                                                                                . "</div>"
-                                                                                . "</div>";
+
+
+                                                                        <script type="text/javascript">
+
+                                                                            var qnt_result_pg = 6;
+                                                                            var pagina = 1; //Página inicial
+                                                                            $(document).ready(function () {
+                                                                                feed(pagina, qnt_result_pg);
+                                                                            });
+
+                                                                            function feed(pagina, qnt_result_pg){
+                                                                                var dados = {
+                                                                                    pagina: pagina,
+                                                                                    qnt_result_pg: qnt_result_pg
+                                                                                }
+                                                                                $.post('php/selectFeed.php', dados, function (retorna) {
+                                                                                    $("#feedSelect").html(retorna);
+                                                                                });
                                                                             }
-                                                                        } else {
-                                                                            echo "0 results";
-                                                                        }
-                                                                        /* for ($j = 0; $j < $linha = $resultado->fetch_assoc(); $j++) {
-                                                                          echo "<div class='pull-right'>
+                                                                        </script>
 
-                                                                          <ul class='store-pages'>
-                                                                          <li><span class='text-uppercase'>Paginas:</span></li>
-                                                                          <li class='active'>$j</li>
-                                                                          <li><a href='index.php'><i class='fa fa-caret-right'></i></a></li>
-                                                                          </ul>
-                                                                          </div>";
-                                                                          } */
-                                                                        ?>       
 
                                                                     </div>
                                                                 </div>
+
 
                                                                 <!--SEARCH-->
 
@@ -444,155 +405,158 @@
                                                                         $filtro = "SELECT * FROM VwFiltro";
 
                                                                         $resultadoFiltro = $conecta->query($filtro);
-                                                                        if ($resultadoFiltro->num_rows > 0) {
-                                                                            while ($linhaFiltro = $resultadoFiltro->fetch_assoc()) {
-                                                                                echo "<table id='tabelaFiltro'>
-                                                                                            <th colspan='2' class='section-title'><h5 class='title'>Nome</h5></th>
+                                                                        if (($resultadoFiltro) AND $resultadoFiltro->num_rows != 0) {
+                                                                            while ($linhaFiltro = mysqli_fetch_assoc($resultadoFiltro)) {
+                                                                                ?>
+                                                                                <table id='tabelaFiltro'>
+                                                                                    <th colspan='2' class='section-title'><h5 class='title'>Nome</h5></th>
 
 
-                                                                            <tr>
-                                                                                <td><label class='text-uppercase'>Nome Científico:</label></td>
-                                                                                <td><label class='text-uppercase'>Nome Popular:</label></td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                
-                                                                                <td><select class='input search-categories'>
-                                                                                        <option>Selecione</option>
-                                                                                        <option>" . $linhaFiltro["nomeCientifico"] . "</option>
-                                                                                        <option>Todos</option>
-                                                                                        </select></td>
-                                                                                        
-                                                                                <td><select class='input search-categories'>
-                                                                                        <option>Selecione</option>
-                                                                                        <option>" . $linhaFiltro["nomePopular"] . "</option>
-                                                                                        <option>Todos</option>
-                                                                                        </select></td>
-                                                                                        
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <th colspan='2' class='section-title'><label class='text-uppercase' class='title'>Tipo</label></th>
-                                                                            </tr>
-                                                                            <tr>
+                                                                                    <tr>
+                                                                                        <td><label class='text-uppercase'>Nome Científico:</label></td>
+                                                                                        <td><label class='text-uppercase'>Nome Popular:</label></td>
+                                                                                    </tr>
+                                                                                    <tr>
 
-                                                                                <td><label class='text-uppercase'>Divisão:</label></td>
+                                                                                        <td><select class='input search-categories'>
+                                                                                                <option>Selecione</option>
+                                                                                                <option><?php echo $linhaFiltro["nomeCientifico"]; ?></option>
+                                                                                                <option>Todos</option>
+                                                                                            </select></td>
 
-                                                                                <td><label class='text-uppercase'>Classe:</label></td>
-                                                                            </tr>
-                                                                            <tr><td><select class='input search-categories'>
-                                                                                        <option>Selecione</option>
-                                                                                        <option>" . $linhaFiltro["divisao"] . "</option>
-                                                                                        <option>Todos</option>
-                                                                                        </select></td>
-                                                                                        
-                                                                                <td><select class='input search-categories'>
-                                                                                        <option>Selecione</option>
-                                                                                        <option>" . $linhaFiltro["classe"] . "</option>
-                                                                                        <option>Todos</option>
-                                                                                        </select></td>
-                                                                            </tr><tr>
-                                                                                <td><label class='text-uppercase'>Ordem:</label></td>
-                                                                                <td><label class='text-uppercase'>Família:</label></td>
+                                                                                        <td><select class='input search-categories'>
+                                                                                                <option>Selecione</option>
+                                                                                                <option><?php echo $linhaFiltro["nomePopular"]; ?></option>
+                                                                                                <option>Todos</option>
+                                                                                            </select></td>
 
-                                                                            </tr>
-                                                                            <tr>
-                                                                                
-                                                                                <td><select class='input search-categories'>
-                                                                                        <option>Selecione</option>
-                                                                                        <option>" . $linhaFiltro["ordem"] . "</option>
-                                                                                        <option>Todos</option>
-                                                                                        </select></td>
-                                                                                        
-                                                                                <td><select class='input search-categories'>
-                                                                                        <option>Selecione</option>
-                                                                                        <option>" . $linhaFiltro["familia"] . "</option>
-                                                                                        <option>Todos</option>
-                                                                                        </select></td>
-                                                                            </tr><tr>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <th colspan='2' class='section-title'><label class='text-uppercase' class='title'>Tipo</label></th>
+                                                                                    </tr>
+                                                                                    <tr>
 
-                                                                                <td colspan='2'><label class='text-uppercase'>Carpoteca:</label></td>
+                                                                                        <td><label class='text-uppercase'>Divisão:</label></td>
 
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td colspan='2'><select class='input search-categories'>
-                                                                                        <option>Selecione</option>
-                                                                                        <option>" . $linhaFiltro["nomeCientificoCarpoteca"] . "</option>
-                                                                                        <option>Todos</option>
-                                                                                        </select></td>
-                                                                            </tr>
+                                                                                        <td><label class='text-uppercase'>Classe:</label></td>
+                                                                                    </tr>
+                                                                                    <tr><td><select class='input search-categories'>
+                                                                                                <option>Selecione</option>
+                                                                                                <option><?php echo $linhaFiltro["divisao"]; ?></option>
+                                                                                                <option>Todos</option>
+                                                                                            </select></td>
+
+                                                                                        <td><select class='input search-categories'>
+                                                                                                <option>Selecione</option>
+                                                                                                <option><?php echo $linhaFiltro["classe"]; ?></option>
+                                                                                                <option>Todos</option>
+                                                                                            </select></td>
+                                                                                    </tr><tr>
+                                                                                        <td><label class='text-uppercase'>Ordem:</label></td>
+                                                                                        <td><label class='text-uppercase'>Família:</label></td>
+
+                                                                                    </tr>
+                                                                                    <tr>
+
+                                                                                        <td><select class='input search-categories'>
+                                                                                                <option>Selecione</option>
+                                                                                                <option><?php echo $linhaFiltro["ordem"]; ?></option>
+                                                                                                <option>Todos</option>
+                                                                                            </select></td>
+
+                                                                                        <td><select class='input search-categories'>
+                                                                                                <option>Selecione</option>
+                                                                                                <option><?php echo $linhaFiltro["familia"]; ?></option>
+                                                                                                <option>Todos</option>
+                                                                                            </select></td>
+                                                                                    </tr><tr>
+
+                                                                                        <td colspan='2'><label class='text-uppercase'>Carpoteca:</label></td>
+
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td colspan='2'><select class='input search-categories'>
+                                                                                                <option>Selecione</option>
+                                                                                                <option><?php echo $linhaFiltro["nomeCientificoCarpoteca"]; ?></option>
+                                                                                                <option>Todos</option>
+                                                                                            </select></td>
+                                                                                    </tr>
 
 
                                                                                 </table>
                                                                                 <div class='pull-right'>
                                                                                     <button class='primary-btn'>Pesquisar</button>
                                                                                 </div>
-                                                                                        ";
+
+                                                                            <?php
                                                                             }
                                                                         } else {
-                                                                            echo "<table id='tabelaFiltro'>
-                                                                                        <th colspan='2' class='section-title'><h5 class='title'>Nome</h5></th>
+                                                                            ?>
+                                                                            <table id='tabelaFiltro'>
+                                                                                <th colspan='2' class='section-title'><h5 class='title'>Nome</h5></th>
 
 
-                                                                            <tr>
-                                                                                <td><label class='text-uppercase'>Nome Científico:</label></td>
-                                                                                <td><label class='text-uppercase'>Nome Popular:</label></td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                
-                                                                                <td><select class='input search-categories'>
-                                                                                        <option>Selecione</option>
+                                                                                <tr>
+                                                                                    <td><label class='text-uppercase'>Nome Científico:</label></td>
+                                                                                    <td><label class='text-uppercase'>Nome Popular:</label></td>
+                                                                                </tr>
+                                                                                <tr>
+
+                                                                                    <td><select class='input search-categories'>
+                                                                                            <option>Selecione</option>
                                                                                         </select></td>
-                                                                                        
-                                                                                <td><select class='input search-categories'>
-                                                                                        <option>Selecione</option>
-                                                                                        </select></td>
-                                                                                        
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <th colspan='2' class='section-title'><label class='text-uppercase' class='title'>Tipo</label></th>
-                                                                            </tr>
-                                                                            <tr>
 
-                                                                                <td><label class='text-uppercase'>Divisão:</label></td>
-
-                                                                                <td><label class='text-uppercase'>Classe:</label></td>
-                                                                            </tr>
-                                                                            <tr><td><select class='input search-categories'>
-                                                                                        <option>Selecione</option>
+                                                                                    <td><select class='input search-categories'>
+                                                                                            <option>Selecione</option>
                                                                                         </select></td>
-                                                                                        
-                                                                                <td><select class='input search-categories'>
-                                                                                        <option>Selecione</option>
-                                                                                        </select></td>
-                                                                            </tr><tr>
-                                                                                <td><label class='text-uppercase'>Ordem:</label></td>
-                                                                                <td><label class='text-uppercase'>Família:</label></td>
 
-                                                                            </tr>
-                                                                            <tr>
-                                                                                
-                                                                                <td><select class='input search-categories'>
-                                                                                        <option>Selecione</option>
-                                                                                        </select></td>
-                                                                                        
-                                                                                <td><select class='input search-categories'>
-                                                                                        <option>Selecione</option>
-                                                                                        </select></td>
-                                                                            </tr><tr>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <th colspan='2' class='section-title'><label class='text-uppercase' class='title'>Tipo</label></th>
+                                                                                </tr>
+                                                                                <tr>
 
-                                                                                <td colspan='2'><label class='text-uppercase'>Carpoteca:</label></td>
+                                                                                    <td><label class='text-uppercase'>Divisão:</label></td>
 
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td colspan='2'><select class='input search-categories'>
-                                                                                        <option>Selecione</option>
+                                                                                    <td><label class='text-uppercase'>Classe:</label></td>
+                                                                                </tr>
+                                                                                <tr><td><select class='input search-categories'>
+                                                                                            <option>Selecione</option>
                                                                                         </select></td>
-                                                                            </tr>
 
-                                                                                </table>
-                                                                                <div class='pull-right'>
-                                                                                    <button class='primary-btn'>Pesquisar</button>
-                                                                                </div>
-                                                                                        ";
+                                                                                    <td><select class='input search-categories'>
+                                                                                            <option>Selecione</option>
+                                                                                        </select></td>
+                                                                                </tr><tr>
+                                                                                    <td><label class='text-uppercase'>Ordem:</label></td>
+                                                                                    <td><label class='text-uppercase'>Família:</label></td>
+
+                                                                                </tr>
+                                                                                <tr>
+
+                                                                                    <td><select class='input search-categories'>
+                                                                                            <option>Selecione</option>
+                                                                                        </select></td>
+
+                                                                                    <td><select class='input search-categories'>
+                                                                                            <option>Selecione</option>
+                                                                                        </select></td>
+                                                                                </tr><tr>
+
+                                                                                    <td colspan='2'><label class='text-uppercase'>Carpoteca:</label></td>
+
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td colspan='2'><select class='input search-categories'>
+                                                                                            <option>Selecione</option>
+                                                                                        </select></td>
+                                                                                </tr>
+
+                                                                            </table>
+                                                                            <div class='pull-right'>
+                                                                                <button class='primary-btn'>Pesquisar</button>
+                                                                            </div>
+                                                                            <?php
                                                                         }
                                                                         ?>
                                                                     </form>
