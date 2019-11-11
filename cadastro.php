@@ -72,8 +72,8 @@
                                 </div>
 
                                 <ul class="custom-menu">
-                                    <li><a href="#"><i class="fa fa-user-o"></i> Minha Conta</a></li>
-                                    <li><a href="#"><i class="fa fa-heart-o"></i> Plantas Salvas</a></li>
+                                    <!--<li><a href="#"><i class="fa fa-user-o"></i> Minha Conta</a></li>-->
+                                    <!--<li><a href="#"><i class="fa fa-heart-o"></i> Plantas Salvas</a></li>-->
                                     <li><a href="formularioPlanta.php"><i class="fa fa-check"></i> Ficha da Planta</a></li>
                                     <li><a href="formularioCarpoteca.php"><i class="fa fa-check"></i> Ficha da Carpoteca</a></li>
                                     <li><a href="cadastro.php"><i class="fa fa-user-plus"></i> Conceder Acesso</a></li>
@@ -113,221 +113,16 @@
             <div class="menu-nav">
                 <span class="menu-header">Menu <i class="fa fa-bars"></i></span>
                 <ul class="menu-list">
-                    <li id="inicio"><a href="index.php"><span class="category-header">Início <!--<i class="fa fa-list"></i>--></span></a></li>
-                    <li class="dropdown mega-dropdown full-width"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Divisão <i class="fa fa-caret-down"></i></a>
-                        <div class="custom-menu">
-                            <div class="row">
-
-
-                                <div class="col-md-3">
-                                    <ul class="list-links">
-                                        <li><h3 class='list-links-title'>Categorias</h3></li>
-                                        <?php
-                                        $DivisaoSelect = "SELECT divisao FROM plantas LIMIT 39";
-
-                                        $resultadoDivisao = $conecta->query(($DivisaoSelect));
-                                        if ($resultadoDivisao->num_rows > 0) {
-
-
-                                            for ($i = 0; $i < $linhaDivisao = $resultadoDivisao->fetch_assoc(); $i++) {
-                                                echo "<li><a href='divisoes.php'>" . $linhaDivisao["divisao"] . "</a></li>";
-                                                if (($i + 1) % 6 == 0) {
-                                                    echo "</ul>"
-                                                    . "</div>"
-                                                    . "<ul class='list-links'>"
-                                                    . "<li><h3 class='list-links-title'>Categorias</h3></li>"
-                                                    ;
-                                                }
-
-                                                if ($i == $linhaDivisao = $resultadoDivisao->fetch_assoc()) {
-                                                    echo "</ul>"
-                                                    . "<hr class='hidden-md hidden-lg'>"
-                                                    . "</div>";
-                                                }
-
-                                                if ($i + 1 >= 20) {
-                                                    echo "</div><bottom>Add</bottom>";
-                                                    return;
-                                                }
-                                            }
-                                        } else {
-                                            echo "0 resultados";
-                                        }
-                                        ?>
-
-
-                                </div>         
-
-                                <li class="dropdown mega-dropdown full-width"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Classe <i class="fa fa-caret-down"></i></a>
-                                    <div class="custom-menu">
-                                        <div class="row">
-                                            <div class="col-md-3">
-                                                <ul class="list-links">
-                                                    <li><h3 class='list-links-title'>Categorias</h3></li>
-                                                    <?php
-                                                    $ClasseSelect = "SELECT classe FROM plantas LIMIT 39";
-
-                                                    $resultadoClasse = $conecta->query(($ClasseSelect));
-                                                    if ($resultadoClasse->num_rows > 0) {
-
-
-                                                        for ($i = 0; $i < $linhaClasse = $resultadoClasse->fetch_assoc(); $i++) {
-                                                            echo "<li><a href='classes.php'>" . $linhaClasse["classe"] . "</a></li>";
-                                                            if (($i + 1) % 6 == 0) {
-                                                                echo "</ul>"
-                                                                . "</div>"
-                                                                . "<ul class='list-links'>"
-                                                                . "<li><h3 class='list-links-title'>Categorias</h3></li>"
-                                                                ;
-                                                            }
-
-                                                            if ($i == $linhaClasse = $resultadoClasse->fetch_assoc()) {
-                                                                echo "</ul>"
-                                                                . "<hr class='hidden-md hidden-lg'>"
-                                                                . "</div>";
-                                                            }
-
-                                                            if ($i + 1 >= 20) {
-                                                                echo "</div><bottom>Add</bottom>";
-                                                                return;
-                                                            }
-                                                        }
-                                                    } else {
-                                                        echo "0 resultados";
-                                                    }
-                                                    ?>
-
-
-                                            </div>      
-                                            <li class="dropdown mega-dropdown full-width"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Ordem <i class="fa fa-caret-down"></i></a>
-                                                <div class="custom-menu">
-                                                    <div class="row">
-
-                                                        <div class="col-md-3">
-                                                            <ul class="list-links">
-                                                                <li><h3 class='list-links-title'>Categorias</h3></li>
-                                                                <?php
-                                                                $OrdemSelect = "SELECT ordem FROM plantas LIMIT 39";
-
-                                                                $resultadoOrdem = $conecta->query(($OrdemSelect));
-                                                                if ($resultadoOrdem->num_rows > 0) {
-
-
-                                                                    for ($i = 0; $i < $linhaOrdem = $resultadoOrdem->fetch_assoc(); $i++) {
-                                                                        echo "<li><a href='ordens.php'>" . $linhaOrdem["ordem"] . "</a></li>";
-                                                                        if (($i + 1) % 6 == 0) {
-                                                                            echo "</ul>"
-                                                                            . "</div>"
-                                                                            . "<ul class='list-links'>"
-                                                                            . "<li><h3 class='list-links-title'>Categorias</h3></li>"
-                                                                            ;
-                                                                        }
-
-                                                                        if ($i == $linhaOrdem = $resultadoOrdem->fetch_assoc()) {
-                                                                            echo "</ul>"
-                                                                            . "<hr class='hidden-md hidden-lg'>"
-                                                                            . "</div>";
-                                                                        }
-
-                                                                        if ($i + 1 >= 20) {
-                                                                            echo "</div><bottom>Add</bottom>";
-                                                                            return;
-                                                                        }
-                                                                    }
-                                                                } else {
-                                                                    echo "0 resultados";
-                                                                }
-                                                                ?>
-
-
-                                                        </div>      
-                                                        <li class="dropdown mega-dropdown full-width"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Família <i class="fa fa-caret-down"></i></a>
-                                                            <div class="custom-menu">
-                                                                <div class="row">
-                                                                    <div class="col-md-3">
-                                                                        <ul class="list-links">
-                                                                            <li><h3 class='list-links-title'>Categorias</h3></li>
-                                                                            <?php
-                                                                            $FamiliaSelect = "SELECT familia FROM plantas LIMIT 39";
-
-                                                                            $resultadoFamilia = $conecta->query(($FamiliaSelect));
-                                                                            if ($resultadoFamilia->num_rows > 0) {
-
-
-                                                                                for ($i = 0; $i < $linhaFamilia = $resultadoFamilia->fetch_assoc(); $i++) {
-                                                                                    echo "<li><a href='familias.php'>" . $linhaFamilia["familia"] . "</a></li>";
-                                                                                    if (($i + 1) % 6 == 0) {
-                                                                                        echo "</ul>"
-                                                                                        . "</div>"
-                                                                                        . "<ul class='list-links'>"
-                                                                                        . "<li><h3 class='list-links-title'>Categorias</h3></li>"
-                                                                                        ;
-                                                                                    }
-
-                                                                                    if ($i == $linhaFamilia = $resultadoFamilia->fetch_assoc()) {
-                                                                                        echo "</ul>"
-                                                                                        . "<hr class='hidden-md hidden-lg'>"
-                                                                                        . "</div>";
-                                                                                    }
-
-                                                                                    if ($i + 1 >= 20) {
-                                                                                        echo "</div><bottom>Add</bottom>";
-                                                                                        return;
-                                                                                    }
-                                                                                }
-                                                                            } else {
-                                                                                echo "0 resultados";
-                                                                            }
-                                                                            ?>
-
-
+                    <li id="inicio"><a href="index.php">Início <!--<i class="fa fa-list"></i>--></a></li>
+                    <li><a href="divisoes.php">Divisão</a></li>
+                        <li><a href="classes.php">Classe</a></li>
+                        <li><a href="ordens.php">Ordem</a></li>
+                        <li><a href="familias.php">Família</a></li>
+                        <li><a href="carpotecas.php">Carpoteca</a></li>
+                </ul>
+                        
                                                                     </div>      
-                                                                    <li class="dropdown mega-dropdown full-width"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Carpoteca<i class="fa fa-caret-down"></i></a>
-                                                                        <div class="custom-menu">
-                                                                            <div class="row">
-                                                                                <div class="col-md-3">
-                                                                                    <ul class="list-links">
-                                                                                        <li><h3 class='list-links-title'>Categorias</h3></li>
-                                                                                        <?php
-                                                                                        $CarpotecaSelect = "SELECT nomeCientificoCarpoteca FROM carpoteca LIMIT 39";
-
-                                                                                        $resultadoCarpoteca = $conecta->query(($CarpotecaSelect));
-                                                                                        if ($resultadoCarpoteca->num_rows > 0) {
-
-
-                                                                                            for ($i = 0; $i < $linhaCarpoteca = $resultadoCarpoteca->fetch_assoc(); $i++) {
-                                                                                                echo "<li><a href='carpotecas.php'>" . $linhaCarpoteca["nomeCientificoCarpoteca"] . "</a></li>";
-                                                                                                if (($i + 1) % 6 == 0) {
-                                                                                                    echo "</ul>"
-                                                                                                    . "</div>"
-                                                                                                    . "<ul class='list-links'>"
-                                                                                                    . "<li><h3 class='list-links-title'>Categorias</h3></li>"
-                                                                                                    ;
-                                                                                                }
-
-                                                                                                if ($i == $linhaCarpoteca = $resultadoCarpoteca->fetch_assoc()) {
-                                                                                                    echo "</ul>"
-                                                                                                    . "<hr class='hidden-md hidden-lg'>"
-                                                                                                    . "</div>";
-                                                                                                }
-
-                                                                                                if ($i + 1 >= 20) {
-                                                                                                    echo "</div><bottom>Add</bottom>";
-                                                                                                    return;
-                                                                                                }
-                                                                                            }
-                                                                                        } else {
-                                                                                            echo "0 resultados";
-                                                                                        }
-                                                                                        ?>
-
-
-                                                                                </div>      
-                                                                            </div>
-                                                                        </div>
-                                                                    </li>
-
-                                                                    </ul>
+                                                                    
                                                                 </div>
                                                                 <!-- menu nav -->
                                                             </div>

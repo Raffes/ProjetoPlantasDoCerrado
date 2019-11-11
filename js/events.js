@@ -1,3 +1,15 @@
+
+function mostraCampo( el )
+{
+  var inputOutros = document.getElementById('outros');
+  if (el.value === 'Outros'){ 
+   	  inputOutros.style.display = "block";
+  }
+  else {
+      inputOutros.style.display = "none";
+  }
+}
+
 function abrirIframe(){
     
 }

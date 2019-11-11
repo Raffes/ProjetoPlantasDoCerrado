@@ -178,7 +178,52 @@ hr {
   transition: 0.3s all;
 }
 
-.input#formulario {
+.input#selectForm {
+    width: 300px;
+    height: 40px;
+}
+
+.input#selectForm1 {
+    width: 300px;
+    height: 40px;
+}
+
+.input#selectForm2 {
+    width: 300px;
+    height: 40px;
+}
+
+.input#selectForm3 {
+    width: 300px;
+    height: 40px;
+}
+
+.input#selectForm4 {
+    width: 300px;
+    height: 40px;
+}
+
+.input#formSelect {
+    width: 300px;
+    height: 40px;
+}
+
+.input#formSelect1 {
+    width: 300px;
+    height: 40px;
+}
+
+.input#formSelect2 {
+    width: 300px;
+    height: 40px;
+}
+
+.input#formSelect3 {
+    width: 300px;
+    height: 40px;
+}
+
+.input#formSelect4 {
     width: 300px;
     height: 40px;
 }
@@ -221,6 +266,8 @@ textarea.input {
 .input-checkbox input[type="checkbox"]:checked+label+.caption, .input-checkbox input[type="radio"]:checked+label+.caption {
   max-height: 800px;
 }
+
+
 
 /*.selectFormu .caption {
   max-height: 0;
@@ -1883,10 +1930,11 @@ table#btn-login{
 
 table#fichamento1 {
     height: 329px;
-    width: 660px;
+    width: 360px;
     margin-left: 20px;
     /*border: 1px #30323A solid;*/
 }
+
 
 table#fichamento2 {
     

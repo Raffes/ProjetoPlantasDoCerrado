@@ -25,10 +25,10 @@ $tabela1 = "CREATE TABLE IF NOT EXISTS `dbPlantasDoCerrado`.`cadastroDeUsuario` 
 
 $tabela2 = "CREATE TABLE IF NOT EXISTS `dbPlantasDoCerrado`.`imagemCarpoteca` (
   `id_imagemCarpoteca` INT NOT NULL AUTO_INCREMENT,
-  `imgCarpoteca1` MEDIUMBLOB NULL,
-  `imgCarpoteca2` MEDIUMBLOB NULL,
-  `imgCarpoteca3` MEDIUMBLOB NULL,
-  `imgCarpoteca4` MEDIUMBLOB NULL,
+  `imgCarpoteca1` BLOB NULL,
+  `imgCarpoteca2` BLOB NULL,
+  `imgCarpoteca3` BLOB NULL,
+  `imgCarpoteca4` BLOB NULL,
   PRIMARY KEY (`id_imagemCarpoteca`))";
 
 $tabela3 = "CREATE TABLE IF NOT EXISTS `dbPlantasDoCerrado`.`carpoteca` (
